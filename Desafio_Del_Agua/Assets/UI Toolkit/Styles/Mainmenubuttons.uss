@@ -1,0 +1,4 @@
+.button-main-title {
+    -unity-font-style: bold;
+    font-size: 33px;
+}
