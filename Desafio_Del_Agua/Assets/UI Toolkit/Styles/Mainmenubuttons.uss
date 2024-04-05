@@ -1,4 +1,10 @@
 .button-main-title {
     -unity-font-style: bold;
     font-size: 33px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    -unity-background-image-tint-color: rgba(35, 61, 192, 0.6);
+    background-color: rgba(27, 148, 227, 0.89);
 }
