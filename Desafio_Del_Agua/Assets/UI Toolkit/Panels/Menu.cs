@@ -12,6 +12,7 @@ public class MiCodigo : MonoBehaviour
     {
         _document = GetComponent<UIDocument>();
         _button = _document.rootVisualElement.Q<Button>("play") as Button;
+        
         _button.RegisterCallback<ClickEvent>(OnPlayGameClick);
     }
     private void OnDisable()
@@ -20,6 +21,6 @@ public class MiCodigo : MonoBehaviour
     }
     private void OnPlayGameClick(ClickEvent evt)
     {
-        Debug.Log("Presionaste el boton");
+        Debug.Log("Presionaste el boton play");
     }
 }
