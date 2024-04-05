@@ -1,10 +1,33 @@
 .button-main-title {
     -unity-font-style: bold;
     font-size: 33px;
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-    border-bottom-right-radius: 18px;
-    border-bottom-left-radius: 18px;
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+    border-bottom-right-radius: 33px;
+    border-bottom-left-radius: 33px;
     -unity-background-image-tint-color: rgba(35, 61, 192, 0.6);
     background-color: rgba(27, 148, 227, 0.89);
+    color: rgb(255, 255, 255);
+    border-left-color: rgba(0, 231, 255, 0);
+    border-right-color: rgba(0, 231, 255, 0);
+    border-top-color: rgba(0, 231, 255, 0);
+    border-bottom-color: rgba(0, 231, 255, 0);
+    border-top-width: 8px;
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+    border-left-width: 8px;
+    -unity-text-outline-width: 1px;
+    letter-spacing: 1px;
+    -unity-text-outline-color: rgba(17, 112, 245, 0);
+    -unity-slice-scale: 18.6px;
+}
+
+.button-main-title:hover {
+    background-color: rgba(0, 255, 208, 0);
+    background-image: url("project://database/Assets/UI%20Toolkit/Bacgrounds/Fondo.png?fileID=2800000&guid=2b94f3b7599cdff46bf83d0b31952a0c&type=3#Fondo");
+    color: rgb(221, 207, 37);
+}
+
+.button-main-title:active {
+    background-color: rgba(27, 148, 227, 0);
 }
