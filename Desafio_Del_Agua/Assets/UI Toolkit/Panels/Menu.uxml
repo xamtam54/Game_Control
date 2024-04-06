@@ -7,6 +7,7 @@
             <ui:Button text="Jugar" parse-escape-sequences="true" display-tooltip-when-elided="true" name="play" class="button-main-title" />
             <ui:Button text="Opciones" parse-escape-sequences="true" display-tooltip-when-elided="true" name="options" class="button-main-title" />
             <ui:Button text="Tutorial" parse-escape-sequences="true" display-tooltip-when-elided="true" name="tutorial" class="button-main-title" />
+            <ui:Button text="Creditos" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Credits" class="button-main-title" />
             <ui:Button text="Salir" parse-escape-sequences="true" display-tooltip-when-elided="true" name="exit" class="button-main-title" />
         </ui:VisualElement>
     </ui:VisualElement>
