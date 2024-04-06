@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/OptionsStyle.uss?fileID=7433441132597879392&amp;guid=d5d6e79d074881a42a0224e21c7a9b86&amp;type=3#OptionsStyle" />
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/OrdenTutorial.uss?fileID=7433441132597879392&amp;guid=c0ffbdba6f6af2c4a8c0feb660b09a12&amp;type=3#OrdenTutorial" />
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/Optionsbutton.uss?fileID=7433441132597879392&amp;guid=0795f1e7431bfda4d82505c2ff39e73b&amp;type=3#Optionsbutton" />
+    <ui:VisualElement name="BackGround" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/Fondo.png?fileID=2800000&amp;guid=2b94f3b7599cdff46bf83d0b31952a0c&amp;type=3#Fondo&quot;); -unity-background-image-tint-color: rgb(128, 128, 128); align-items: flex-start; justify-content: center;">
+        <ui:VisualElement name="Intrucciones" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 75%; align-items: stretch; justify-content: flex-end; -unity-background-image-tint-color: rgba(0, 0, 0, 0.25); background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;); flex-direction: column; -unity-text-align: middle-left;">
+            <ui:Label tabindex="-1" text="Tutorial" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Tutorial" class="textocolor" style="position: absolute; top: 30px; left: 800px; font-size: 72px; -unity-font-style: bold; color: rgb(49, 124, 183); width: 304px;" />
+            <ui:VisualElement name="Info" class="textocolor" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 80%; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;); -unity-background-image-tint-color: rgba(55, 55, 55, 0.76); flex-direction: row;">
+                <ui:VisualElement name="MovementC" class="Panel-organization" style="flex-grow: 1;">
+                    <ui:Label tabindex="-1" text="Movimiento" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Movimiento" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="OthersC" class="Panel-organization" style="flex-grow: 1;">
+                    <ui:Label tabindex="-1" text="Otros controles" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Mecanicas" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Mechanics" class="Panel-organization" style="flex-grow: 1;">
+                    <ui:Label tabindex="-1" text="Mecanicas" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Enemigos" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Enemies" class="Panel-organization" style="flex-grow: 1;">
+                    <ui:Label tabindex="-1" text="Enemigos" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Otros" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button text="Volver a menu principal" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Menu" class="textocolor button-options" style="width: 560px; height: 10%; position: absolute; left: 676px; top: 948px; background-color: rgb(97, 98, 111); border-top-left-radius: 45px; border-top-right-radius: 45px; border-bottom-right-radius: 45px; border-bottom-left-radius: 45px; border-left-color: rgb(183, 183, 183); border-right-color: rgb(183, 183, 183); border-top-color: rgb(183, 183, 183); border-bottom-color: rgb(183, 183, 183); -unity-background-image-tint-color: rgb(255, 255, 255);" />
+    </ui:VisualElement>
+</ui:UXML>

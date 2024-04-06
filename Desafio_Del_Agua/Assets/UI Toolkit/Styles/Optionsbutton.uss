@@ -1,0 +1,9 @@
+.button-options {
+    -unity-background-image-tint-color: rgb(192, 50, 50);
+}
+
+.button-options:hover {
+    color: rgb(43, 202, 148);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-image: url("project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&guid=bb020e30f1bebfb438369d864a486e27&type=3#fondo slicer opciones");
+}

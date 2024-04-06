@@ -44,25 +44,25 @@ public class MiCodigo : MonoBehaviour
     }
     private void OnPlayGameClick(ClickEvent evt)
     {
-        Debug.Log("Presionaste el boton play");
+        //Debug.Log("Presionaste el boton play");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Uno");
     }
 
     private void OnOptionsClick(ClickEvent evt)
     {
-        Debug.Log("Presionaste el boton opciones");
+        //Debug.Log("Presionaste el boton opciones");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Options");
     }
 
     private void OnTutorialClick(ClickEvent evt)
     {
-        Debug.Log("Presionaste el boton tutorial");
+        //Debug.Log("Presionaste el boton tutorial");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial");
     }
 
     private void OnCreditsClick(ClickEvent evt)
     {
-        Debug.Log("Presionaste el boton Creditos");
+        //Debug.Log("Presionaste el boton Creditos");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
     }
 }
