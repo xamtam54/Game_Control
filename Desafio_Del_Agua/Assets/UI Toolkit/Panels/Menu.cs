@@ -8,11 +8,13 @@ public class MiCodigo : MonoBehaviour
     private UIDocument _document;
     private Button _button1;
     private Button _button2;
-   // private Button _button3;
-   //private Button _button4;
+    private Button _button3;
+    private Button _button4;
    //--------------------------------------------------
     public string Uno;
     public string Options;
+    public string Tutorial;
+    public string Credits;
 
     
    //------------------------------------------------
@@ -26,13 +28,19 @@ public class MiCodigo : MonoBehaviour
         _button2.RegisterCallback<ClickEvent>(OnOptionsClick);
 
 
+        _button3 = _document.rootVisualElement.Q<Button>("tutorial") as Button;
+        _button3.RegisterCallback<ClickEvent>(OnTutorialClick);
+
+        _button4 = _document.rootVisualElement.Q<Button>("Credits") as Button;
+        _button4.RegisterCallback<ClickEvent>(OnCreditsClick);
+
     }
     private void OnDisable()
     {
         _button1.UnregisterCallback<ClickEvent>(OnPlayGameClick);
-        _button2.UnregisterCallback<ClickEvent>(OnPlayGameClick);
-        //_button3.UnregisterCallback<ClickEvent>(OnPlayGameClick);
-        //_button4.UnregisterCallback<ClickEvent>(OnPlayGameClick);
+        _button2.UnregisterCallback<ClickEvent>(OnOptionsClick);
+        _button3.UnregisterCallback<ClickEvent>(OnTutorialClick);
+        _button4.UnregisterCallback<ClickEvent>(OnCreditsClick);
     }
     private void OnPlayGameClick(ClickEvent evt)
     {
@@ -44,5 +52,17 @@ public class MiCodigo : MonoBehaviour
     {
         Debug.Log("Presionaste el boton opciones");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Options");
+    }
+
+    private void OnTutorialClick(ClickEvent evt)
+    {
+        Debug.Log("Presionaste el boton tutorial");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial");
+    }
+
+    private void OnCreditsClick(ClickEvent evt)
+    {
+        Debug.Log("Presionaste el boton Creditos");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
     }
 }
