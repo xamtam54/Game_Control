@@ -1,0 +1,11 @@
+VisualElement {
+}
+
+.textocolor {
+    flex-shrink: 0;
+    font-size: 49px;
+    color: rgb(76, 239, 255);
+    cursor: initial;
+    width: 554px;
+    background-image: none;
+}
