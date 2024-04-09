@@ -6,17 +6,31 @@
         <ui:VisualElement name="Intrucciones" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 75%; align-items: stretch; justify-content: flex-end; -unity-background-image-tint-color: rgba(0, 0, 0, 0.25); background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;); flex-direction: column; -unity-text-align: middle-left;">
             <ui:Label tabindex="-1" text="Tutorial" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Tutorial" class="textocolor" style="position: absolute; top: 30px; left: 800px; font-size: 72px; -unity-font-style: bold; color: rgb(49, 124, 183); width: 304px;" />
             <ui:VisualElement name="Info" class="textocolor" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 80%; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;); -unity-background-image-tint-color: rgba(55, 55, 55, 0.76); flex-direction: row;">
-                <ui:VisualElement name="MovementC" class="Panel-organization" style="flex-grow: 1;">
-                    <ui:Label tabindex="-1" text="Movimiento" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Movimiento" style="-unity-text-align: middle-center;" />
+                <ui:VisualElement name="MovementC" class="Panel-organization" style="flex-grow: 1; justify-content: space-between;">
+                    <ui:Label tabindex="-1" text="Movimiento" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Movimiento" style="-unity-text-align: middle-center; justify-content: space-between;" />
+                    <ui:VisualElement name="ParticionM" style="flex-grow: 0; align-items: center; justify-content: space-between; height: 85%; flex-shrink: 0;">
+                        <ui:VisualElement name="WASD" style="flex-grow: 0; width: 48%; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/WASD.png?fileID=2800000&amp;guid=b569f654e341bae4b881eee5eab82bb5&amp;type=3#WASD&quot;); height: 37%; flex-shrink: 0; border-top-left-radius: 32px; border-top-right-radius: 32px; border-bottom-right-radius: 32px; border-bottom-left-radius: 32px;" />
+                        <ui:Label tabindex="-1" text="Correr" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Correr" />
+                        <ui:VisualElement name="Crtl" style="flex-grow: 1; flex-shrink: 1; width: 75%; height: auto; justify-content: center; align-items: center;">
+                            <ui:VisualElement name="CrtlI" style="flex-grow: 0; flex-shrink: 0; width: 67%; height: 61%; justify-content: flex-end; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/Captura%20de%20pantalla%202024-04-09%20151146.png?fileID=2800000&amp;guid=c8f45454364130e42bda6728d18e5194&amp;type=3#Captura de pantalla 2024-04-09 151146&quot;); align-items: center; border-top-left-radius: 32px; border-top-right-radius: 32px; border-bottom-right-radius: 32px; border-bottom-left-radius: 32px; border-left-color: rgba(37, 220, 236, 0); border-right-color: rgba(37, 220, 236, 0); border-top-color: rgba(37, 220, 236, 0); border-bottom-color: rgba(37, 220, 236, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="OthersC" class="Panel-organization" style="flex-grow: 1;">
-                    <ui:Label tabindex="-1" text="Otros controles" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Mecanicas" style="-unity-text-align: middle-center;" />
+                <ui:VisualElement name="OthersC" class="Panel-organization" style="flex-grow: 1; justify-content: center; align-items: stretch;">
+                    <ui:Label tabindex="-1" text="Modo sistema" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SistemMode" style="-unity-text-align: middle-center;" />
+                    <ui:VisualElement name="PartcicionO" style="flex-grow: 0; flex-shrink: 0; align-items: center; justify-content: center; width: auto; height: 85%;">
+                        <ui:VisualElement name="E" style="flex-grow: 0; width: 35%; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/Captura%20de%20pantalla%202024-04-09%20152510.png?fileID=2800000&amp;guid=b2c3ac8401d6a10489f67eb895b3df5d&amp;type=3#Captura de pantalla 2024-04-09 152510&quot;); height: 24%; flex-shrink: 0; border-top-left-radius: 32px; border-top-right-radius: 32px; border-bottom-right-radius: 32px; border-bottom-left-radius: 32px; align-items: flex-start;" />
+                        <ui:Label tabindex="-1" text="Cambio de arma" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CambioArma" style="height: 68px;" />
+                        <ui:VisualElement name="Q" style="flex-grow: 0; height: 24%; flex-shrink: 0; width: 35%; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/Captura%20de%20pantalla%202024-04-09%20153752.png?fileID=2800000&amp;guid=51237fa3d53ef6d41af1c1e51e63d2d0&amp;type=3#Captura de pantalla 2024-04-09 153752&quot;); border-top-left-radius: 32px; border-top-right-radius: 32px; border-bottom-right-radius: 32px; border-bottom-left-radius: 32px;" />
+                        <ui:Label tabindex="-1" text="Atacar" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Ataque" />
+                        <ui:VisualElement name="Atack" style="flex-grow: 0; height: 22%; flex-shrink: 0; width: 35%; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/Captura%20de%20pantalla%202024-04-09%20155444.png?fileID=2800000&amp;guid=0b32a743f9d5ce549a824d2b5e1694db&amp;type=3#Captura de pantalla 2024-04-09 155444&quot;);" />
+                    </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="Mechanics" class="Panel-organization" style="flex-grow: 1;">
-                    <ui:Label tabindex="-1" text="Mecanicas" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Enemigos" style="-unity-text-align: middle-center;" />
+                    <ui:Label tabindex="-1" text="Mecanicas" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Mecanicas" style="-unity-text-align: middle-center;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="Enemies" class="Panel-organization" style="flex-grow: 1;">
-                    <ui:Label tabindex="-1" text="Enemigos" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Otros" style="-unity-text-align: middle-center;" />
+                    <ui:Label tabindex="-1" text="Enemigos" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Enemigos" style="-unity-text-align: middle-center;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
