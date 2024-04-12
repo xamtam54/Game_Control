@@ -10,6 +10,7 @@ public class MiCodigo : MonoBehaviour
     private Button _button2;
     private Button _button3;
     private Button _button4;
+    private Button _button5;
    //--------------------------------------------------
     public string Uno;
     public string Options;
@@ -33,6 +34,9 @@ public class MiCodigo : MonoBehaviour
 
         _button4 = _document.rootVisualElement.Q<Button>("Credits") as Button;
         _button4.RegisterCallback<ClickEvent>(OnCreditsClick);
+
+        _button5 = _document.rootVisualElement.Q<Button>("exit") as Button;
+        _button5.RegisterCallback<ClickEvent>(Exit);
 
     }
     private void OnDisable()
@@ -64,5 +68,10 @@ public class MiCodigo : MonoBehaviour
     {
         //Debug.Log("Presionaste el boton Creditos");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
+    }
+
+    public void Exit(ClickEvent evt)
+    {
+        Application.Quit();
     }
 }
