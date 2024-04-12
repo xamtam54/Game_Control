@@ -1,0 +1,51 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/Tama%C3%B1ovisualelements.uss?fileID=7433441132597879392&amp;guid=60c92d91d884ffa48bbb32de58c2b8f1&amp;type=3#Tamañovisualelements" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/Fondo.png?fileID=2800000&amp;guid=2b94f3b7599cdff46bf83d0b31952a0c&amp;type=3#Fondo&quot;); -unity-background-image-tint-color: rgb(128, 128, 128); align-items: stretch; flex-direction: row; justify-content: center;">
+        <ui:VisualElement name="Creditos" style="flex-grow: 0; font-size: 90px; flex-shrink: 0; width: 94%; height: 100%; align-items: stretch;">
+            <ui:VisualElement name="Titulo" style="flex-grow: 0; flex-direction: row; justify-content: center; align-items: center; height: 260px;" />
+            <ui:Label tabindex="-1" text="Creditos" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Creditos" style="font-size: 79px; color: rgb(49, 124, 183); -unity-font-style: bold; position: absolute; top: 217px; left: 707px; right: auto; width: auto; height: auto;" />
+            <ui:VisualElement name="Elementos" style="flex-grow: 0; flex-shrink: 0; height: 70%; flex-direction: row; align-items: center; justify-content: space-between; align-self: stretch; width: 100%;">
+                <ui:VisualElement name="NK" class="grow" style="flex-grow: 0; flex-shrink: 0;">
+                    <ui:Label tabindex="-1" text="Nikolai Torres" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombreNK" class="subtitles" />
+                    <ui:VisualElement name="DatosNk" class="Datosinterior" style="flex-grow: 0; height: 90%; justify-content: center; align-items: center;">
+                        <ui:VisualElement name="InfoNk" class="Infotext" style="flex-grow: 0; height: 75%; width: 90%;">
+                            <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet,&#10;consectetur adipiscing&#10;elit. Suspendisse in mi sed&#10;velit lacinia vulputate.&#10;Vestibulum dignissim mollis&#10;ipsum sed pellentesque." parse-escape-sequences="true" display-tooltip-when-elided="true" name="textnk" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="LK" class="grow" style="flex-grow: 1;">
+                    <ui:Label tabindex="-1" text="Luis Beltran" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombreLK" class="subtitles" />
+                    <ui:VisualElement name="DatosLK" class="Datosinterior" style="flex-grow: 0; height: 90%;">
+                        <ui:VisualElement name="InfoLk" class="Infotext" style="flex-grow: 0; height: 75%; width: 90%;">
+                            <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet,&#10;consectetur adipiscing&#10;elit. Suspendisse in mi sed&#10;velit lacinia vulputate.&#10;Vestibulum dignissim mollis&#10;ipsum sed pellentesque." parse-escape-sequences="true" display-tooltip-when-elided="true" name="textlk" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="CS" class="grow" style="flex-grow: 1;">
+                    <ui:Label tabindex="-1" text="Carlos Salazar" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombreCS" class="subtitles" />
+                    <ui:VisualElement name="DatosCS" class="Datosinterior" style="flex-grow: 0; height: 90%;">
+                        <ui:VisualElement name="InfoCS" class="Infotext" style="flex-grow: 0; height: 75%; width: 90%;">
+                            <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet,&#10;consectetur adipiscing&#10;elit. Suspendisse in mi sed&#10;velit lacinia vulputate.&#10;Vestibulum dignissim mollis&#10;ipsum sed pellentesque." parse-escape-sequences="true" display-tooltip-when-elided="true" name="textcs" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Musica" class="grow" style="flex-grow: 1;">
+                    <ui:Label tabindex="-1" text="Musica" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombreMs" class="subtitles" />
+                    <ui:VisualElement name="DatosMS" class="Datosinterior" style="flex-grow: 0; height: 90%;">
+                        <ui:VisualElement name="InfoMS" class="Infotext" style="flex-grow: 0; height: 75%; width: 90%;">
+                            <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet,&#10;consectetur adipiscing&#10;elit. Suspendisse in mi sed&#10;velit lacinia vulputate.&#10;Vestibulum dignissim mollis&#10;ipsum sed pellentesque." parse-escape-sequences="true" display-tooltip-when-elided="true" name="textms" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Pf" class="grow" style="flex-grow: 1;">
+                    <ui:Label tabindex="-1" text="Profesor" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombrePF" class="subtitles" />
+                    <ui:VisualElement name="DatosPF" class="Datosinterior" style="flex-grow: 0; height: 90%; visibility: visible;">
+                        <ui:VisualElement name="InfoPF" class="Infotext" style="flex-grow: 0; height: 75%; width: 90%;">
+                            <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet,&#10;consectetur adipiscing&#10;elit. Suspendisse in mi sed&#10;velit lacinia vulputate.&#10;Vestibulum dignissim mollis&#10;ipsum sed pellentesque." parse-escape-sequences="true" display-tooltip-when-elided="true" name="textpf" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
