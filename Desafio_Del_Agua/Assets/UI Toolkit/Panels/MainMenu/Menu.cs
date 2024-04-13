@@ -45,6 +45,7 @@ public class MiCodigo : MonoBehaviour
         _button2.UnregisterCallback<ClickEvent>(OnOptionsClick);
         _button3.UnregisterCallback<ClickEvent>(OnTutorialClick);
         _button4.UnregisterCallback<ClickEvent>(OnCreditsClick);
+        _button5.UnregisterCallback<ClickEvent>(Exit);
     }
     private void OnPlayGameClick(ClickEvent evt)
     {
