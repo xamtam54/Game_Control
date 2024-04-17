@@ -20,10 +20,31 @@
 }
 
 .button {
+    background-image: url("project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&guid=bb020e30f1bebfb438369d864a486e27&type=3#fondo slicer opciones");
+    -unity-background-image-tint-color: rgb(90, 190, 255);
+    width: 60%;
+    height: 45%;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    font-size: 32px;
+    color: rgb(0, 255, 189);
+    -unity-font-style: bold;
 }
 
 .button:hover {
     background-image: url("project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&guid=bb020e30f1bebfb438369d864a486e27&type=3#fondo slicer opciones");
     -unity-background-image-tint-color: rgb(4, 243, 176);
-    color: rgb(38, 142, 159);
+    color: rgb(170, 250, 255);
+    font-size: 32px;
+    -unity-font-style: bold;
+}
+
+.button:active {
+    background-image: url("project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&guid=bb020e30f1bebfb438369d864a486e27&type=3#fondo slicer opciones");
+    -unity-background-image-tint-color: rgb(0, 255, 227);
+    color: rgb(24, 255, 0);
+    font-size: 32px;
+    -unity-font-style: bold;
 }

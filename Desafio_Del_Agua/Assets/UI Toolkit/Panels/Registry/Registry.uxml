@@ -3,15 +3,17 @@
     <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/LogoGrupo.jpg?fileID=2800000&amp;guid=8553e60575bc1ec408b19f00a80c3f65&amp;type=3#LogoGrupo&quot;); align-items: center;">
         <ui:VisualElement name="Division" style="flex-grow: 1; width: 40%; align-items: center; justify-content: center;">
             <ui:VisualElement name="Info" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 75%; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;); -unity-background-image-tint-color: rgba(255, 255, 255, 0.29); border-top-left-radius: 62px; border-top-right-radius: 62px; border-bottom-right-radius: 62px; border-bottom-left-radius: 62px;">
-                <ui:VisualElement name="Banner" class="separationresgitry" style="flex-grow: 1;" />
-                <ui:VisualElement name="User" class="separationresgitry" style="flex-grow: 1; justify-content: flex-end; align-items: center;">
+                <ui:VisualElement name="Banner" class="separationresgitry" style="flex-grow: 1; height: 44%; align-items: center; justify-content: center;">
+                    <ui:VisualElement name="userimage" style="flex-grow: 0; border-top-left-radius: 100px; border-top-right-radius: 100px; border-bottom-right-radius: 100px; border-bottom-left-radius: 100px; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/user.png?fileID=2800000&amp;guid=950002dbf1e58a84bba8ab184ed4b597&amp;type=3#user&quot;); flex-shrink: 0; width: 40%; height: 80%; align-items: center; justify-content: center; -unity-background-image-tint-color: rgba(31, 79, 120, 0.86);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="User" class="separationresgitry" style="flex-grow: 1; justify-content: flex-end; align-items: center; height: 11%; -unity-background-image-tint-color: rgba(255, 255, 255, 0.58);">
                     <ui:TextField picking-mode="Ignore" value="Usuario" class="text" />
                 </ui:VisualElement>
-                <ui:VisualElement name="Pasword" class="separationresgitry" style="flex-grow: 1; align-items: center;">
+                <ui:VisualElement name="Pasword" class="separationresgitry" style="flex-grow: 1; align-items: center; height: 9%;">
                     <ui:TextField picking-mode="Ignore" value="Contraseña" password="true" class="text" />
                 </ui:VisualElement>
-                <ui:VisualElement name="Login" class="separationresgitry" style="flex-grow: 1; align-items: center;">
-                    <ui:Button text="Login" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Login" class="button" style="width: 60%; height: 67px; border-top-left-radius: 34px; border-top-right-radius: 34px; border-bottom-right-radius: 34px; border-bottom-left-radius: 34px; font-size: 31px; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;); -unity-background-image-tint-color: rgb(61, 230, 255); color: rgb(0, 255, 178); -unity-font-style: bold;" />
+                <ui:VisualElement name="Login" class="separationresgitry" style="flex-grow: 1; align-items: center; height: 17%;">
+                    <ui:Button text="Login" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Login" class="button" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
