@@ -1,0 +1,13 @@
+.subdivision {
+    flex-shrink: 0;
+    width: 100%;
+    height: 25%;
+}
+
+.textos {
+    width: 50%;
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+    border-bottom-right-radius: 33px;
+    border-bottom-left-radius: 33px;
+}
