@@ -1,0 +1,29 @@
+.separationresgitry {
+    flex-shrink: 0;
+    width: 100%;
+    height: 25%;
+    border-top-left-radius: 62px;
+    border-top-right-radius: 62px;
+    border-bottom-right-radius: 62px;
+    border-bottom-left-radius: 62px;
+}
+
+.text {
+    width: 74%;
+    flex-shrink: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    height: 64px;
+    font-size: 26px;
+}
+
+.button {
+}
+
+.button:hover {
+    background-image: url("project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&guid=bb020e30f1bebfb438369d864a486e27&type=3#fondo slicer opciones");
+    -unity-background-image-tint-color: rgb(4, 243, 176);
+    color: rgb(38, 142, 159);
+}
