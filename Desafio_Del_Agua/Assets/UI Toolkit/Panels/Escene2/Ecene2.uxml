@@ -1,0 +1,57 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/Sisriego/Escene1mallas.uss?fileID=7433441132597879392&amp;guid=6e6c9c63d66f1224088f5a3ffc908d50&amp;type=3#Escene1mallas" />
+    <ui:VisualElement name="Background" style="flex-grow: 1;">
+        <ui:VisualElement name="row1" style="flex-grow: 1; background-image: none; height: 29px;" />
+        <ui:VisualElement name="row2" style="flex-grow: 0; height: 50%; flex-direction: row;">
+            <ui:VisualElement name="Isle" style="flex-grow: 0; flex-direction: row; width: 22%;">
+                <ui:VisualElement name="isle1" style="flex-grow: 0; background-image: none; width: 167px;" />
+                <ui:VisualElement name="isle2" style="flex-grow: 0; width: 261px;">
+                    <ui:VisualElement name="isle2-1" style="flex-grow: 1; background-image: none; height: 82px;" />
+                    <ui:VisualElement name="isle2-2" style="flex-grow: 0; max-width: initial; width: auto; height: 88%;">
+                        <ui:VisualElement name="Cultivo1" class="cultivos" style="flex-grow: 1; align-items: flex-end; justify-content: center;">
+                            <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" style="position: absolute; top: 48px; left: 168px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="Cultivo2" class="cultivos" style="flex-grow: 1; align-items: flex-end; justify-content: center;">
+                            <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="isle2-3" style="flex-grow: 1; background-image: none; height: 59%;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Bridge" focusable="false" style="flex-grow: 0; background-image: none; width: 46%;" />
+            <ui:VisualElement name="main" style="flex-grow: 1;">
+                <ui:VisualElement name="main1" style="flex-grow: 0; background-image: none; height: 26%;" />
+                <ui:VisualElement name="main2" style="flex-grow: 1; background-image: none; height: 14%;">
+                    <ui:VisualElement name="Cultivosup" class="cultivos" style="flex-grow: 1; flex-direction: row;">
+                        <ui:VisualElement name="cultivosup1" style="flex-grow: 0; height: 100%; width: 27%; background-image: none;" />
+                        <ui:VisualElement name="cultivosup2" style="flex-grow: 1; height: 100%; flex-direction: row;">
+                            <ui:VisualElement name="Cultivo3" style="flex-grow: 1; align-items: center;">
+                                <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" style="position: absolute; top: 0; left: 55px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="Cultivo4" style="flex-grow: 1; align-items: flex-start;">
+                                <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" style="position: absolute; top: 2px; left: 18px;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Cultivosdown" class="cultivos" style="flex-grow: 1;">
+                        <ui:VisualElement name="cultivosdown1" style="flex-grow: 0; height: 61%; width: 100%; background-image: none; flex-direction: row;">
+                            <ui:VisualElement name="Cultivo5" style="flex-grow: 1; justify-content: flex-end; align-items: center;">
+                                <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="Cultivo6" style="flex-grow: 1; justify-content: flex-end; align-items: center;">
+                                <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="Cultivo7" style="flex-grow: 1; justify-content: flex-end; align-items: center;">
+                                <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="extra" style="flex-grow: 1; background-image: none;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cultivosdown2" style="flex-grow: 1; width: 100%; background-image: none;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="main3" style="flex-grow: 0; background-image: none; height: 11%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="row3" style="flex-grow: 1; background-image: none;" />
+    </ui:VisualElement>
+</ui:UXML>
