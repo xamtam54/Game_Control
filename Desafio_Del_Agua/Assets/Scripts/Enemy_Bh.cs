@@ -19,7 +19,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        isAttacking = true;                                                                                //temporal para definir estado de ataque
+        isAttacking = false;                                                                                //temporal para definir estado de ataque
 
     }
 
@@ -63,7 +63,7 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 nearestTarget = GetNearestTargetWithTag("Device");
             }
-            if (nearestTarget == null && persecutionkRange <= 100)
+            if (nearestTarget == null && persecutionkRange <= 500)
             {
                 persecutionkRange = persecutionkRange + 2;
             }
