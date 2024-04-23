@@ -29,8 +29,18 @@
         <ui:VisualElement name="row3" style="flex-grow: 0; flex-shrink: 1; height: 39%; flex-direction: row;">
             <ui:VisualElement name="Maya7" class="sizesectors" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;);" />
             <ui:VisualElement name="Maya8" class="sizesectors" style="flex-grow: 0; width: 23%;">
-                <ui:VisualElement name="8-1" style="flex-grow: 1;" />
-                <ui:VisualElement name="8-2" style="flex-grow: 1;" />
+                <ui:VisualElement name="8-1" class="subsectordown" style="flex-grow: 1; flex-direction: row;">
+                    <ui:VisualElement name="8-1-1" class="cultivos" style="flex-grow: 1; justify-content: flex-end;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="8-1-2" class="cultivos" style="flex-grow: 1; justify-content: flex-end;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="8-1-3" class="cultivos" style="flex-grow: 1; justify-content: flex-end;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="8-2" class="subsectors" style="flex-grow: 1;" />
             </ui:VisualElement>
             <ui:VisualElement name="Maya9" class="sizesectors" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;);" />
         </ui:VisualElement>
