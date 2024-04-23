@@ -2,9 +2,9 @@
     <Style src="project://database/Assets/UI%20Toolkit/Styles/Sisriego/Escene1mallas.uss?fileID=7433441132597879392&amp;guid=6e6c9c63d66f1224088f5a3ffc908d50&amp;type=3#Escene1mallas" />
     <ui:VisualElement name="Fondo" style="flex-grow: 1; flex-direction: column;">
         <ui:VisualElement name="row1" style="flex-grow: 0; height: 28%; flex-shrink: 0; flex-direction: row;">
-            <ui:VisualElement name="Maya1" class="sizesectors" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;);" />
+            <ui:VisualElement name="Maya1" class="sizesectors" style="flex-grow: 1; background-image: none;" />
             <ui:VisualElement name="Maya2" class="sizesectors" style="flex-grow: 0; width: 23%;">
-                <ui:VisualElement name="2-1" class="subsectors" style="flex-grow: 1; align-items: center; justify-content: center; flex-shrink: 0;" />
+                <ui:VisualElement name="2-1" class="subsectors" style="flex-grow: 1; align-items: center; justify-content: center; flex-shrink: 0; background-image: none;" />
                 <ui:VisualElement name="2-2" class="subsectors" style="flex-grow: 1; flex-direction: row;">
                     <ui:VisualElement name="2-2-1" class="cultivos" style="flex-grow: 1;">
                         <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Cultivo1" />
@@ -17,32 +17,58 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Maya3" class="sizesectors" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;);" />
+            <ui:VisualElement name="Maya3" class="sizesectors" style="flex-grow: 1; background-image: none;" />
         </ui:VisualElement>
         <ui:VisualElement name="row2" style="flex-grow: 0; flex-shrink: 0; height: 48%; flex-direction: row;">
-            <ui:VisualElement name="Maya4" class="sizesectors" style="flex-grow: 1;" />
+            <ui:VisualElement name="Maya4" class="sizesectors" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="4-1" style="flex-grow: 1; height: 100%; background-image: none;" />
+                <ui:VisualElement name="4-2" style="flex-grow: 0; height: 100%; flex-shrink: 0; width: 27%;">
+                    <ui:VisualElement name="4-2-1" class="cultivos" style="flex-grow: 1; justify-content: center;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cultivo12" style="position: absolute; top: 59px; left: 52px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="4-2-2" class="cultivos" style="flex-grow: 1; justify-content: center; align-items: center;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cultivo11" style="position: absolute; top: 21px; left: 28px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="4-2-3" class="cultivos" style="flex-grow: 1; justify-content: center;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cultivo10" style="position: absolute; top: -6px; left: 48px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
             <ui:VisualElement name="Maya5" class="sizesectors" style="flex-grow: 0; background-image: none; width: 26%;">
                 <ui:Label tabindex="-1" text="Total%" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(0, 197, 214); position: absolute; top: 154px; left: 187px;" />
             </ui:VisualElement>
-            <ui:VisualElement name="Maya6" class="sizesectors" style="flex-grow: 1;" />
-        </ui:VisualElement>
-        <ui:VisualElement name="row3" style="flex-grow: 0; flex-shrink: 1; height: 39%; flex-direction: row;">
-            <ui:VisualElement name="Maya7" class="sizesectors" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;);" />
-            <ui:VisualElement name="Maya8" class="sizesectors" style="flex-grow: 0; width: 23%;">
-                <ui:VisualElement name="8-1" class="subsectordown" style="flex-grow: 1; flex-direction: row;">
-                    <ui:VisualElement name="8-1-1" class="cultivos" style="flex-grow: 1; justify-content: flex-end;">
-                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <ui:VisualElement name="Maya6" class="sizesectors" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="6-1" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 25%;">
+                    <ui:VisualElement name="6-1-1" class="cultivos" style="flex-grow: 1; justify-content: center;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cultivo4" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="8-1-2" class="cultivos" style="flex-grow: 1; justify-content: flex-end;">
-                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    <ui:VisualElement name="6-1-2" class="cultivos" style="flex-grow: 1; justify-content: center; align-items: center;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cultivo5" style="position: absolute; top: 17px; left: 112px;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="8-1-3" class="cultivos" style="flex-grow: 1; justify-content: flex-end;">
-                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    <ui:VisualElement name="6-1-3" class="cultivos" style="flex-grow: 1; justify-content: flex-start;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cultivo6" />
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="8-2" class="subsectors" style="flex-grow: 1;" />
+                <ui:VisualElement name="6-2" style="flex-grow: 1; height: 100%; background-image: none;" />
             </ui:VisualElement>
-            <ui:VisualElement name="Maya9" class="sizesectors" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="row3" style="flex-grow: 0; flex-shrink: 1; height: 39%; flex-direction: row;">
+            <ui:VisualElement name="Maya7" class="sizesectors" style="flex-grow: 1; background-image: none;" />
+            <ui:VisualElement name="Maya8" class="sizesectors" style="flex-grow: 0; width: 23%;">
+                <ui:VisualElement name="8-1" class="subsectordown" style="flex-grow: 1; flex-direction: row;">
+                    <ui:VisualElement name="8-1-1" class="cultivos" style="flex-grow: 1; justify-content: center;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cultivo9" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="8-1-2" class="cultivos" style="flex-grow: 1; justify-content: flex-end;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cultivo8" style="position: absolute; top: 76px; left: 52px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="8-1-3" class="cultivos" style="flex-grow: 1; justify-content: center;">
+                        <ui:Label tabindex="-1" text="%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cultivo7" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="8-2" class="subsectors" style="flex-grow: 1; background-image: none;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Maya9" class="sizesectors" style="flex-grow: 1; background-image: none;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
