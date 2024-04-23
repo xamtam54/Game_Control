@@ -50,7 +50,7 @@ public class MiCodigo : MonoBehaviour
     private void OnPlayGameClick(ClickEvent evt)
     {
         //Debug.Log("Presionaste el boton play");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Uno");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("escenario 1");
     }
 
     private void OnOptionsClick(ClickEvent evt)
