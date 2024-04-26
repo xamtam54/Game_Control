@@ -2777,7 +2777,7 @@ GameObject:
   - component: {fileID: 1685568729}
   - component: {fileID: 1685568728}
   m_Layer: 0
-  m_Name: Test con la otra camara
+  m_Name: TESTCAM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
