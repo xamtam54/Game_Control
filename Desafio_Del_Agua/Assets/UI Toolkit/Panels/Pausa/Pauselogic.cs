@@ -16,8 +16,9 @@ public class Pauselogic : MonoBehaviour
     //------------------------------
     private void Awake()
     {
-        Resume();
+        Time.timeScale = 1f;
     }
+
     void Update()
     {
         //pausar y reanudar
@@ -60,10 +61,10 @@ public class Pauselogic : MonoBehaviour
         _button1.RegisterCallback<ClickEvent>(OnMenuClick);
     }
 
-    private void OnDisable()
+    /*private void OnDisable()
     {
         _button1.UnregisterCallback<ClickEvent>(OnMenuClick);
-    }
+    }*/
 
     private void OnMenuClick(ClickEvent evt)
     {

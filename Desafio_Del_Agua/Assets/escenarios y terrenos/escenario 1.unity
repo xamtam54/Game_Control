@@ -187,6 +187,10 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 117214286460000749, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
@@ -505,6 +509,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: maquina de agua (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1654d93557903f5498f2b3d79107501a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1654d93557903f5498f2b3d79107501a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -611,6 +623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 439771342}
+  - component: {fileID: 439771343}
   - component: {fileID: 439771341}
   m_Layer: 5
   m_Name: SisRiego1
@@ -626,7 +639,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439771340}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -650,6 +663,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &439771343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439771340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9a66c3902e09342ac2ef3b118b57db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIDocument: {fileID: 439771341}
+  camaraSis: {fileID: 1163194992}
+  camaraplayer: {fileID: 1685568727}
 --- !u!1001 &457843539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -710,6 +738,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 976490af2eca79649bd404ee152f0521, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 976490af2eca79649bd404ee152f0521, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 976490af2eca79649bd404ee152f0521, type: 3}
       propertyPath: m_Name
       value: Silo
@@ -719,6 +755,62 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 976490af2eca79649bd404ee152f0521, type: 3}
+--- !u!1 &468489664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+  m_PrefabInstance: {fileID: 1245631648}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &468489666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468489664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96572429010e50e418c16799c2b0c7ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1510160039}
+  targets:
+  - {fileID: 784589453}
+  - {fileID: 110801138}
+  - {fileID: 1359654734}
+  - {fileID: 1173187176}
+  - {fileID: 2001607739}
+  - {fileID: 242006804}
+  - {fileID: 260766875}
+  - {fileID: 515611850}
+  - {fileID: 877014852}
+  - {fileID: 377339888}
+  - {fileID: 236014278}
+  - {fileID: 1183149960}
+  persecutionkRange: 10
+  attackRange: 5
+  attackDamageRate: 2
+--- !u!195 &468489667
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468489664}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.7
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 3
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &515611849 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4a9b2cc3e62c6d54499e027747ff6d44, type: 3}
@@ -935,6 +1027,10 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -466329591000292508, guid: 721fc55ffca86b743945e61cf86fefc1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 721fc55ffca86b743945e61cf86fefc1, type: 3}
       propertyPath: m_Name
       value: vallas isla
@@ -1015,6 +1111,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1654d93557903f5498f2b3d79107501a, type: 3}
       propertyPath: m_Name
       value: maquina de agua (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1654d93557903f5498f2b3d79107501a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1654d93557903f5498f2b3d79107501a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1148,6 +1252,10 @@ PrefabInstance:
     - target: {fileID: -8391222552659086748, guid: cf0d595507df83a4b98a95bea6093eab, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: cf0d595507df83a4b98a95bea6093eab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -5568371526223589888, guid: cf0d595507df83a4b98a95bea6093eab, type: 3}
       propertyPath: m_NavMeshLayer
@@ -1563,6 +1671,10 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 117214286460000749, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
@@ -1840,12 +1952,12 @@ GameObject:
   - component: {fileID: 1163194994}
   - component: {fileID: 1163194993}
   m_Layer: 0
-  m_Name: CamaraUi
+  m_Name: CamSisRiego1
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1163194993
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1968,6 +2080,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   isAlive: 1
+--- !u!1001 &1245631648
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 342.03723
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 374.44925
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 334.78888
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      propertyPath: m_Name
+      value: test weaver
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 468489666}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 468489667}
+  m_SourcePrefab: {fileID: 100100000, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
 --- !u!1001 &1315444400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2099,6 +2274,10 @@ PrefabInstance:
     - target: {fileID: -8391222552659086748, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 117214286460000749, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
       propertyPath: m_NavMeshLayer
@@ -2573,11 +2752,111 @@ PrefabInstance:
       propertyPath: m_Name
       value: maquina de agua (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1654d93557903f5498f2b3d79107501a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1654d93557903f5498f2b3d79107501a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1654d93557903f5498f2b3d79107501a, type: 3}
+--- !u!1 &1685568727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1685568730}
+  - component: {fileID: 1685568729}
+  - component: {fileID: 1685568728}
+  m_Layer: 0
+  m_Name: Test con la otra camara
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1685568728
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685568727}
+  m_Enabled: 1
+--- !u!20 &1685568729
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685568727}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1685568730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685568727}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.76804054, z: -0, w: 0.6404012}
+  m_LocalPosition: {x: 630.08734, y: 389.8, z: 490.32822}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -100.357, z: 0}
 --- !u!1001 &1767935472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2787,6 +3066,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: maquina de agua
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1654d93557903f5498f2b3d79107501a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1654d93557903f5498f2b3d79107501a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2883,7 +3170,6 @@ GameObject:
   - component: {fileID: 1817831399}
   - component: {fileID: 1817831398}
   - component: {fileID: 1817831397}
-  - component: {fileID: 1817831396}
   m_Layer: 0
   m_Name: Plaga
   m_TagString: Plant
@@ -2891,35 +3177,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1817831396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817831395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96572429010e50e418c16799c2b0c7ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1510160039}
-  targets:
-  - {fileID: 784589453}
-  - {fileID: 110801138}
-  - {fileID: 1359654734}
-  - {fileID: 1173187176}
-  - {fileID: 2001607739}
-  - {fileID: 242006804}
-  - {fileID: 260766875}
-  - {fileID: 515611850}
-  - {fileID: 877014852}
-  - {fileID: 377339888}
-  - {fileID: 236014278}
-  - {fileID: 1183149960}
-  persecutionkRange: 10
-  attackRange: 5
-  attackDamageRate: 2
 --- !u!195 &1817831397
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3114,6 +3371,14 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
       propertyPath: m_Name
@@ -3439,6 +3704,10 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 117214286460000749, guid: 727f2d5f1bba865469fe30b5a171ea08, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
@@ -3461,6 +3730,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1163194995}
+  - {fileID: 1685568730}
   - {fileID: 2054668940}
   - {fileID: 1436205181}
   - {fileID: 798544313}
@@ -3499,3 +3769,4 @@ SceneRoots:
   - {fileID: 1773488518}
   - {fileID: 439771342}
   - {fileID: 1098754005}
+  - {fileID: 1245631648}
