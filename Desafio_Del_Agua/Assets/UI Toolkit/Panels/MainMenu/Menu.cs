@@ -12,10 +12,7 @@ public class MiCodigo : MonoBehaviour
     private Button _button4;
     private Button _button5;
    //--------------------------------------------------
-    public string Uno;
-    public string Options;
-    public string Tutorial;
-    public string Credits;
+
 
     
    //------------------------------------------------
