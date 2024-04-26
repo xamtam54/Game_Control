@@ -4,9 +4,7 @@
         <ui:VisualElement name="Pause" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;); width: 30%; height: 69%; flex-shrink: 0; -unity-background-image-tint-color: rgba(255, 255, 255, 0.67); align-items: center;">
             <ui:Label tabindex="-1" text="Pausa" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" style="width: 232px; font-size: 74px; color: rgb(0, 231, 243); -unity-font-style: bold;" />
             <ui:VisualElement name="Opciones" style="flex-grow: 0; height: 69%; width: 81%; align-items: center; justify-content: space-around;">
-                <ui:Button text="Opciones" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button-main-title" style="width: 83%;" />
-                <ui:Button text="Reanudar juego" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button-main-title" style="width: 83%;" />
-                <ui:Button text="Volver al menu principal" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button-main-title" style="width: 83%; font-size: 27px;" />
+                <ui:Button text="Volver al menu principal" parse-escape-sequences="true" display-tooltip-when-elided="true" name="mainmenu" class="button-main-title" style="width: 92%; font-size: 31px; height: 22%;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

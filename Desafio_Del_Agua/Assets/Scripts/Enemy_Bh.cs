@@ -34,7 +34,7 @@ public class NewBehaviourScript : MonoBehaviour
             //if (distanceToPlayer <= persecutionkRange)
             //{
             agent.destination = player.position;
-            Debug.Log("Atacando");
+           // Debug.Log("Atacando");
             //}
             if (player != null)
             {
@@ -68,7 +68,7 @@ public class NewBehaviourScript : MonoBehaviour
                 persecutionkRange = persecutionkRange + 2;
             }
 
-            if (nearestTarget != null)
+           /* if (nearestTarget != null)
             {
                 if (nearestTarget.CompareTag("Plant"))
                 {
@@ -82,13 +82,13 @@ public class NewBehaviourScript : MonoBehaviour
                 {
                     Debug.Log("Atacando máquina");
                 }
-
+                
 
 
                 agent.destination = nearestTarget.position;
 
 
-            }
+            }*/
             
 
             if (nearestTarget != null)
