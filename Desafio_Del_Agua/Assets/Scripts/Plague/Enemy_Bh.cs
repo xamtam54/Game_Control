@@ -48,7 +48,7 @@ public class NewBehaviourScript : MonoBehaviour
 
             Transform nearestTarget = null;
 
-            if (nearestTarget == null /*&& isActive*/) 
+            if (nearestTarget == null) 
             { 
                 nearestTarget = GetNearestTargetWithTag("Device");
             }
@@ -77,7 +77,7 @@ public class NewBehaviourScript : MonoBehaviour
                 //solo debug
                 if (nearestTarget.CompareTag("Plant"))
                 {
-                    Debug.Log("Atacando planta");
+                    //Debug.Log("Atacando planta");
                 }
                 else if (nearestTarget.CompareTag("Water"))
                 {
@@ -123,11 +123,11 @@ public class NewBehaviourScript : MonoBehaviour
                         nearestTarget = target;
                     }
                 }
-            }/*
-            if (target.CompareTag(tag))
+            }
+            if (target.CompareTag(tag) && tag == "Device")
             {
-                LifeController lifeController = target.GetComponent<LifeController>();
-                if (lifeController != null && lifeController.isAlive)
+                Devices device = target.GetComponent<Devices>();
+                if (device != null && device.Status && device.IsActive)   //si esta bien status y si esta activo
                 {
                     float distanceToTarget = Vector3.Distance(transform.position, target.position);
                     if (distanceToTarget <= persecutionkRange && distanceToTarget < shortestDistance)
@@ -136,22 +136,67 @@ public class NewBehaviourScript : MonoBehaviour
                         nearestTarget = target;
                     }
                 }
-            }*/
-        }
+            }
+                /*
+                if (target.CompareTag(tag))
+                {
+                    LifeController lifeController = target.GetComponent<LifeController>();
+                    if (lifeController != null && lifeController.isAlive)
+                    {
+                        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                        if (distanceToTarget <= persecutionkRange && distanceToTarget < shortestDistance)
+                        {
+                            shortestDistance = distanceToTarget;
+                            nearestTarget = target;
+                        }
+                    }
+                }*/
+            }
 
-        return nearestTarget;
+            return nearestTarget;
     }
-
+    /*
     public void S_plants()
     {
-        GameObject[] plantObjects = GameObject.FindGameObjectsWithTag("Plant");
+        GameObject[] plantObjects = GameObject.FindGameObjectsWithTag("Plant", "Device");
+
         targets = new Transform[plantObjects.Length];
         for (int i = 0; i < plantObjects.Length; i++)
         {
             targets[i] = plantObjects[i].transform;
+            //Debug.Log(targets[i]);
+        }
+        
+    }*/
+    public void S_plants()
+    {
+        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>(); // Encuentra todos los objetos en la escena
+
+        List<Transform> plantTargets = new List<Transform>(); // Lista para almacenar los objetos con los tags correctos
+
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.CompareTag("Plant") || obj.CompareTag("Device")) // Verifica si el objeto tiene alguno de los tags deseados
+            {
+                plantTargets.Add(obj.transform); // Agrega el objeto a la lista de objetivos
+            }
+        }
+
+        // Convierte la lista a un array si es necesario
+        targets = plantTargets.ToArray();
+    }
+    /*
+    public void S_devices()
+    {
+        Debug.Log("aksjdfaksjhaslhalshfkjahsfkj");
+        GameObject[] deviceObjects = GameObject.FindGameObjectsWithTag("Device");
+        targets = new Transform[deviceObjects.Length];
+        for (int i = 0; i < deviceObjects.Length; i++)
+        {
+            targets[i] = deviceObjects[i].transform;
             Debug.Log(targets[i]);
         }
-    }
+    }*/
 
     private IEnumerator ApplyDamageOverTime(Transform target)
     {
@@ -166,6 +211,19 @@ public class NewBehaviourScript : MonoBehaviour
                 {
                     yield return new WaitForSeconds(3f); // Retraso de 1 segundo
                     plant.UpdateHealth(Mathf.RoundToInt(attackDamageRate)); // Aplicar daño
+                    elapsedTime += 1f;
+                }
+            }
+        }else if (tag == "Device")
+        {
+            Devices device = target.GetComponent<Devices>();
+            if (device != null)
+            {
+                float elapsedTime = 0f;
+                while (elapsedTime < 1f) // Daño se aplica durante 1 segundo
+                {
+                    yield return new WaitForSeconds(3f); // Retraso de 1 segundo
+                    device.UpdateHealth(Mathf.RoundToInt(attackDamageRate)); // Aplicar daño
                     elapsedTime += 1f;
                 }
             }
