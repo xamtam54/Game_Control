@@ -29,6 +29,11 @@ public class Devices : MonoBehaviour
     public void Start()
     {
         _life.enabled = false;
+
+        if (DeviceName == "")
+        {
+            gameObject.SetActive(false);
+        }
     }
     // Constructor
     public void CreateDevice(string deviceName, bool isActive, bool status, string actuatorName, string waterManagementType, string sensorType, string measureUnit, Plants[] plantData, float Max_Water, float Actual_Water)
@@ -44,6 +49,8 @@ public class Devices : MonoBehaviour
         this.currentHealth = max_Health;
         this.Max_Water = Max_Water;
         this.Actual_Water = Actual_Water;
+
+        gameObject.SetActive(true);
     }
 
     public void UpdateHealth(int damage)

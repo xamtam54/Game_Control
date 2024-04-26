@@ -23,6 +23,14 @@ public class Plants : MonoBehaviour
     public GameObject healthBar;                    // barra de vida de aqui tomar porcentaje - convertir despues a la barra amarilla
 
     [SerializeField] private Image _life;
+    void Start()
+    {
+            if (plant_Name == "")
+            {
+                gameObject.SetActive(false);
+            }
+    }
+    
 
     // crear
     public void InitializePlant(string name, string species, float minPH, float maxPH, float waterRequirements, int isAlive, float lifespan)
@@ -34,7 +42,8 @@ public class Plants : MonoBehaviour
         this.dailyWaterRequirements = waterRequirements;
         this.lifespan = lifespan;
         this.isAlive = isAlive;
-        this.currentHealth = max_Health; 
+        this.currentHealth = max_Health;
+        gameObject.SetActive(true);
     }
     
 

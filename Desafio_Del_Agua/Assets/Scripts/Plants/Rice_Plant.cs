@@ -20,6 +20,7 @@ public class Rice_Plant : MonoBehaviour
             Plants ricePlant = plantInstance.GetComponent<Plants>();
             if (ricePlant != null)
             {
+                
                 ricePlant.InitializePlant("Arroz", "Oryza sativa", 5.5f, 7.0f, 20f, 1, 125f);
                 ricePlant.gameObject.tag = plantTag;
             }

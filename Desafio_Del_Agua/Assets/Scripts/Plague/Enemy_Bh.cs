@@ -176,6 +176,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         foreach (GameObject obj in allObjects)
         {
+            
             if (obj.CompareTag("Plant") || obj.CompareTag("Device")) // Verifica si el objeto tiene alguno de los tags deseados
             {
                 plantTargets.Add(obj.transform); // Agrega el objeto a la lista de objetivos
