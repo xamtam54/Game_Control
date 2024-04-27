@@ -22,15 +22,34 @@ public class Plants : MonoBehaviour
 
     public GameObject healthBar;                    // barra de vida de aqui tomar porcentaje - convertir despues a la barra amarilla
 
+    private bool isOnTheSmartPhone = false;         //Control de aparicion de las barras de vida y el estatus
+
     [SerializeField] private Image _life;
+
     void Start()
     {
+        
+            healthBar.SetActive(false);
             if (plant_Name == "")
             {
                 gameObject.SetActive(false);
             }
     }
-    
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (isOnTheSmartPhone)
+            {
+                MostrarVida();
+            }
+            else
+            {
+                OcultarVida();
+            }
+        }
+    }
 
     // crear
     public void InitializePlant(string name, string species, float minPH, float maxPH, float waterRequirements, int isAlive, float lifespan)
@@ -76,5 +95,17 @@ public class Plants : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    
+    //Mostrar vida
+    void MostrarVida()
+    {
+        healthBar.SetActive(false);
+        isOnTheSmartPhone = !isOnTheSmartPhone;
+    }
+
+    //Ocultar vida
+    void OcultarVida()
+    {
+        healthBar.SetActive(true);
+        isOnTheSmartPhone = !isOnTheSmartPhone;
+    }
 }

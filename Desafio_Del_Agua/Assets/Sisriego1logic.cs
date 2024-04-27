@@ -18,11 +18,11 @@ public class Sisriego1logic : MonoBehaviour
         {
             if (isOnTheSmartPhone)
             {
-                ActiveSisRiego();
+                DeactivateSisRiego();
             }
             else
             {
-                DeactivateSisRiego();
+                 ActiveSisRiego();
             }
         }
     }
