@@ -1709,7 +1709,7 @@ MonoBehaviour:
   max_Health: 100
   currentHealth: 0
   lifespan: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1217879506}
   _life: {fileID: 406861043}
 --- !u!4 &881816238 stripped
 Transform:
