@@ -10,13 +10,13 @@ public class NewBehaviourScript : MonoBehaviour
     private NavMeshAgent agent;
     private bool isAttacking;
 
-    public float persecutionkRange = 10f;
+    public float persecutionkRange = 100f;
     public float persecutionkRangeForPlayer = 0f;
 
 
 
-    public float attackRange = 5f;
-    public float attackDamageRate = 2f;
+    public float attackRange = 50f;
+    public float attackDamageRate = 100f;
 
 
     void Start()
@@ -85,7 +85,7 @@ public class NewBehaviourScript : MonoBehaviour
                 }
                 else if (nearestTarget.CompareTag("Device"))
                 {
-                    Debug.Log("Atacando máquina");
+                    //Debug.Log("Atacando máquina");
                 }
                 //hasta aqui
             }
