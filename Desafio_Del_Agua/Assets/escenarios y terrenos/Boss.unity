@@ -1953,7 +1953,7 @@ MonoBehaviour:
   max_Health: 100
   currentHealth: 0
   lifespan: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1387541689}
   _life: {fileID: 1028117614}
 --- !u!1 &1187911610
 GameObject:
