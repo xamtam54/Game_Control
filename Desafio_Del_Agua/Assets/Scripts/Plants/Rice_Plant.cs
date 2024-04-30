@@ -29,7 +29,7 @@ public class Rice_Plant : MonoBehaviour
                 Debug.LogWarning("El prefab plantPrefab no tiene el componente Plants adjunto.");
             }
         }
-
+        
         NewBehaviourScript newBehaviourScript = FindObjectOfType<NewBehaviourScript>();
         if (newBehaviourScript == null)
         {
@@ -38,7 +38,8 @@ public class Rice_Plant : MonoBehaviour
         }
 
         newBehaviourScript.S_plants();
-
+        
+        
 
     }
 }

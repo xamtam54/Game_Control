@@ -7,6 +7,8 @@ TagManager:
   - Plant
   - Water
   - Device
+  - Weaver
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - Plant
   - Water
   - UI
-  - 
-  - 
+  - Boss
+  - Weaver
   - 
   - 
   - 
