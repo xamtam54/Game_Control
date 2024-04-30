@@ -29,7 +29,7 @@ public class Plants : MonoBehaviour
     void Start()
     {
         
-            healthBar.SetActive(false);
+            healthBar.SetActive(false); //inicia las barras de vida escondidas
             if (plant_Name == "")
             {
                 gameObject.SetActive(false);
@@ -38,6 +38,7 @@ public class Plants : MonoBehaviour
 
     void Update()
     {
+        //mostrar/ocultar barras de vida
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (isOnTheSmartPhone)

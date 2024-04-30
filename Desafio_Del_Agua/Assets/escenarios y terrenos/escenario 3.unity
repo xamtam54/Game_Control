@@ -1813,7 +1813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 761.73
+      value: 693.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1821,7 +1821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 368.39
+      value: 493.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20aed389bb06a6a43954e111bced5efe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8219,7 +8219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &923336803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9086,7 +9086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &978800005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9764,8 +9764,10 @@ MonoBehaviour:
   PlantData: []
   max_Health: 100
   currentHealth: 0
-  healthBar: {fileID: 0}
   _life: {fileID: 1258117752}
+  Enviar_a: {fileID: 0}
+  valoraPasar: 0
+  _Awa: {fileID: 0}
 --- !u!1001 &1127168155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11312,7 +11314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1319083456
 Transform:
   m_ObjectHideFlags: 0
@@ -11978,7 +11980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1413191533
 Transform:
   m_ObjectHideFlags: 0
@@ -14813,23 +14815,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad03b899724e9d142aa3cfb4c39b4e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeviceName: 
+  DeviceName: Contenedor General
   IsActive: 0
   SisRiegoStatus: 0
-  Status: 0
-  ActuatorName: 
-  WaterManagementType: 
-  SensorType: 
-  MeasureUnit: 
-  SensorData: 
+  Status: 1
+  ActuatorName: Contenedor General
+  WaterManagementType: Contenedor General
+  SensorType: null
+  MeasureUnit: litros
+  SensorData: null
   WaterLevel: {fileID: 1309781127}
-  Max_Water: 0
-  Actual_Water: 0
+  Max_Water: 10000
+  Actual_Water: 10000
   PlantData: []
   max_Health: 100
   currentHealth: 0
-  healthBar: {fileID: 0}
   _life: {fileID: 1820170105}
+  Enviar_a: {fileID: 2022343855}
+  valoraPasar: 10
+  _Awa: {fileID: 2040428817}
 --- !u!1 &1729145579
 GameObject:
   m_ObjectHideFlags: 0
@@ -15714,8 +15718,10 @@ MonoBehaviour:
   PlantData: []
   max_Health: 100
   currentHealth: 0
-  healthBar: {fileID: 0}
   _life: {fileID: 1944846816}
+  Enviar_a: {fileID: 0}
+  valoraPasar: 0
+  _Awa: {fileID: 0}
 --- !u!1 &1820170104
 GameObject:
   m_ObjectHideFlags: 0
@@ -17099,8 +17105,10 @@ MonoBehaviour:
   PlantData: []
   max_Health: 100
   currentHealth: 0
-  healthBar: {fileID: 0}
   _life: {fileID: 1356373461}
+  Enviar_a: {fileID: 0}
+  valoraPasar: 0
+  _Awa: {fileID: 0}
 --- !u!1 &1949789827
 GameObject:
   m_ObjectHideFlags: 0
@@ -17907,23 +17915,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad03b899724e9d142aa3cfb4c39b4e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeviceName: 
-  IsActive: 0
+  DeviceName: Contenedor Local
+  IsActive: 1
   SisRiegoStatus: 0
-  Status: 0
-  ActuatorName: 
-  WaterManagementType: 
-  SensorType: 
-  MeasureUnit: 
-  SensorData: 
-  WaterLevel: {fileID: 0}
-  Max_Water: 0
+  Status: 1
+  ActuatorName: Contenedor Local
+  WaterManagementType: Contenedor Local
+  SensorType: nulo
+  MeasureUnit: litros
+  SensorData: nulo
+  WaterLevel: {fileID: 1309781127}
+  Max_Water: 10000
   Actual_Water: 0
   PlantData: []
   max_Health: 100
   currentHealth: 0
-  healthBar: {fileID: 0}
   _life: {fileID: 1298013576}
+  Enviar_a: {fileID: 1718585187}
+  valoraPasar: 0
+  _Awa: {fileID: 0}
 --- !u!1001 &2022385433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18748,7 +18758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2065544433
 MonoBehaviour:
   m_ObjectHideFlags: 0

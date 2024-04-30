@@ -15,7 +15,7 @@ public class Devices : MonoBehaviour
     public string MeasureUnit;                    // Unidad de medida (puede ser null)
     public string SensorData;                     // Data del sensor
 
-    public GameObject WaterLevel;                  //objeto de tipo canvas que muestra el nivel del agua del contenedor
+    public GameObject WaterLevel;                  //objeto de tipo canvas que muestra el nivel del agua del Enviar_a
     
     public float Max_Water;                       // maximo de agua que puede contener o sacar en caso de ser aspersor
     public float Actual_Water;                    // cuanto tiene ahora (puede ser null) solo si es un tanque
@@ -25,12 +25,20 @@ public class Devices : MonoBehaviour
     public float max_Health = 100f;                 // vida 
     public float currentHealth;                     // vida actual 
 
-    public GameObject healthBar;                    // barra de vida de aqui tomar porcentaje
+    //public GameObject healthBar;                    // barra de vida de aqui tomar porcentaje ----Nk no se requiere ya que los tanques o los dispositivos no tienen vida como tal
 
     [SerializeField] private Image _life;
+
+    public Devices Enviar_a;
+    public float valoraPasar;
+    //private bool pasarAgua;                         //USAR CUANDO SE TENGAN LOS BOTONES PARA SISRIEGO
+    [SerializeField] private Image _Awa;
     
     public void Start()
     {
+        // pasarAgua = false;
+
+        SendWater(Enviar_a, valoraPasar);
         _life.enabled = false;
 
         if (DeviceName == "")
@@ -41,6 +49,12 @@ public class Devices : MonoBehaviour
 
     void Update()
     {
+       
+            
+      SendWater(Enviar_a, valoraPasar);
+                  
+        
+
         if (Input.GetKeyDown(KeyCode.E) && WaterLevel!=null)
         {
             if (SisRiegoStatus)
@@ -89,6 +103,12 @@ public class Devices : MonoBehaviour
         _life.enabled = true;
     }
 
+    
+    private void UpdateWaterBar()
+    {
+        _Awa.fillAmount = Actual_Water / Max_Water;
+    }
+
     // muerte
     private void Die()
     {
@@ -105,19 +125,19 @@ public class Devices : MonoBehaviour
 
     public void SendWater(Devices targetDevice, float amount)
     {
-        if (targetDevice.IsActive && targetDevice.Status && WaterManagementType != null)     //esta bien y activo y sea un tanque
+        if (targetDevice != null && targetDevice.IsActive && targetDevice.Status && WaterManagementType != null && amount >0 )     //Que el objetivo no sea nulo, que este activo, que este vivo, que el tipo de manejo no sea nulo y que la cantidad que mande sea mayor a 0.
         {
             
             
-            if (Actual_Water >= amount)                                                         //tiene sufuciente agua?
+            if (Actual_Water >= amount && targetDevice.Actual_Water < targetDevice.Max_Water)                    //tiene sufuciente agua y el destinatario suficiente espacio?
             {
                 
-                if (targetDevice.ActuatorName != null)                                          //que sea un aspersor - tuberia    se tiene que enviar a un conjunto? o que solo la animacion se active? si mejor que solo se active gracias a una funcion asi se evitan problemas con la cantidad de agua trasferida a las plantas
+                if (targetDevice.ActuatorName == "Aspersor" || targetDevice.ActuatorName == "Tuberia" )         //que sea un aspersor - tuberia    se tiene que enviar a un conjunto? o que solo la animacion se active? si mejor que solo se active gracias a una funcion asi se evitan problemas con la cantidad de agua trasferida a las plantas
                 {
                     Actual_Water -= amount;                        //resta agua al dispositivo
                     targetDevice.Actual_Water += amount;           //suma agua al otro
 
-                    Debug.Log(DeviceName + " ha enviado " + amount + " litros de agua a " + targetDevice.DeviceName);
+                    //Debug.Log(DeviceName + " ha enviado " + amount + " litros de agua a " + targetDevice.DeviceName);
                     //empiece animacion     8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
                     foreach (Plants plant in targetDevice.PlantData)
                     {
@@ -131,21 +151,23 @@ public class Devices : MonoBehaviour
                     Actual_Water -= amount;                        //resta agua al dispositivo
 
                     targetDevice.Actual_Water += amount;           //suma agua al otro
-                    Debug.Log(DeviceName + " ha enviado " + amount + " litros de agua a " + targetDevice.DeviceName);
+                                                                   // Debug.Log(DeviceName + " ha enviado " + amount + " litros de agua a " + targetDevice.DeviceName);
+                    UpdateWaterBar();
                 }
             }
             else
             {
-                Debug.Log(DeviceName + " no tiene suficiente agua para enviar a " + targetDevice.DeviceName + "o espacio");
+               // Debug.Log(DeviceName + " no tiene suficiente agua para enviar a " + targetDevice.DeviceName + " o espacio");
             }
 
             
         }
         else
         {
-            Debug.Log("No se puede enviar agua de " + DeviceName + " a " + targetDevice.DeviceName + " porque el dispositivo de destino no está activo o está dañado.");
+          //  Debug.Log("No se puede enviar agua de " + DeviceName + " a " + targetDevice.DeviceName + " porque el dispositivo de destino no está activo o está dañado.");
         }
     }
+
     void ShowWater()
     {
         WaterLevel.SetActive(false);

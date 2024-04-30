@@ -23,7 +23,7 @@ public class WaterTank : MonoBehaviour
                 waterTank.CreateDevice("Tanque de agua", true, true, null, "Medidor de agua", "Sensor de nivel", "Litros", null, 20f, 15f);
                 waterTank.gameObject.tag = plantTag;
                
-                Debug.Log("Estado del Tanque de agua: " + waterTank.Status);
+               // Debug.Log("Estado del Tanque de agua: " + waterTank.Status);
             }
             else
             {
