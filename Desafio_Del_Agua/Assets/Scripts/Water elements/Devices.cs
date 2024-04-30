@@ -49,7 +49,7 @@ public class Devices : MonoBehaviour
 
     void Update()
     {
-       
+        UpdateWaterBar();
             
       SendWater(Enviar_a, valoraPasar);
                   
@@ -152,7 +152,6 @@ public class Devices : MonoBehaviour
 
                     targetDevice.Actual_Water += amount;           //suma agua al otro
                                                                    // Debug.Log(DeviceName + " ha enviado " + amount + " litros de agua a " + targetDevice.DeviceName);
-                    UpdateWaterBar();
                 }
             }
             else
