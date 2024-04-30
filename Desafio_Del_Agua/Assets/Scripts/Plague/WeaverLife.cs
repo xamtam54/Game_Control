@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaverLife : MonoBehaviour
 {
     public int maxHits = 2; 
-    private int hitsReceived = 0; 
+    public int hitsReceived = 0; 
 
     public void ReceiveDamage(int damage)
     {
