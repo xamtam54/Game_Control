@@ -1,11 +1,26 @@
 VisualElement {
 }
 
-.textocolor {
-    flex-shrink: 0;
-    font-size: 49px;
-    color: rgb(76, 239, 255);
-    cursor: initial;
-    width: 554px;
-    background-image: none;
+.button {
+    font-size: 50px;
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+    border-bottom-right-radius: 23px;
+    border-bottom-left-radius: 23px;
+    background-image: url("project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/myrthe-van-tol-grass-texture.jpg?fileID=2800000&guid=67335b999287fc24f886352f6a1213f8&type=3#myrthe-van-tol-grass-texture");
+    -unity-background-image-tint-color: rgb(0, 222, 255);
+    -unity-font-style: bold;
+    color: rgb(45, 255, 254);
+}
+
+.button:hover {
+    background-image: url("project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/696.jpg?fileID=2800000&guid=1f30ba7cdb15e924f98636b55c81dc2f&type=3#696");
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgb(0, 253, 225);
+    color: rgb(0, 66, 255);
+}
+
+.button:active {
+    background-image: url("project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/myrthe-van-tol-grass-texture.jpg?fileID=2800000&guid=67335b999287fc24f886352f6a1213f8&type=3#myrthe-van-tol-grass-texture");
+    -unity-background-image-tint-color: rgba(255, 0, 0, 0.42);
 }

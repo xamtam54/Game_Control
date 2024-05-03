@@ -1,0 +1,25 @@
+.button {
+    background-image: url("project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/06-1024x1024.jpeg?fileID=2800000&guid=dfd8f295caa952d4397569503b2cf5bb&type=3#06-1024x1024");
+    -unity-background-image-tint-color: rgb(0, 238, 255);
+    flex-shrink: 0;
+    width: 30%;
+    height: 30%;
+    font-size: 35px;
+    -unity-font-style: bold;
+    color: rgb(0, 226, 255);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.button:hover {
+    background-image: url("project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/06-1024x1024.jpeg?fileID=2800000&guid=dfd8f295caa952d4397569503b2cf5bb&type=3#06-1024x1024");
+    -unity-background-image-tint-color: rgb(199, 100, 255);
+}
+
+.button:active {
+    background-image: url("project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/06-1024x1024.jpeg?fileID=2800000&guid=dfd8f295caa952d4397569503b2cf5bb&type=3#06-1024x1024");
+    -unity-background-image-tint-color: rgb(40, 180, 243);
+    color: rgb(171, 8, 255);
+}
