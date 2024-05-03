@@ -7,9 +7,11 @@ public class Sorgo_Plant : MonoBehaviour
     public GameObject plantPrefab;
     public Transform[] spawnPoints;
     public string plantTag = "Plant";
+    public string plantLayer = "Sorgo";
 
     void Start()
     {
+        int layerIndex = LayerMask.NameToLayer(plantLayer);
 
         foreach (Transform spawnPoint in spawnPoints)
         {
@@ -20,8 +22,9 @@ public class Sorgo_Plant : MonoBehaviour
             Plants sorgoPlant = plantInstance.GetComponent<Plants>();
             if (sorgoPlant != null)
             {
-                sorgoPlant.InitializePlant("Sorgo", "Sorghum", 6.2f, 7.8f, 400f, 1, 100f);
+                sorgoPlant.InitializePlant("Sorgo", "Sorghum", 6.2f, 7.8f, 400f,1f, 1, 100f);
                 sorgoPlant.gameObject.tag = plantTag;
+                plantInstance.layer = layerIndex;
             }
             else
             {

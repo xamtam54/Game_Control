@@ -7,10 +7,12 @@ public class Rice_Plant : MonoBehaviour
     public GameObject plantPrefab; 
     public Transform[] spawnPoints;
     public string plantTag = "Plant";
+    public string plantLayer = "Rice";
 
     void Start()
     {
-        
+        int layerIndex = LayerMask.NameToLayer(plantLayer);
+
         foreach (Transform spawnPoint in spawnPoints)
         {
             GameObject plantInstance = Instantiate(plantPrefab, spawnPoint.position, spawnPoint.rotation);
@@ -21,8 +23,9 @@ public class Rice_Plant : MonoBehaviour
             if (ricePlant != null)
             {
                 
-                ricePlant.InitializePlant("Arroz", "Oryza sativa", 5.5f, 7.0f, 20f, 1, 125f);
+                ricePlant.InitializePlant("Arroz", "Oryza sativa", 5.5f, 7.0f, 20f, 1f, 1, 125f);
                 ricePlant.gameObject.tag = plantTag;
+                plantInstance.layer = layerIndex;
             }
             else
             {

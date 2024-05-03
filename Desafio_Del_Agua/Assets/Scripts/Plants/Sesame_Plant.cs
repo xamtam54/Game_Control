@@ -7,9 +7,11 @@ public class Sesame_Plant : MonoBehaviour
     public GameObject plantPrefab;
     public Transform[] spawnPoints;
     public string plantTag = "Plant";
+    public string plantLayer = "Sesame";
 
     void Start()
     {
+        int layerIndex = LayerMask.NameToLayer(plantLayer);
 
         foreach (Transform spawnPoint in spawnPoints)
         {
@@ -20,8 +22,9 @@ public class Sesame_Plant : MonoBehaviour
             Plants sesamePlant = plantInstance.GetComponent<Plants>();
             if (sesamePlant != null)
             {
-                sesamePlant.InitializePlant("Ajonjolí", "Sesamum indicum", 5.4f, 6.7f, 350f, 1, 100f);
+                sesamePlant.InitializePlant("Ajonjolí", "Sesamum indicum", 5.4f, 6.7f, 350f,1f, 1, 100f);
                 sesamePlant.gameObject.tag = plantTag;
+                plantInstance.layer = layerIndex;
             }
             else
             {

@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement>
+        <ui:VisualElement name="Container" style="height: 450px; width: 225px; -unity-text-align: upper-left; white-space: normal; flex-direction: column; align-self: flex-end; align-items: stretch; justify-content: space-around; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.57); -unity-text-outline-color: rgba(0, 0, 0, 0);">
+            <ui:Button text="Encender aspersores." parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(2, 145, 35); -unity-font-style: bold;" />
+            <ui:Button text="Apagar aspersores." parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(255, 61, 61); -unity-font-style: bold;" />
+            <ui:Button text="Encender tanques." parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(2, 145, 35); -unity-font-style: bold;" />
+            <ui:Button text="Encender tanques." parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(255, 61, 61); -unity-font-style: bold;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

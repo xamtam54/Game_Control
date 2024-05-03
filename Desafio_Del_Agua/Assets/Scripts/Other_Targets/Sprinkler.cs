@@ -7,9 +7,12 @@ public class Sprinkler : MonoBehaviour
     public GameObject _sprinkler;
     public Transform[] spawnPoints;
     public string plantTag = "Device";
+    public string deviceLayer = "Sesame";
 
     void Start()
     {
+        int layerIndex = LayerMask.NameToLayer(deviceLayer);
+
         foreach (Transform spawnPoint in spawnPoints)
         {
             GameObject sprinklerInstance = Instantiate(_sprinkler, spawnPoint.position, spawnPoint.rotation);
@@ -20,10 +23,10 @@ public class Sprinkler : MonoBehaviour
 
             if (sprinkler != null)
             {
-                sprinkler.CreateDevice("Aspersor", true, true, "Aspersor1", null, null, "Litros", null, 0f, 0f);
+                sprinkler.CreateDevice("Aspersor", false, true, "Aspersor1", null, null, "Litros", null, 10f, 0f);
                 sprinkler.gameObject.tag = plantTag;
-
-                Debug.Log("Estado del Tanque de agua: " + sprinkler.Status);
+                sprinklerInstance.layer = layerIndex;
+                //Debug.Log("Estado del Tanque de agua: " + sprinkler.Status);
             }
             else
             {

@@ -26,9 +26,12 @@ public class Plants : MonoBehaviour
 
     [SerializeField] private Image _life;
 
+    [SerializeField] private Image _Awa;
+
     void Start()
     {
-        
+        UpdateWaterBar();
+
             healthBar.SetActive(false); //inicia las barras de vida escondidas
             if (plant_Name == "")
             {
@@ -53,7 +56,7 @@ public class Plants : MonoBehaviour
     }
 
     // crear
-    public void InitializePlant(string name, string species, float minPH, float maxPH, float waterRequirements, int isAlive, float lifespan)
+    public void InitializePlant(string name, string species, float minPH, float maxPH, float waterRequirements, float Actual_Water, int isAlive, float lifespan)
     {
         this.plant_Name = name;
         this.specie = species;
@@ -62,6 +65,7 @@ public class Plants : MonoBehaviour
         this.dailyWaterRequirements = waterRequirements;
         this.lifespan = lifespan;
         this.isAlive = isAlive;
+        this.Actual_Water = Actual_Water;
         this.currentHealth = max_Health;
         gameObject.SetActive(true);
     }
@@ -94,6 +98,11 @@ public class Plants : MonoBehaviour
         Debug.Log("La planta " + plant_Name + " ha muerto.");
         //Destroy(gameObject);                                                    // Destruye el objeto 
         gameObject.SetActive(false);
+    }
+
+    public void UpdateWaterBar()
+    {
+        _Awa.fillAmount = Actual_Water /( dailyWaterRequirements * 2);
     }
 
     //Mostrar vida

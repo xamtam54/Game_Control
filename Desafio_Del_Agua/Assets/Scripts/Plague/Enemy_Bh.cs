@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class NewBehaviourScript : MonoBehaviour
 {
     public Transform player;
     public Transform[] targets;
-    private NavMeshAgent agent;
+    private UnityEngine.AI.NavMeshAgent agent;
     private bool isAttacking;
 
     public float persecutionkRange = 100f;
@@ -21,7 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>(); 
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); 
         isAttacking = true;//temporal para definir estado de ataque
 
         
@@ -43,7 +42,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             
             Debug.Log("Atacando al jugador");
-            StartCoroutine(ApplyDamageOverTime(player));                                                    // Iniciar la corutina para aplicar daño periódico
+            StartCoroutine(ApplyDamageOverTime(player));                                                    // Iniciar la corutina para aplicar daï¿½o periï¿½dico
             agent.destination = player.position;
         }
         else
@@ -91,7 +90,7 @@ public class NewBehaviourScript : MonoBehaviour
                 }
                 else if (nearestTarget.CompareTag("Device"))
                 {
-                    //Debug.Log("Atacando máquina");
+                    //Debug.Log("Atacando mï¿½quina");
                 }
                 //hasta aqui
             }
@@ -102,7 +101,7 @@ public class NewBehaviourScript : MonoBehaviour
                 float distanceToTarget = Vector3.Distance(transform.position, nearestTarget.position);
                 if (distanceToTarget <= attackRange)
                 {
-                    StartCoroutine(ApplyDamageOverTime(nearestTarget)); // Iniciar la corutina para aplicar daño periódico
+                    StartCoroutine(ApplyDamageOverTime(nearestTarget)); // Iniciar la corutina para aplicar daï¿½o periï¿½dico
                 }
 
                 agent.destination = nearestTarget.position;
@@ -167,7 +166,7 @@ public class NewBehaviourScript : MonoBehaviour
         S_Targets sTargets = FindObjectOfType<S_Targets>();
         if (sTargets != null)
         {
-            // Llama al método S_plants() en la instancia encontrada de S_Targets
+            // Llama al mï¿½todo S_plants() en la instancia encontrada de S_Targets
             sTargets.S_plants();
             this.targets = sTargets.targets;
 
@@ -179,7 +178,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No se encontró ningún objeto de la clase S_Targets en la escena.");
+            Debug.LogError("No se encontrï¿½ ningï¿½n objeto de la clase S_Targets en la escena.");
         }
     }
 
@@ -193,10 +192,10 @@ public class NewBehaviourScript : MonoBehaviour
             if (plant != null)
             {
                 float elapsedTime = 0f;
-                while (elapsedTime < 1f) // Daño se aplica durante 1 segundo
+                while (elapsedTime < 1f) // Daï¿½o se aplica durante 1 segundo
                 {
                     yield return new WaitForSeconds(3f); // Retraso de 1 segundo
-                    plant.UpdateHealth(Mathf.RoundToInt(attackDamageRate)); // Aplicar daño
+                    plant.UpdateHealth(Mathf.RoundToInt(attackDamageRate)); // Aplicar daï¿½o
                     elapsedTime += 1f;
                 }
             }
@@ -206,10 +205,10 @@ public class NewBehaviourScript : MonoBehaviour
             if (device != null)
             {
                 float elapsedTime = 0f;
-                while (elapsedTime < 1f) // Daño se aplica durante 1 segundo
+                while (elapsedTime < 1f) // Daï¿½o se aplica durante 1 segundo
                 {
                     yield return new WaitForSeconds(3f); // Retraso de 1 segundo
-                    device.UpdateHealth(Mathf.RoundToInt(attackDamageRate)); // Aplicar daño
+                    device.UpdateHealth(Mathf.RoundToInt(attackDamageRate)); // Aplicar daï¿½o
                     elapsedTime += 1f;
                 }
             }
@@ -220,10 +219,10 @@ public class NewBehaviourScript : MonoBehaviour
             if (lifeController != null)
             {
                 float elapsedTime = 0f;
-                while (elapsedTime < 1f) // Daño se aplica durante 1 segundo
+                while (elapsedTime < 1f) // Daï¿½o se aplica durante 1 segundo
                 {
                     yield return new WaitForSeconds(3f); // Retraso de 1 segundo
-                    lifeController.TakeDamage(Mathf.RoundToInt(attackDamageRate)); // Aplicar daño
+                    lifeController.TakeDamage(Mathf.RoundToInt(attackDamageRate)); // Aplicar daï¿½o
                     elapsedTime += 1f;
                 }
             }

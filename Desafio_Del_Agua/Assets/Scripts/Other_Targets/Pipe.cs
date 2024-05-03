@@ -7,9 +7,12 @@ public class Pipe : MonoBehaviour
     public GameObject _pipe;
     public Transform[] spawnPoints;
     public string plantTag = "Device";
+    public string deviceLayer = "Rice";
 
     void Start()
     {
+        int layerIndex = LayerMask.NameToLayer(deviceLayer);
+
         foreach (Transform spawnPoint in spawnPoints)
         {
             GameObject pipeInstance = Instantiate(_pipe, spawnPoint.position, spawnPoint.rotation);
@@ -20,10 +23,11 @@ public class Pipe : MonoBehaviour
 
             if (pipe != null)
             {
-                pipe.CreateDevice("Tuberia", true, true, "Tuberia1",null ,null , "Litros", null, 0f, 0f);
+                pipe.CreateDevice("Tuberia", false, true, "Tuberia1",null ,null , "Litros", null, 1f, 0f);
                 pipe.gameObject.tag = plantTag;
+                pipeInstance.layer = layerIndex;
 
-                Debug.Log("Estado del Tanque de agua: " + pipe.Status);
+                //Debug.Log("Estado del Tanque de agua: " + pipe.Status);
             }
             else
             {

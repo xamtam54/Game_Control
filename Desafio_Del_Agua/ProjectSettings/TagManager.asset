@@ -9,6 +9,7 @@ TagManager:
   - Device
   - Weaver
   - Boss
+  - waterTank
   layers:
   - Default
   - TransparentFX
@@ -18,10 +19,10 @@ TagManager:
   - UI
   - Boss
   - Weaver
-  - 
-  - 
-  - 
-  - 
+  - Rice
+  - Sorgo
+  - Sesame
+  - WaterTower
   - 
   - 
   - 
