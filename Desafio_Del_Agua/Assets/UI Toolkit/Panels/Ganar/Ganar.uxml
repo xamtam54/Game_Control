@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/Ganar.uss?fileID=7433441132597879392&amp;guid=31ee38ad663cb274db55b0d86343c7c2&amp;type=3#Ganar" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/fondo%20slicer%20opciones.png?fileID=2800000&amp;guid=bb020e30f1bebfb438369d864a486e27&amp;type=3#fondo slicer opciones&quot;); -unity-background-image-tint-color: rgba(0, 76, 77, 0.4); align-items: center; justify-content: center;">
+        <ui:VisualElement name="Victoria" style="flex-grow: 0; flex-shrink: 0; width: 50%; height: 60%; background-image: none; -unity-background-image-tint-color: rgba(0, 46, 94, 0.59); border-top-left-radius: 70px; border-top-right-radius: 70px; border-bottom-right-radius: 70px; border-bottom-left-radius: 70px;">
+            <ui:VisualElement name="Cabecera" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 30%; background-image: url(&quot;project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/myrthe-van-tol-grass-texture.jpg?fileID=2800000&amp;guid=67335b999287fc24f886352f6a1213f8&amp;type=3#myrthe-van-tol-grass-texture&quot;); -unity-background-image-tint-color: rgba(0, 41, 255, 0.71); border-top-left-radius: 70px; border-top-right-radius: 70px; border-bottom-right-radius: 70px; border-bottom-left-radius: 70px; justify-content: center; align-items: center;">
+                <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-shrink: 0; width: 52%; height: 66%; align-items: center; justify-content: center; border-top-left-radius: 62px; border-top-right-radius: 62px; border-bottom-right-radius: 62px; border-bottom-left-radius: 62px; background-image: url(&quot;project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/06-1024x1024.jpeg?fileID=2800000&amp;guid=dfd8f295caa952d4397569503b2cf5bb&amp;type=3#06-1024x1024&quot;); -unity-background-image-tint-color: rgb(35, 85, 128);">
+                    <ui:Label tabindex="-1" text="Ganaste" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Titulo" style="width: 296px; font-size: 62px; -unity-font-style: bold; color: rgb(0, 246, 255);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Cuerpo" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 70%; border-top-left-radius: 48px; border-top-right-radius: 48px; border-bottom-right-radius: 48px; border-bottom-left-radius: 48px; background-image: url(&quot;project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/myrthe-van-tol-grass-texture.jpg?fileID=2800000&amp;guid=67335b999287fc24f886352f6a1213f8&amp;type=3#myrthe-van-tol-grass-texture&quot;); -unity-background-image-tint-color: rgba(0, 41, 255, 0.76); flex-direction: row; align-self: center; justify-content: center; align-items: center;">
+                <ui:VisualElement style="flex-grow: 0; align-items: center; justify-content: space-between; flex-direction: row; flex-shrink: 0; width: 92%; height: 90%;">
+                    <ui:Button text="Reiniciar" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button" />
+                    <ui:Button text="Salir al menu" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button" />
+                    <ui:Button text="Siguiente" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button" style="justify-content: space-between; align-items: center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
