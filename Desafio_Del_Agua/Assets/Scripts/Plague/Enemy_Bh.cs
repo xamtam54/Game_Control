@@ -9,25 +9,22 @@ public class NewBehaviourScript : MonoBehaviour
     private UnityEngine.AI.NavMeshAgent agent;
     private bool isAttacking;
 
-    public float persecutionkRange = 100f;
-    public float persecutionkRangeForPlayer = 0f;
+    public float persecutionkRange = 20f;
+    public float persecutionkRangeForPlayer = 19f;        //distancia para atacar al jugador si esta atacando
 
     public S_Targets sTargets;
 
-    public float attackRange = 50f;
-    public float attackDamageRate = 100f;
+    public float attackRange = 5f;
+    public float attackDamageRate = 10f;
 
+    bool isCooldown = false;
 
     void Start()
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>(); 
-        isAttacking = true;//temporal para definir estado de ataque
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 
-        
-        
+
         S_plants();
-
-        
     }
 
     
@@ -35,40 +32,44 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
 
-        LifeController lifeController = player.GetComponent<LifeController>();
+
+
+        Player jugador = player.GetComponent<Player>();
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (player != null && isAttacking && lifeController.isAlive && distanceToPlayer <= persecutionkRangeForPlayer)                                                                  //si el jugador empieza a atacar 
+        if (player != null && jugador.isAttacking && distanceToPlayer <= persecutionkRangeForPlayer )                                                                  //si el jugador empieza a atacar 
         {
-            
-            Debug.Log("Atacando al jugador");
-            StartCoroutine(ApplyDamageOverTime(player));                                                    // Iniciar la corutina para aplicar da�o peri�dico
-            agent.destination = player.position;
+            if (distanceToPlayer <= attackRange && !isCooldown)
+            {
+                StartCoroutine(AttackCooldown());
+                Debug.Log("Atacando al jugador");
+                StartCoroutine(ApplyDamageOverTime(player));
+            }
+            else if (agent != null && agent.enabled)
+            {
+                agent.destination = player.position;
+            }
+
         }
         else
         {
-            //primero ataca dispositivos si estan activados
-            //segundo plantas vivas
-            //tercero agua
+   
 
             Transform nearestTarget = null;
+            
+            if (nearestTarget == null)
+            {
+                nearestTarget = GetNearestTargetWithTag("waterTank");
+            }
 
             if (nearestTarget == null) 
             { 
                 nearestTarget = GetNearestTargetWithTag("Device");
             }
 
-            if (nearestTarget == null /*&& isAlive*/)
+            if (nearestTarget == null)
             {
                 nearestTarget = GetNearestTargetWithTag("Plant");
-            }
-            if (nearestTarget == null)
-            {
-                nearestTarget = GetNearestTargetWithTag("Water");
-            }
-            if (nearestTarget == null)
-            {
-                nearestTarget = GetNearestTargetWithTag("Player");
             }
 
             //no hay nada en rango
@@ -77,34 +78,19 @@ public class NewBehaviourScript : MonoBehaviour
                 persecutionkRange = persecutionkRange + 2;
             }
             
-            if (nearestTarget != null)
-            {
-                //solo debug
-                if (nearestTarget.CompareTag("Plant"))
-                {
-                    //Debug.Log("Atacando planta");
-                }
-                else if (nearestTarget.CompareTag("Water"))
-                {
-                    Debug.Log("Atacando agua");
-                }
-                else if (nearestTarget.CompareTag("Device"))
-                {
-                    //Debug.Log("Atacando m�quina");
-                }
-                //hasta aqui
-            }
             
-
             if (nearestTarget != null)
             {
                 float distanceToTarget = Vector3.Distance(transform.position, nearestTarget.position);
-                if (distanceToTarget <= attackRange)
+                if (distanceToTarget <= attackRange && !isCooldown)
                 {
-                    StartCoroutine(ApplyDamageOverTime(nearestTarget)); // Iniciar la corutina para aplicar da�o peri�dico
+                    StartCoroutine(AttackCooldown());
+                    StartCoroutine(ApplyDamageOverTime(nearestTarget)); 
                 }
-
-                agent.destination = nearestTarget.position;
+                else if (agent != null && agent.enabled)
+                {
+                    agent.destination = nearestTarget.position;
+                }
             }
         }
     }
@@ -116,65 +102,40 @@ public class NewBehaviourScript : MonoBehaviour
 
         foreach (Transform target in targets)
         {
-                if (target.CompareTag(tag) && tag == "Plant")
+            if (target.CompareTag(tag))
+            {
+                float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                bool isValidTarget = false;
+
+                if (tag == "Plant")
                 {
                     Plants plant = target.GetComponent<Plants>();
-                    if (plant != null && plant.isAlive == 1)
-                    {
-                        float distanceToTarget = Vector3.Distance(transform.position, target.position);
-                        if (distanceToTarget <= persecutionkRange && distanceToTarget < shortestDistance)
-                        {
-                            shortestDistance = distanceToTarget;
-                            nearestTarget = target;
-                        }
-                    }
+                    isValidTarget = (plant != null && plant.isAlive == 1);
                 }
-                if (target.CompareTag(tag) && tag == "Device")
+                else if (tag == "Device" || tag == "waterTank")
                 {
                     Devices device = target.GetComponent<Devices>();
-                    if (device != null && device.Status && device.IsActive)   //si esta bien status y si esta activo
-                    {
-                        float distanceToTarget = Vector3.Distance(transform.position, target.position);
-                        if (distanceToTarget <= persecutionkRange && distanceToTarget < shortestDistance)
-                        {
-                            shortestDistance = distanceToTarget;
-                            nearestTarget = target;
-                        }
-                    }
+                    isValidTarget = (device != null && device.Status && device.IsActive);
                 }
-               
-        }
 
-            return nearestTarget;
-    }
-    public void S_plants()
-    {/*
-        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
-
-        List<Transform> plantTargets = new List<Transform>();
-
-        foreach (GameObject obj in allObjects)
-        {
-            if (obj.CompareTag("Plant") || obj.CompareTag("Device") || obj.CompareTag("Player"))
-            {
-                plantTargets.Add(obj.transform);
+                if (isValidTarget && distanceToTarget <= persecutionkRange && distanceToTarget < shortestDistance)
+                {
+                    shortestDistance = distanceToTarget;
+                    nearestTarget = target;
+                }
             }
         }
 
+        return nearestTarget;
+    }
 
-        this.targets = plantTargets.ToArray();*/
+    public void S_plants()
+    {
         S_Targets sTargets = FindObjectOfType<S_Targets>();
         if (sTargets != null)
         {
-            // Llama al m�todo S_plants() en la instancia encontrada de S_Targets
             sTargets.S_plants();
             this.targets = sTargets.targets;
-
-            
-            
-
-            
-
         }
         else
         {
@@ -182,52 +143,61 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 
-
     private IEnumerator ApplyDamageOverTime(Transform target)
     {
         string tag = target.tag;
-        if (tag == "Plant")
+        Plants plant = null;
+        Devices device = null;
+        Player player = null;
+
+        switch (tag)
         {
-            Plants plant = target.GetComponent<Plants>();
-            if (plant != null)
-            {
-                float elapsedTime = 0f;
-                while (elapsedTime < 1f) // Da�o se aplica durante 1 segundo
+            case "Plant":
+                plant = target.GetComponent<Plants>();
+                if (plant != null)
                 {
-                    yield return new WaitForSeconds(3f); // Retraso de 1 segundo
-                    plant.UpdateHealth(Mathf.RoundToInt(attackDamageRate)); // Aplicar da�o
-                    elapsedTime += 1f;
+                    plant.UpdateHealth(10); 
                 }
-            }
-        }else if (tag == "Device")
-        {
-            Devices device = target.GetComponent<Devices>();
-            if (device != null)
-            {
-                float elapsedTime = 0f;
-                while (elapsedTime < 1f) // Da�o se aplica durante 1 segundo
+                break;
+            case "Device":
+            case "waterTank":
+                device = target.GetComponent<Devices>();
+                if (device != null)
                 {
-                    yield return new WaitForSeconds(3f); // Retraso de 1 segundo
-                    device.UpdateHealth(Mathf.RoundToInt(attackDamageRate)); // Aplicar da�o
-                    elapsedTime += 1f;
+                    device.UpdateHealth(10); 
                 }
-            }
-        }
-        else
-        {
-            LifeController lifeController = target.GetComponent<LifeController>();
-            if (lifeController != null)
-            {
-                float elapsedTime = 0f;
-                while (elapsedTime < 1f) // Da�o se aplica durante 1 segundo
+                break;
+            default:
+                player = target.GetComponent<Player>();
+                if (player != null)
                 {
-                    yield return new WaitForSeconds(3f); // Retraso de 1 segundo
-                    lifeController.TakeDamage(Mathf.RoundToInt(attackDamageRate)); // Aplicar da�o
-                    elapsedTime += 1f;
+                    //animacion ataque
+                    player.StunPlayer(5f); 
                 }
-            }
+                break;
         }
 
+        if (plant != null)
+        {
+            plant.UpdateHealth(10); 
+        }
+        else if (device != null)
+        {
+            device.UpdateHealth(10); 
+        }
+        else if (player != null)
+        {
+            //animacion ataque
+            player.StunPlayer(5f); 
+        }
+
+        yield return null; 
+    }
+    IEnumerator AttackCooldown()
+    {
+        isCooldown = true;
+        yield return new WaitForSeconds(2f); 
+        isCooldown = false; 
     }
 
     private void OnDrawGizmosSelected()

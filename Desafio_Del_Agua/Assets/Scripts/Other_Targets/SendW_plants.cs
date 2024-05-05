@@ -81,7 +81,7 @@ public class SendW_plants : MonoBehaviour
                     if (device.Actual_Water >= amount)                      //tiene sufuciente agua y al ser planta no necesita espacio
                     {
                         //resta agua
-                        if (plant.Actual_Water <= plant.dailyWaterRequirements * 2 )           //capacidad maxima = plant.dailyWaterRequirements * 2
+                        if (plant.Actual_Water <= plant.dailyWaterRequirements)           //capacidad maxima = plant.dailyWaterRequirements 
                         {
                             device.Actual_Water -= amount;        
                             plant.Actual_Water += amount * targetPlants.Length;                   //suma agua y si no se controla se desperdicia

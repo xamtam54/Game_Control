@@ -18,6 +18,7 @@ public class Plants : MonoBehaviour
 
     public float max_Health = 100f;                 // vida 
     public float currentHealth;                     // vida actual 
+
     public float lifespan;                          // cuantos dias tarda 
 
     public GameObject healthBar;                    // barra de vida de aqui tomar porcentaje - convertir despues a la barra amarilla
@@ -27,6 +28,19 @@ public class Plants : MonoBehaviour
     [SerializeField] private Image _life;
 
     [SerializeField] private Image _Awa;
+
+    [SerializeField] private Image _Progress;
+
+    //logica de progreso vida, etc de la planta
+    private float waterDecreaseRate = 0.5f; // Tasa de disminución de agua por segundo                  //40 segundos
+    private float lifeDecreaseRate = 1.42f; // Tasa de disminución de vida por segundo                  70 segundos
+    private float progressIncreaseRate = 0.5f; // Tasa de aumento de progreso por segundo            5 mins
+
+    //public float currentWater = 1.0f; // Agua actual de la planta (0 a 1)
+    //public float currentLife = 1.0f; // Vida actual de la planta (0 a 1)
+    public float progress = 0.0f; // Progreso actual de la planta (0 a 1)
+    public bool progressComplete = false; // Variable para verificar si el progreso llegó al 100%
+
 
     void Start()
     {
@@ -53,6 +67,11 @@ public class Plants : MonoBehaviour
                 OcultarVida();
             }
         }
+
+        DecreaseWaterAndLifeOverTime();
+        IncreaseProgressIfWatered();
+        UpdateWaterBar();
+        UpdateProgressBar(); 
     }
 
     // crear
@@ -95,14 +114,18 @@ public class Plants : MonoBehaviour
     private void Die()
     {
         isAlive = 2;
-        Debug.Log("La planta " + plant_Name + " ha muerto.");
         //Destroy(gameObject);                                                    // Destruye el objeto 
         gameObject.SetActive(false);
     }
 
     public void UpdateWaterBar()
     {
-        _Awa.fillAmount = Actual_Water /( dailyWaterRequirements * 2);
+        _Awa.fillAmount = Actual_Water /( dailyWaterRequirements);
+    }
+
+    public void UpdateProgressBar()
+    {
+        _Progress.fillAmount = progress / 1.0f;
     }
 
     //Mostrar vida
@@ -117,5 +140,35 @@ public class Plants : MonoBehaviour
     {
         healthBar.SetActive(true);
         isOnTheSmartPhone = !isOnTheSmartPhone;
+    }
+
+    void DecreaseWaterAndLifeOverTime()
+    {
+        if (Actual_Water > 0)
+        {
+            Actual_Water -= waterDecreaseRate * Time.deltaTime;
+        }
+        else
+        {
+            currentHealth -= lifeDecreaseRate * Time.deltaTime;
+            UpdateHealthBar();
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+    }
+
+    void IncreaseProgressIfWatered()
+    {
+        if (Actual_Water > 0)
+        {
+            progress += progressIncreaseRate * Time.deltaTime;
+            if (progress >= 1.0f)
+            {
+                progressComplete = true;
+                _Progress.color = Color.white;
+            }
+        }
     }
 }

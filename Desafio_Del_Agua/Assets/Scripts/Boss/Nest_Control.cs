@@ -33,7 +33,6 @@ public class Nest_Control : MonoBehaviour
         if (colliders.Length > 0 && nest2 != nest)
         {
             float randomValue = Random.value;
-            Debug.Log(randomValue);
             Activate(randomValue);
             nest = nest2;
         }

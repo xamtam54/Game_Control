@@ -161,7 +161,7 @@ public class S_Targets : MonoBehaviour
 
         foreach (GameObject obj in allObjects)
         {
-            if (obj.CompareTag("Plant") || obj.CompareTag("Device") || obj.CompareTag("Player") || obj.CompareTag("waterTank"))
+            if ((obj.CompareTag("Plant") || obj.CompareTag("Device") || obj.CompareTag("Player") || obj.CompareTag("waterTank")) && obj.layer != LayerMask.NameToLayer("WaterTower"))
             {
                 plantTargets.Add(obj.transform);
             }

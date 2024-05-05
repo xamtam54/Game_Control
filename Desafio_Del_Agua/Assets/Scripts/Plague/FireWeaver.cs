@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireWeaver : MonoBehaviour
 {
     public int damageOnDeath = 10;
-    public float damageRadius = 5f;
+    public float damageRadius = 12.5f;
 
     void OnDestroy()
     {
@@ -29,7 +29,7 @@ public class FireWeaver : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, damageRadius);
     }
 }

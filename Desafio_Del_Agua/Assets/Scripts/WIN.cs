@@ -3,36 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WIN : MonoBehaviour
-{/*
+{
     public S_Targets sTargets;
-    private int contador; // si es 3 se gana 1 por cultivo, cambia en funcion de la cantidad de cultivos 
-
-    private bool rice = false;
-    private bool sorgo = false;
-    private bool sesame = false;
-
-
+    private bool lost = false; // perdio
+    private bool won = false; // gano
 
     void Start()
     {
         sTargets = FindObjectOfType<S_Targets>();
-        if (sTargets != null)
+        
+    }
+
+    void Update()
+    {
+        if (sTargets != null && !lost && !won)
         {
-            sTargets.S_plants();
-            
-                if (sTargets.ricePlants != null)
-                {
-                    contador += 1;
-                }
-                if (sTargets.sorgoDevices != null)
-                {
-                    contador += 1;
-                }
-                if (sTargets.sesameDevices != null)
-                {
-                    contador += 1;
-                }
-            Debug.Log(contador);
+            CheckWinCondition();
         }
         else
         {
@@ -40,34 +26,74 @@ public class WIN : MonoBehaviour
         }
     }
 
-    void Update()
+    void CheckWinCondition()
     {
-        if (sTargets.ricePlants != null)
+        int totalPlants = 0;
+        int deadPlants = 0;
+        foreach (Plants plant in sTargets.ricePlants)
         {
-            Cwin(sTargets.ricePlants);
-        }
-        if (sTargets.sorgoDevices != null)
-        {
-            Cwin(sTargets.sorgoDevices);
-        }
-        if (sTargets.sesameDevices != null)
-        {
-            Cwin(sTargets.sesameDevices);
-        }
-    }
-
-    public void Cwin(Plants[] plants)
-    {
-        foreach (obj item in Plants[] plants)
-        {
-            int temporal;
-            if ( item.)
+            totalPlants++;
+            if (plant.isAlive == 2)
             {
-                if (temporal == largo del array)
-                {
-                    
-                }
+                deadPlants++;
             }
         }
-    }*/
+        foreach (Plants plant in sTargets.sorgoPlants)
+        {
+            totalPlants++;
+            if (plant.isAlive == 2)
+            {
+                deadPlants++;
+            }
+        }
+        foreach (Plants plant in sTargets.sesamePlants)
+        {
+            totalPlants++;
+            if (plant.isAlive == 2) 
+            {
+                deadPlants++;
+            }
+        }
+
+        float deathPercentage = (float)deadPlants / totalPlants * 100;
+
+        if (deathPercentage > 40)
+        {
+            lost = true;
+            Debug.Log("El jugador ha perdido.");
+            return;
+        }
+
+        bool allProgressComplete = true;
+        foreach (Plants plant in sTargets.ricePlants)
+        {
+            if (plant.isAlive == 1 && !plant.progressComplete)
+            {
+                allProgressComplete = false;
+                break;
+            }
+        }
+        foreach (Plants plant in sTargets.sorgoPlants)
+        {
+            if (plant.isAlive == 1 && !plant.progressComplete)
+            {
+                allProgressComplete = false;
+                break;
+            }
+        }
+        foreach (Plants plant in sTargets.sesamePlants)
+        {
+            if (plant.isAlive == 1 && !plant.progressComplete)
+            {
+                allProgressComplete = false;
+                break;
+            }
+        }
+
+        if (allProgressComplete)
+        {
+            won = true;
+            Debug.Log("El jugador ha ganado.");
+        }
+    }
 }

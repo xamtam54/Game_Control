@@ -18,24 +18,29 @@ public class DisplaySwitcher : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && targetPositions[0] != null)
         {
             SwitchToTargetPosition(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && targetPositions[1] != null)
         {
             SwitchToTargetPosition(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) && targetPositions[2] != null)
         {
             SwitchToTargetPosition(2);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4) && targetPositions[3] != null)
         {
             SwitchToTargetPosition(3);
-        }
+        }/*
+        if (Input.GetKeyDown(KeyCode.Space) && targetPositions[4] != null)
+        {
+            HideAllTargetPositions();
+            //aqui se envia a la camara del jugador
+        }*/
     }
 
     private void SwitchToTargetPosition(int index)
@@ -43,18 +48,23 @@ public class DisplaySwitcher : MonoBehaviour
         if (index >= 0 && index < targetPositions.Length)
         {
             currentView = targetPositions[index];
+            HideAllTargetPositions();
+            targetPositions[index].gameObject.SetActive(true);
         }
     }
 
     private void LateUpdate()
     {
-        // Transición suave de posición
         transform.position = Vector3.Lerp(transform.position, currentView.position, Time.deltaTime * transitionSpeed);
-
-        // Calcular la rotación deseada relativa a la rotación inicial
         Quaternion desiredRotation = Quaternion.Inverse(initialRotation) * currentView.rotation;
-
-        // Transición suave de rotación
         transform.rotation = Quaternion.Lerp(transform.rotation, initialRotation * desiredRotation, Time.deltaTime * transitionSpeed);
+    }
+
+    void HideAllTargetPositions()
+    {
+        foreach (Transform target in targetPositions)
+        {
+            target.gameObject.SetActive(false);
+        }
     }
 }

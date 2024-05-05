@@ -7,30 +7,27 @@ public class weaver_control : MonoBehaviour
     public GameObject plantPrefab;
     public Transform[] spawnPoints;
     public string plantTag = "Weaver";
+    public float initialDelay = 5f;
+    public float repeatDelay = 90f;
 
     void Start()
     {
+        InvokeRepeating("SpawnWeaver", initialDelay, repeatDelay);
+    }
 
+    void SpawnWeaver()
+    {
         foreach (Transform spawnPoint in spawnPoints)
         {
-            GameObject weaverInstance = Instantiate(plantPrefab, spawnPoint.position, spawnPoint.rotation);
-            weaverInstance.transform.position = spawnPoint.position;
-            weaverInstance.transform.rotation = spawnPoint.rotation;
-
-            NewBehaviourScript ricePlant = weaverInstance.GetComponent<NewBehaviourScript>();
-            if (ricePlant != null)
+            for (int i = 0; i < 2; i++)
             {
+                GameObject weaverInstance = Instantiate(plantPrefab, spawnPoint.position, spawnPoint.rotation);
 
-                ricePlant.gameObject.tag = plantTag;
-            }
-            else
-            {
-                Debug.LogWarning("El prefab plantPrefab no tiene el componente Plants adjunto.");
+                weaverInstance.transform.position = spawnPoint.position;
+                weaverInstance.transform.rotation = spawnPoint.rotation;
+
+                weaverInstance.tag = plantTag;
             }
         }
-
-      
-
-
     }
 }
