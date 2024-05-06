@@ -1,35 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WIN : MonoBehaviour
 {
     public S_Targets sTargets;
-    private bool lost = false; // perdio
-    private bool won = false; // gano
+    public bool lost = false; // perdio
+    public bool won = false; // gano
+    float agua_actual = 0;
+
+   
+           
+    
 
     void Start()
     {
         sTargets = FindObjectOfType<S_Targets>();
-        
+        Devices torre = sTargets.Tower[0];
+        agua_actual = torre.Actual_Water;
     }
 
     void Update()
     {
-        if (sTargets != null && !lost && !won)
+        
+
+        if (Time.timeScale == 1f)
         {
-            CheckWinCondition();
-        }
-        else
-        {
-            Debug.LogError("No se encontró ningún objeto de la clase S_Targets en la escena.");
+            if (sTargets != null && !lost && !won)
+            {
+                Devices torre = sTargets.Tower[0];
+                agua_actual = torre.Actual_Water;
+                CheckWinCondition();
+            }
+            else
+            {
+                Debug.LogError("No se encontró ningún objeto de la clase S_Targets en la escena.");
+            }
         }
     }
 
     void CheckWinCondition()
     {
+        
+        
+        //Debug.Log("Nivel del agua dentor del metodo actual: " + agua_actual);
+
         int totalPlants = 0;
         int deadPlants = 0;
+        
         foreach (Plants plant in sTargets.ricePlants)
         {
             totalPlants++;
@@ -56,10 +75,12 @@ public class WIN : MonoBehaviour
         }
 
         float deathPercentage = (float)deadPlants / totalPlants * 100;
+        
 
-        if (deathPercentage > 40)
+        if (deathPercentage > 40 || agua_actual <= 1)
         {
             lost = true;
+            Time.timeScale = 0f;
             Debug.Log("El jugador ha perdido.");
             return;
         }
@@ -92,6 +113,7 @@ public class WIN : MonoBehaviour
 
         if (allProgressComplete)
         {
+            Time.timeScale = 0f;
             won = true;
             Debug.Log("El jugador ha ganado.");
         }

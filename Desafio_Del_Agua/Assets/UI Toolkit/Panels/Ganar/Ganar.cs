@@ -1,24 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
-public class perder : MonoBehaviour
+public class Ganar : MonoBehaviour
 {
     public UIDocument uIDocument;
     public WIN winScript; // Referencia al script WIN
     private Button _button1;
     private Button _button2;
 
-    public void Awake()
+    void Awake()
     {
         Time.timeScale = 1f;
         uIDocument = GetComponent<UIDocument>();
-       // devices = torre_principal.GetComponent<Devices>();
     }
 
-    public void Update()
+    void Update()
     {
-        if (winScript != null && winScript.lost)
+        if (winScript != null && winScript.won)
         {
             uIDocument.enabled = true;
             Time.timeScale = 0f;
@@ -26,7 +27,6 @@ public class perder : MonoBehaviour
             Volver_Menu();
         }
     }
-
 
     public void Restart()
     {
@@ -51,6 +51,4 @@ public class perder : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
-
-
 }
