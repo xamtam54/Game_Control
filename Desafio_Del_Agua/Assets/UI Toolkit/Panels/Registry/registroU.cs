@@ -6,8 +6,10 @@ using UnityEngine.Networking;
 
 public class registroU : MonoBehaviour
 {
+    private UIDocument uIDocument;
     private TextField usernameField;
     private TextField passwordField;
+    private Button _button1;
 
     void Start()
     {
@@ -15,9 +17,16 @@ public class registroU : MonoBehaviour
         usernameField = uIDocument.rootVisualElement.Q<TextField>("UsernameField");
         passwordField = uIDocument.rootVisualElement.Q<TextField>("PasswordField");
     }
+    void Awake()
+    {
+        uIDocument = GetComponent<UIDocument>(); // Quita "UIDocument" de aquí para usar la variable miembro
+        _button1 = uIDocument.rootVisualElement.Q<Button>("Registro") as Button;
+        _button1.RegisterCallback<ClickEvent>(evt => registrar());
+    }
 
     public void registrar()
     {
+        Debug.Log("Entro al metodo registrar");
         string username = usernameField.value;
         string password = passwordField.value;
 
