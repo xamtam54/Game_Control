@@ -4,57 +4,68 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Networking;
 
-
 public class registroU : MonoBehaviour
 {
-    // tomar datos IUtoolkit 
-
-    // enviar datos
-    string test = "edison cañon";
+    private TextField usernameField;
+    private TextField passwordField;
 
     void Start()
     {
-        Debug.Log("inicio");
-        //StartCoroutine(EnviarTipoDeJugador(test));
-        //StartCoroutine(EncontrarTiposDeJugador());
+        UIDocument uIDocument = GetComponent<UIDocument>();
+        usernameField = uIDocument.rootVisualElement.Q<TextField>("UsernameField");
+        passwordField = uIDocument.rootVisualElement.Q<TextField>("PasswordField");
     }
 
-    IEnumerator EnviarTipoDeJugador(string tipoDePlaga)
+    public void registrar()
     {
-        string url = "http://www.irrigationmanagementudec.somee.com/api/User_Types?User_Type_Name=" + test;
+        string username = usernameField.value;
+        string password = passwordField.value;
 
-        using (UnityWebRequest request = UnityWebRequest.PostWwwForm(url, ""))
+        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
         {
+            Debug.LogError("Por favor, completa todos los campos.");
+            return;
+        }
+        StartCoroutine(CreateUser(username, password));
+    }
+
+
+    public string baseAPIUrl = "http://www.irrigationmanagementudec.somee.com/";
+
+
+
+    public IEnumerator CreateUser(string userName, string password)
+    {
+        string url = this.baseAPIUrl;
+
+        // JSON
+        string jsonBody =   "{\"UserName\":\"" + userName + 
+                            "\",\"Names\":\"" + "jugador" + 
+                            "\",\"Surnames\":\"" + "ext" + 
+                            "\",\"Password\":\"" + password + 
+                            "\",\"Email\":\"" + "generico@gmail.com" + 
+                            "\",\"User_Type_Id\":" + 1 + "}";
+
+        // POST 
+        using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
+        {
+            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonBody);
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            request.downloadHandler = new DownloadHandlerBuffer();
+            request.SetRequestHeader("Content-Type", "application/json");
+
+            // Enviar la solicitud
             yield return request.SendWebRequest();
 
-            if (request.isNetworkError || request.isHttpError)
+            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
             {
-                Debug.LogError("Error al enviar" + request.error);
+                Debug.LogError("Error al enviar la solicitud: " + request.error);
             }
             else
             {
-                Debug.Log("Tipo enviado correctamente: " + test);
+                Debug.Log("Usuario creado correctamente");
             }
         }
     }
 
-    IEnumerator EncontrarTiposDeJugador()
-    {
-        string url = "http://www.irrigationmanagementudec.somee.com/api/User_Types" ;
-
-        using (UnityWebRequest request = UnityWebRequest.Get(url))
-        {
-            yield return request.SendWebRequest();
-
-            if (request.isNetworkError || request.isHttpError)
-            {
-                Debug.LogError("Error al enviar: " + request.error);
-            }
-            else
-            {
-                string responseText = request.downloadHandler.text;
-                Debug.Log("Respuesta del servidor: " + responseText);
-            }
-        }
-    }
 }
