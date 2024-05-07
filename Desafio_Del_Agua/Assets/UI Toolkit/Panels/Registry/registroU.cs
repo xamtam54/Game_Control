@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 public class registroU : MonoBehaviour
 {
     private UIDocument uIDocument;
-    public UIDocument otroUIDocument; //para mostrar el de ingresar una vez el usuario se crea
+    public GameObject otroUIDocument; //para mostrar el de ingresar una vez el usuario se crea
     private TextField usernameField;
     private TextField passwordField;
     private Button _button1;
@@ -65,24 +65,19 @@ public class registroU : MonoBehaviour
 
     public IEnumerator CreateUser(string userName, string password)
     {
-        string url = this.baseAPIUrl;
+        // Construir la URL completa con los parámetros de consulta
+        string url = baseAPIUrl.TrimEnd('/') + "/api/Users?" +
+                     "username=" + UnityWebRequest.EscapeURL(userName) +
+                     "&password=" + UnityWebRequest.EscapeURL(password) +
+                     "&names=" + UnityWebRequest.EscapeURL("jugador") +
+                     "&surnames=" + UnityWebRequest.EscapeURL("ext") +
+                     "&email=" + UnityWebRequest.EscapeURL("generico@gmail.com") +
+                     "&user_type_id=1";
+        Debug.Log("URL: " + url);
 
-        // JSON
-        string jsonBody = "{\"UserName\":\"" + userName +
-                            "\",\"Names\":\"" + "jugador" +
-                            "\",\"Surnames\":\"" + "ext" +
-                            "\",\"Password\":\"" + password +
-                            "\",\"Email\":\"" + "generico@gmail.com" +
-                            "\",\"User_Type_Id\":" + 1 + "}";
-
-        // POST 
-        using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
+        // Crear la solicitud POST
+        using (UnityWebRequest request = UnityWebRequest.PostWwwForm(url, ""))
         {
-            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonBody);
-            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
-            request.downloadHandler = new DownloadHandlerBuffer();
-            request.SetRequestHeader("Content-Type", "application/json");
-
             // Enviar la solicitud
             yield return request.SendWebRequest();
 
@@ -92,9 +87,10 @@ public class registroU : MonoBehaviour
             }
             else
             {
+
                 Debug.Log("Usuario creado correctamente");
                 uIDocument.enabled = false;
-                otroUIDocument.enabled = true;
+                otroUIDocument.SetActive(true);
             }
         }
     }
