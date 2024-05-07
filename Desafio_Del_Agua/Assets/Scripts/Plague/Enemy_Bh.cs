@@ -15,7 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
     public S_Targets sTargets;
 
     public float attackRange = 5f;
-    public float attackDamageRate = 10f;
+    public float attackDamageRate = 0.1f;
 
     bool isCooldown = false;
 
