@@ -7,13 +7,15 @@
                     <ui:Label tabindex="-1" text="INGRESAR" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" style="-unity-font-style: bold; font-size: 52px; color: rgb(255, 255, 255);" />
                     <ui:VisualElement name="userimage" style="flex-grow: 0; border-top-left-radius: 100px; border-top-right-radius: 100px; border-bottom-right-radius: 100px; border-bottom-left-radius: 100px; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/user.png?fileID=2800000&amp;guid=950002dbf1e58a84bba8ab184ed4b597&amp;type=3#user&quot;); flex-shrink: 0; width: 20%; height: 40%; align-items: center; justify-content: center; -unity-background-image-tint-color: rgba(31, 79, 120, 0.86);" />
                 </ui:VisualElement>
-                <ui:VisualElement name="User" class="separationresgitry" style="flex-grow: 1; justify-content: flex-end; align-items: center; height: 11%; -unity-background-image-tint-color: rgba(255, 255, 255, 0.58);">
-                    <ui:TextField picking-mode="Ignore" value="Usuario" view-data-key="Name" class="text" />
+                <ui:VisualElement name="User" class="separationresgitry" style="flex-grow: 1; justify-content: center; align-items: center; height: 11%; -unity-background-image-tint-color: rgba(255, 255, 255, 0.58); flex-direction: row-reverse;">
+                    <ui:TextField picking-mode="Ignore" view-data-key="Name" name="Nombre_Usuario" class="text" style="width: 60%;" />
+                    <ui:Label tabindex="-1" text="Nombre Usuario" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 26px; color: rgb(255, 255, 255); -unity-font-style: bold;" />
                 </ui:VisualElement>
-                <ui:VisualElement name="Pasword" class="separationresgitry" style="flex-grow: 1; align-items: center; height: 9%;">
-                    <ui:TextField picking-mode="Ignore" value="Contraseña" password="true" class="text" />
+                <ui:VisualElement name="Pasword" class="separationresgitry" style="flex-grow: 1; align-items: center; height: 9%; flex-direction: row-reverse; justify-content: center;">
+                    <ui:TextField picking-mode="Ignore" password="true" name="User_Pasword" class="text" style="width: 60%;" />
+                    <ui:Label tabindex="-1" text="Contraseña" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 26px; -unity-font-style: bold; color: rgb(255, 255, 255);" />
                 </ui:VisualElement>
-                <ui:VisualElement name="Login" class="separationresgitry" style="flex-grow: 1; align-items: center; height: 17%;">
+                <ui:VisualElement name="Login_cube" class="separationresgitry" style="flex-grow: 1; align-items: center; height: 17%;">
                     <ui:Button text="INGRESAR" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Login" class="button" />
                 </ui:VisualElement>
             </ui:VisualElement>
