@@ -58,10 +58,13 @@ public class loginU : MonoBehaviour
 
     public IEnumerator AuthenticateUser(string username, string password)
     {
-        // Construir la URL
-        string url = this.baseAPIUrl + "login?username=" + username + "&password=" + password;
+        // Construir la URL 
+        string url = baseAPIUrl.TrimEnd('/') + "/api/Users?" +
+                     "username=" + UnityWebRequest.EscapeURL(username) +
+                     "&password=" + UnityWebRequest.EscapeURL(password);
+        Debug.Log("URL: " + url);
 
-        // Realizar la solicitud GET
+        // GET
         using (UnityWebRequest request = UnityWebRequest.Get(url))
         {
             yield return request.SendWebRequest();
@@ -72,11 +75,33 @@ public class loginU : MonoBehaviour
             }
             else
             {
-                if (request.responseCode == 200) 
+                if (request.responseCode == 200)
                 {
-                    Debug.Log("Usuario autenticado correctamente");
-                    // aqui va el codigo
-                    UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu"); //carga el menu principal del juego
+                    Users[] users = JsonUtility.FromJson<UsersArrayWrapper>("{\"items\":" + request.downloadHandler.text + "}").items;
+
+                    bool authenticated = false;
+                    int userId = -1;
+
+                    foreach (var user in users)
+                    {
+                        if (user.userName == username && user.password == password)
+                        {
+                            authenticated = true;
+                            userId = user.users_Id;
+                            break;
+                        }
+                    }
+
+                    if (authenticated)
+                    {
+                        Debug.Log("Usuario autenticado correctamente. ID del usuario: " + userId);
+                        // cidigo
+                        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu"); //carga el menu principal del juego
+                    }
+                    else
+                    {
+                        Debug.LogError("Error de autenticación: Nombre de usuario o contraseña incorrectos");
+                    }
                 }
                 else
                 {
@@ -84,5 +109,28 @@ public class loginU : MonoBehaviour
                 }
             }
         }
+    }
+
+    // Clase para deserializar la respuesta JSON
+    [System.Serializable]
+    public class Users
+    {
+        public int users_Id;
+        public string userName;
+        public string names;
+        public string surnames;
+        public string password;
+        public string email;
+        public string registration_Date;
+        public int is_Active;
+        public int user_Type_Id;
+        public string user_Type;
+        public bool isDeleted;
+    }
+
+    [System.Serializable]
+    public class UsersArrayWrapper
+    {
+        public Users[] items;
     }
 }
