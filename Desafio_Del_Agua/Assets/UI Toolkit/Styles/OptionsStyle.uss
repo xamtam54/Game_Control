@@ -24,3 +24,8 @@ VisualElement {
     background-image: url("project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/myrthe-van-tol-grass-texture.jpg?fileID=2800000&guid=67335b999287fc24f886352f6a1213f8&type=3#myrthe-van-tol-grass-texture");
     -unity-background-image-tint-color: rgba(255, 0, 0, 0.42);
 }
+
+.textp {
+    font-size: 30px;
+    color: rgb(0, 253, 246);
+}

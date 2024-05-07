@@ -3,7 +3,7 @@
     <Style src="project://database/Assets/UI%20Toolkit/Styles/Mainmenubuttons.uss?fileID=7433441132597879392&amp;guid=7a6cccc9c7159c14391246ac4d74e413&amp;type=3#Mainmenubuttons" />
     <ui:VisualElement name="BackGround" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/Fondo.png?fileID=2800000&amp;guid=2b94f3b7599cdff46bf83d0b31952a0c&amp;type=3#Fondo&quot;); flex-direction: row; justify-content: flex-start; align-items: stretch; align-self: auto;">
         <ui:VisualElement name="SideBar" focusable="false" style="flex-grow: 0; width: 30%; height: auto; background-color: rgba(58, 58, 58, 0); background-image: none; -unity-slice-scale: 0; align-self: stretch; justify-content: center;">
-            <ui:Label tabindex="-1" text="El Desafio del agua" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="label-main-title" style="width: 440px; flex-grow: initial; flex-wrap: wrap; color: rgb(49, 228, 255);" />
+            <ui:Label tabindex="-1" text="Plaga en la granja" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="label-main-title" style="width: 440px; flex-grow: initial; flex-wrap: wrap; color: rgb(49, 228, 255);" />
             <ui:Button text="Jugar" parse-escape-sequences="true" display-tooltip-when-elided="true" name="play" class="button-main-title" />
             <ui:Button text="Opciones" parse-escape-sequences="true" display-tooltip-when-elided="true" name="options" class="button-main-title" />
             <ui:Button text="Tutorial" parse-escape-sequences="true" display-tooltip-when-elided="true" name="tutorial" class="button-main-title" />
