@@ -17,6 +17,7 @@
                 </ui:VisualElement>
                 <ui:VisualElement name="Login" class="separationresgitry" style="flex-grow: 1; align-items: center; height: 17%;">
                     <ui:Button text="Registrarse" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Registro" class="button" />
+                    <ui:Button text="Ya tengo cuenta" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Cuenta" class="button" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

@@ -7,48 +7,40 @@ using UnityEngine.Networking;
 public class registroU : MonoBehaviour
 {
     private UIDocument uIDocument;
-    public GameObject otroUIDocument; //para mostrar el de ingresar una vez el usuario se crea
     private TextField usernameField;
     private TextField passwordField;
     private Button _button1;
+    private Button _button2;
     private string _username;
     private string _password;
-
-    void Awake()
-    {
-        // No es necesario hacer nada aquí.
-    }
 
     void Start()
     {
         uIDocument = GetComponent<UIDocument>(); // Asignar a la variable de clase
         if (uIDocument != null)
         {
-            Debug.Log("El documento existe :D");
+           // Debug.Log("El documento existe :D");
             usernameField = uIDocument.rootVisualElement.Q<TextField>("UsernameField");
             passwordField = uIDocument.rootVisualElement.Q<TextField>("PasswordField");
-            check();
+            
 
             // Mover el registro del callback del botón aquí
             _button1 = uIDocument.rootVisualElement.Q<Button>("Registro") as Button;
             _button1.RegisterCallback<ClickEvent>(evt => registrar());
-        }
-    }
-    void Update()
-    {
 
-    }
-    void check()
-    {
-        if (usernameField != null && passwordField != null)
-        {
-            Debug.Log("Ninguno de los 2 es null");
+            _button2 = uIDocument.rootVisualElement.Q<Button>("Cuenta") as Button;
+            _button2.RegisterCallback<ClickEvent>(evt => Inicio());
         }
     }
 
+   
+    public void Inicio()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Log in"); //carga el menu principal del juego
+    }
     public void registrar()
     {
-        Debug.Log("Entro al metodo registrar");
+        //Debug.Log("Entro al metodo registrar");
         string username = usernameField.text;
         string password = passwordField.text;
         Debug.Log(username + " " + password); //comprobacion de los datos insertados
@@ -89,8 +81,7 @@ public class registroU : MonoBehaviour
             {
 
                 Debug.Log("Usuario creado correctamente");
-                uIDocument.enabled = false;
-                otroUIDocument.SetActive(true);
+                Inicio();
             }
         }
     }
