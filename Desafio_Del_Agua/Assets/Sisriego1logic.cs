@@ -1,15 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+
 
 public class Sisriego1logic : MonoBehaviour
 {
-    public UIDocument uIDocument;
-    public GameObject camaraSis;
-    public GameObject camaraplayer;
-    private bool isOnTheSmartPhone = false;
-
+    
+    public Camera camaraSis;
+    
+    
+    public AudioListener CameraAudioListener;
+    private bool isOnTheSmartPhone ;
+    
+    void Start()
+    {
+        isOnTheSmartPhone = true;
+        camaraSis = GetComponent<Camera>();        
+        CameraAudioListener = GetComponent<AudioListener>();
+        CameraAudioListener.enabled = false;
+        camaraSis.enabled = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,29 +28,28 @@ public class Sisriego1logic : MonoBehaviour
         {
             if (isOnTheSmartPhone)
             {
-                DeactivateSisRiego();
+                ActiveSisRiego(); 
             }
             else
             {
-                 ActiveSisRiego();
+                DeactivateSisRiego();
             }
         }
     }
     void ActiveSisRiego()
     {
         Debug.Log("Se activo SisRiego");
-        uIDocument.enabled = true;
-        camaraSis.SetActive(true);
-        camaraplayer.SetActive(false);
-        isOnTheSmartPhone =!isOnTheSmartPhone;
+        camaraSis.enabled = true;       
+        CameraAudioListener.enabled = true;        
+        // Cambiar el estado después de activar todo
+        isOnTheSmartPhone = !isOnTheSmartPhone;       
     }
 
     void DeactivateSisRiego()
     {
         Debug.Log("Se desactivo SisRiego");
-        uIDocument.enabled = false;
-        camaraSis.SetActive(false);
-        camaraplayer.SetActive(true);
-        isOnTheSmartPhone = !isOnTheSmartPhone;
+        camaraSis.enabled = false;
+        CameraAudioListener.enabled = false;          
+        isOnTheSmartPhone = !isOnTheSmartPhone;// Cambiar el estado después de desactivar todo
     }
 }

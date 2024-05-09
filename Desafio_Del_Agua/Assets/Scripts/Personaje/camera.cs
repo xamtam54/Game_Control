@@ -6,25 +6,38 @@ public class ThirdPersonCamera : MonoBehaviour
     public float distance = 5f; // Distance from the target
     public float height = 2f; // Height above the target
     public float rotationDamping = 10f; // Damping for camera rotation
-
+    private bool quieto;
     private float currentRotationAngle; // Current rotation angle of the camera
 
-    void LateUpdate()
+    void Start()
     {
-        // Calculate desired rotation angle based on player's current rotation
-        float desiredRotationAngle = target.eulerAngles.y;
-        float desiredHeight = target.position.y + height;
+        quieto = false;
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        { quieto = !quieto; }
+    }
+        void LateUpdate()
+    {
 
-        // Calculate current rotation angle and height using damping
-        currentRotationAngle = Mathf.LerpAngle(currentRotationAngle, desiredRotationAngle, rotationDamping * Time.deltaTime);
-        Quaternion currentRotation = Quaternion.Euler(0f, currentRotationAngle, 0f);
+        if (!quieto)
+        {
+            // Calculate desired rotation angle based on player's current rotation
+            float desiredRotationAngle = target.eulerAngles.y;
+            float desiredHeight = target.position.y + height;
 
-        // Calculate desired position based on rotation and distance
-        Vector3 desiredPosition = target.position - currentRotation * Vector3.forward * distance;
-        desiredPosition.y = desiredHeight;
+            // Calculate current rotation angle and height using damping
+            currentRotationAngle = Mathf.LerpAngle(currentRotationAngle, desiredRotationAngle, rotationDamping * Time.deltaTime);
+            Quaternion currentRotation = Quaternion.Euler(0f, currentRotationAngle, 0f);
 
-        // Update camera position and rotation
-        transform.position = desiredPosition;
-        transform.LookAt(target);
+            // Calculate desired position based on rotation and distance
+            Vector3 desiredPosition = target.position - currentRotation * Vector3.forward * distance;
+            desiredPosition.y = desiredHeight;
+
+            // Update camera position and rotation
+            transform.position = desiredPosition;
+            transform.LookAt(target);
+        }
     }
 }

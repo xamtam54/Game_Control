@@ -17,8 +17,16 @@ public class WIN : MonoBehaviour
     void Start()
     {
         sTargets = FindObjectOfType<S_Targets>();
-        Devices torre = sTargets.Tower[0];
-        agua_actual = torre.Actual_Water;
+        if (sTargets.Tower.Length > 0)
+        {
+            Devices torre = sTargets.Tower[0];
+            agua_actual = torre.Actual_Water;
+        }
+        else
+        {
+           // Debug.LogError("El array Tower está vacío en el objeto S_Targets.");
+        }
+
     }
 
     void Update()
@@ -82,6 +90,7 @@ public class WIN : MonoBehaviour
             lost = true;
             Time.timeScale = 0f;
             Debug.Log("El jugador ha perdido.");
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
             return;
         }
 
@@ -116,6 +125,7 @@ public class WIN : MonoBehaviour
             Time.timeScale = 0f;
             won = true;
             Debug.Log("El jugador ha ganado.");
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
         }
     }
 }

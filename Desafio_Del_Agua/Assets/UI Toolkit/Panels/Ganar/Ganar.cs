@@ -10,6 +10,7 @@ public class Ganar : MonoBehaviour
     public WIN winScript; // Referencia al script WIN
     private Button _button1;
     private Button _button2;
+    private Button _button3;
 
     void Awake()
     {
@@ -25,9 +26,24 @@ public class Ganar : MonoBehaviour
             Time.timeScale = 0f;
             Reinicio_captura();
             Volver_Menu();
+            Siguiente();
         }
     }
+    public void Siguiente()
+    {
+        _button3 = uIDocument.rootVisualElement.Q<Button>("Siguiente") as Button;
+        _button3.RegisterCallback<ClickEvent>(evt => CapturarSiguiente());
+    }
+    public void CapturarSiguiente()
+    {
+        string nombreEscenaActual = SceneManager.GetActiveScene().name;
 
+        // Obtener el índice de la escena actual
+        int indiceActual = SceneManager.GetActiveScene().buildIndex;
+
+        // Cargar la siguiente escena
+        SceneManager.LoadScene(indiceActual + 1);
+    }
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //Reinicia la escena que esta cargada
