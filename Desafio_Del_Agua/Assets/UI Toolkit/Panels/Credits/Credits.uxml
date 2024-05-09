@@ -48,6 +48,6 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:Button text="Volver a menu principal" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Menu" class="button-options" style="width: 560px; height: 10%; position: absolute; left: 676px; top: 948px; background-color: rgb(97, 98, 111); border-top-left-radius: 45px; border-top-right-radius: 45px; border-bottom-right-radius: 45px; border-bottom-left-radius: 45px; border-left-color: rgb(183, 183, 183); border-right-color: rgb(183, 183, 183); border-top-color: rgb(183, 183, 183); border-bottom-color: rgb(183, 183, 183); -unity-background-image-tint-color: rgb(255, 255, 255); font-size: 49px; color: rgb(76, 239, 255);" />
+        <ui:Button text="Volver a menu principal" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Menu" class="button-options" style="width: 560px; height: 10%; position: absolute; left: 676px; top: 948px; background-color: rgb(97, 98, 111); border-top-left-radius: 45px; border-top-right-radius: 45px; border-bottom-right-radius: 45px; border-bottom-left-radius: 45px; border-left-color: rgb(183, 183, 183); border-right-color: rgb(183, 183, 183); border-top-color: rgb(183, 183, 183); border-bottom-color: rgb(183, 183, 183); -unity-background-image-tint-color: rgb(255, 255, 255); font-size: 40px; color: rgb(76, 239, 255);" />
     </ui:VisualElement>
 </ui:UXML>

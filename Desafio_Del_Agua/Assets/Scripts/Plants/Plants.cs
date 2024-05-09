@@ -16,7 +16,7 @@ public class Plants : MonoBehaviour
 
     public float Actual_Water;                      //agua esta se debe restar en el tiempo
 
-    public float max_Health = 100f;                 // vida 
+    public float max_Health = 1000f;                 // vida 
     public float currentHealth;                     // vida actual 
 
     public float lifespan;                          // cuantos dias tarda 
