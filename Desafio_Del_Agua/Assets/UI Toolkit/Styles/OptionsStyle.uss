@@ -29,3 +29,6 @@ VisualElement {
     font-size: 30px;
     color: rgb(0, 253, 246);
 }
+
+.unity-toggle_checkmark {
+}

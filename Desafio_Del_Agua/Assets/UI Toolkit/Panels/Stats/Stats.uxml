@@ -9,16 +9,16 @@
         <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-between; align-items: stretch;">
             <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 4%; flex-shrink: 0; height: 100%;" />
             <ui:VisualElement name="Body" style="flex-grow: 1; align-items: center; justify-content: flex-start; flex-direction: column; width: 1280px; background-image: url(&quot;project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/06-1024x1024.jpeg?fileID=2800000&amp;guid=dfd8f295caa952d4397569503b2cf5bb&amp;type=3#06-1024x1024&quot;); -unity-background-image-tint-color: rgba(53, 53, 53, 0.67); border-top-left-radius: 161px; border-top-right-radius: 161px; border-bottom-right-radius: 161px; border-bottom-left-radius: 161px;">
-                <ui:VisualElement class="subtitles" style="flex-grow: 0; width: 90%; height: 30%; background-image: none; flex-shrink: 0; align-items: flex-start; -unity-background-image-tint-color: rgb(157, 157, 157);">
-                    <ui:Toggle label="Completar el primer nivel " name="Nivel" focusable="false" picking-mode="Ignore" value="false" style="-unity-background-image-tint-color: rgb(255, 255, 255); -unity-background-scale-mode: stretch-to-fill;" />
+                <ui:VisualElement name="Logro1" class="subtitles" style="flex-grow: 0; width: 90%; height: 30%; background-image: none; flex-shrink: 0; align-items: flex-start; -unity-background-image-tint-color: rgb(157, 157, 157); display: flex;">
+                    <ui:Toggle label="Completar el primer nivel " name="Nivel" focusable="false" picking-mode="Ignore" value="true" style="-unity-background-image-tint-color: rgb(255, 255, 255); -unity-background-scale-mode: stretch-to-fill;" />
                     <ui:Label tabindex="-1" text="Completa el primer nivel" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 33px; color: rgb(41, 192, 255);" />
                 </ui:VisualElement>
-                <ui:VisualElement class="subtitles" style="flex-grow: 0; width: 90%; height: 30%; background-image: none; flex-shrink: 0; align-items: flex-start;">
-                    <ui:Toggle label="Salvacion de Cultivos " name="Cultivos" focusable="false" picking-mode="Ignore" />
+                <ui:VisualElement name="Logro2" class="subtitles" style="flex-grow: 0; width: 90%; height: 30%; background-image: none; flex-shrink: 0; align-items: flex-start; display: flex;">
+                    <ui:Toggle label="Salvacion de Cultivos " name="Cultivos" focusable="false" picking-mode="Ignore" value="true" class="unity-toggle_checkmark" style="overflow: visible;" />
                     <ui:Label tabindex="-1" text="Salva al menos el 60% de los cultivos en un nivel." parse-escape-sequences="true" display-tooltip-when-elided="true" picking-mode="Ignore" focusable="false" style="-unity-font-style: bold; font-size: 33px; color: rgb(41, 192, 255);" />
                 </ui:VisualElement>
-                <ui:VisualElement class="subtitles" style="flex-grow: 0; height: 30%; width: 90%; background-image: none; flex-shrink: 0; align-items: flex-start;">
-                    <ui:Toggle label="Derrota al jefe" name="Jefe" picking-mode="Ignore" focusable="false" value="false" />
+                <ui:VisualElement name="Logro3" class="subtitles" style="flex-grow: 0; height: 30%; width: 90%; background-image: none; flex-shrink: 0; align-items: flex-start; display: flex;">
+                    <ui:Toggle label="Derrota al jefe" name="Jefe" picking-mode="Ignore" focusable="false" value="true" />
                     <ui:Label tabindex="-1" text="En el tercer escenario derrota al jefe final." parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 33px; color: rgb(41, 192, 255);" />
                 </ui:VisualElement>
             </ui:VisualElement>
