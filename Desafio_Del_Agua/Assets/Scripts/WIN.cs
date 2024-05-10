@@ -9,10 +9,11 @@ public class WIN : MonoBehaviour
     public bool lost = false; // perdio
     public bool won = false; // gano
     float agua_actual = 0;
+    public int totalSobrevivientes = 0;
 
-   
-           
-    
+
+
+
 
     void Start()
     {
@@ -83,7 +84,8 @@ public class WIN : MonoBehaviour
         }
 
         float deathPercentage = (float)deadPlants / totalPlants * 100;
-        
+
+        totalSobrevivientes = 100 - deathPercentage;
 
         if (deathPercentage > 40 || agua_actual <= 1)
         {
