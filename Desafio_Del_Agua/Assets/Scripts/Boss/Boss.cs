@@ -7,7 +7,6 @@ public class Boss : MonoBehaviour
 {
     public int maxHealth = 100; 
     private int currentHealth;   
-    public bool isAlive = true;
 
     public Image healthBar; 
 
@@ -64,15 +63,5 @@ public class Boss : MonoBehaviour
 
         // Asegurarse de que la vida no sea negativa
         currentHealth = Mathf.Max(currentHealth, 0);
-
-        if (currentHealth <= 0) {
-            die();
-        }
-    }
-
-    public void die()
-    {
-        isAlive = false;
-        gameObject.SetActive(false);
     }
 }

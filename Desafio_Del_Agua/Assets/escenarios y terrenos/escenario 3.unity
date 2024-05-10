@@ -17054,15 +17054,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 498998ea9b4d0e148abca7d65f24d6aa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1941536929}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 498998ea9b4d0e148abca7d65f24d6aa, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1941536930}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 498998ea9b4d0e148abca7d65f24d6aa, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1941536931}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 498998ea9b4d0e148abca7d65f24d6aa, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1941536932}
   m_SourcePrefab: {fileID: 100100000, guid: 498998ea9b4d0e148abca7d65f24d6aa, type: 3}
 --- !u!1 &1309781127
 GameObject:
@@ -22376,13 +22367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a7cd02f99338b44b9f23a36fd8e4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
   sTargets: {fileID: 0}
-=======
-  sTargets: {fileID: 1667265217}
-  lost: 0
-  won: 0
->>>>>>> Stashed changes
 --- !u!4 &1682543647
 Transform:
   m_ObjectHideFlags: 0
@@ -23573,7 +23558,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  isAlive: 1
   healthBar: {fileID: 457134515}
   waypoints:
   - {fileID: 589252740}
@@ -26310,7 +26294,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941536923}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f35a3944efbaf74899d0e3f7e86a40b, type: 3}
   m_Name: 
@@ -26362,52 +26346,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToActivate: {fileID: 1746473953}
---- !u!114 &1941536930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941536923}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9b09a098be957d43bad6965fab5b162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  winScript: {fileID: 1682543646}
-  paso: 0
-  gameId: 0
---- !u!114 &1941536931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941536923}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b02d629f72f4284d913755c5e0fab02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sTargets: {fileID: 1667265217}
-  winScript: {fileID: 1682543646}
-  gameId: 0
-  paso: 0
---- !u!114 &1941536932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941536923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628d83b8be061374789eab486b015608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boss: {fileID: 1746473955}
-  gameId: 0
-  paso: 0
 --- !u!1 &1944846815
 GameObject:
   m_ObjectHideFlags: 0
