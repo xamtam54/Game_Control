@@ -85,7 +85,7 @@ public class WIN : MonoBehaviour
 
         float deathPercentage = (float)deadPlants / totalPlants * 100;
 
-        totalSobrevivientes = 100 - deathPercentage;
+        totalSobrevivientes = (int)(100f - deathPercentage);
 
         if (deathPercentage > 40 || agua_actual <= 1)
         {
