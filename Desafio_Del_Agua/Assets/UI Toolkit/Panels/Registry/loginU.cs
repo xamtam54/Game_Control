@@ -3,23 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Networking;
-using static loginU;
+
 
 
 public class loginU : MonoBehaviour
 {
     // Tomar datos de UI Toolkit
-    private TextField usernameField;
+    private UIDocument uIDocument;
+    public GameObject esteobjeto;
+    public UIDocument otroDocument;
+    private TextField usernameField; // para mostrar registro si el user la cago
     private TextField passwordField;
-
+    private Button _button1;
+    private Button _button2;
+    private string _username;
+    private string _password;
 
     void Start()
     {
-        // UIDocument uIDocument = GetComponent<UIDocument>();
-        // usernameField = uIDocument.rootVisualElement.Q<TextField>("UsernameField");
-        // passwordField = uIDocument.rootVisualElement.Q<TextField>("PasswordField");
-        Debug.Log("inicio");
-        StartCoroutine(AuthenticateUser("UsuarioReal", "12345678"));
+        uIDocument = GetComponent<UIDocument>(); // Asignar a la variable de clase
+        if (uIDocument != null)
+        {
+            // Debug.Log("El documento existe :D");
+            usernameField = uIDocument.rootVisualElement.Q<TextField>("Nombre_Usuario");
+            passwordField = uIDocument.rootVisualElement.Q<TextField>("User_Pasword");
+
+
+            // Mover el registro del callback del botón aquí
+            _button1 = uIDocument.rootVisualElement.Q<Button>("Login") as Button;
+            _button1.RegisterCallback<ClickEvent>(evt => Login());
+
+            _button2 = uIDocument.rootVisualElement.Q<Button>("Registro") as Button;
+            _button2.RegisterCallback<ClickEvent>(evt => IrRegistro());
+
+        }
+    }
+
+    public void IrRegistro()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Registro"); //carga el menu principal del juego
     }
 
     public string baseAPIUrl = "http://www.irrigationmanagementudec.somee.com/";
@@ -277,7 +299,7 @@ public class loginU : MonoBehaviour
         else
         {
             Debug.Log("No se encontraron datos guardados para la puntuación");
-        }
+        }
     }
     */
 }

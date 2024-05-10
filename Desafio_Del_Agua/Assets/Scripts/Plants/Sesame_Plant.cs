@@ -22,7 +22,7 @@ public class Sesame_Plant : MonoBehaviour
             Plants sesamePlant = plantInstance.GetComponent<Plants>();
             if (sesamePlant != null)
             {
-                sesamePlant.InitializePlant("Ajonjolí", "Sesamum indicum", 5.4f, 6.7f, 350f,1f, 1, 100f);
+                sesamePlant.InitializePlant("Ajonjolí", "Sesamum indicum", 5.4f, 6.7f, 20f, 10f, 1, 125f);
                 sesamePlant.gameObject.tag = plantTag;
                 plantInstance.layer = layerIndex;
             }

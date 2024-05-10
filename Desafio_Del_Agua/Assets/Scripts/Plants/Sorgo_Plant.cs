@@ -22,7 +22,7 @@ public class Sorgo_Plant : MonoBehaviour
             Plants sorgoPlant = plantInstance.GetComponent<Plants>();
             if (sorgoPlant != null)
             {
-                sorgoPlant.InitializePlant("Sorgo", "Sorghum", 6.2f, 7.8f, 400f,1f, 1, 100f);
+                sorgoPlant.InitializePlant("Sorgo", "Sorghum", 6.2f, 7.8f, 20f, 10f, 1, 125f);
                 sorgoPlant.gameObject.tag = plantTag;
                 plantInstance.layer = layerIndex;
             }
