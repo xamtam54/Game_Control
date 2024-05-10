@@ -16,13 +16,13 @@ public class Boss : MonoBehaviour
 
     private int currentWaypointIndex = 0;  
 
-    void Start()
+    void Start() 
     {
         currentHealth = maxHealth;
 
         if (waypoints.Length == 0)
         {
-            Debug.LogError("No se han definido waypoints para el movimiento del jefe.");
+            Debug.LogError("No se ha n definido waypoints para el movimiento del jefe.");
             enabled = false; 
         }
     }

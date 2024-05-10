@@ -6,9 +6,9 @@ public class WIN : MonoBehaviour
 {
     public S_Targets sTargets;
     private bool lost = false; // perdio
-    private bool won = false; // gano
+    public bool won = false; // gano
 
-    void Start()
+    void Start() 
     {
         sTargets = FindObjectOfType<S_Targets>();
         
