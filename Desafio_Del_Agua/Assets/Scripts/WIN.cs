@@ -61,7 +61,7 @@ public class WIN : MonoBehaviour
         float deathPercentage = (float)deadPlants / totalPlants * 100;
 
         // Calcular el total de plantas que sobrevivieron
-        totalSobrevivientes = totalPlants - deadPlants;
+        totalSobrevivientes = 100 - deathPercentage;
 
         // Si el porcentaje de plantas muertas es mayor que 40%, el jugador pierde
         if (deathPercentage > 40)
