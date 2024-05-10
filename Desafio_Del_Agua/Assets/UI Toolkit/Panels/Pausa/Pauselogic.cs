@@ -41,6 +41,7 @@ public class Pauselogic : MonoBehaviour
         Debug.Log("Se Reanudó");
         uIdocument.enabled = false;
         Time.timeScale = 1f; // Vuelve al tiempo normal
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         isPaused = !isPaused;
     }
 
@@ -50,6 +51,7 @@ public class Pauselogic : MonoBehaviour
         uIdocument.enabled = true;
         Time.timeScale = 0f; // Pausa el tiempo en el juego
         Boton();
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
         isPaused = !isPaused;
     }
 

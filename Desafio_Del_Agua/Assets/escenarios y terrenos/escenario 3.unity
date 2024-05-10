@@ -11264,6 +11264,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   runSpeed: 14
+--- !u!114 &851100318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851100313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f5ec77dc4bed84e878f43b3b8b7bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
+  stun: 0
+--- !u!114 &851100319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851100313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4cef8c4f90c9c40aab2cdcd5ff0e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 2
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  damagePerHit: 1
+  attackCooldown: 1
 --- !u!1 &856584762
 GameObject:
   m_ObjectHideFlags: 0
@@ -11681,7 +11713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &879516129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15218,7 +15250,7 @@ MonoBehaviour:
   targets: []
   persecutionkRange: 20
   persecutionkRangeForPlayer: 19
-  sTargets: {fileID: 0}
+  sTargets: {fileID: 1667265217}
   attackRange: 5
   attackDamageRate: 10
 --- !u!195 &1149257260
@@ -17331,7 +17363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1319083456
 Transform:
   m_ObjectHideFlags: 0
@@ -17987,6 +18019,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28af46745084f1445ae765784fe95a75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 851100315}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28af46745084f1445ae765784fe95a75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 851100318}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28af46745084f1445ae765784fe95a75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 851100319}
   m_SourcePrefab: {fileID: 100100000, guid: 28af46745084f1445ae765784fe95a75, type: 3}
 --- !u!1 &1345279678
 GameObject:
@@ -25469,7 +25507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96572429010e50e418c16799c2b0c7ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 851100314}
   targets: []
   persecutionkRange: 20
   persecutionkRangeForPlayer: 19
