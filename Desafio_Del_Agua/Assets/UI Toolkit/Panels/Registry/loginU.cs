@@ -24,15 +24,15 @@ public class loginU : MonoBehaviour
         uIDocument = GetComponent<UIDocument>(); // Asignar a la variable de clase
         if (uIDocument != null)
         {
-           // Debug.Log("El documento existe :D");
+            // Debug.Log("El documento existe :D");
             usernameField = uIDocument.rootVisualElement.Q<TextField>("Nombre_Usuario");
             passwordField = uIDocument.rootVisualElement.Q<TextField>("User_Pasword");
-            
+
 
             // Mover el registro del callback del botón aquí
             _button1 = uIDocument.rootVisualElement.Q<Button>("Login") as Button;
             _button1.RegisterCallback<ClickEvent>(evt => Login());
-            
+
             _button2 = uIDocument.rootVisualElement.Q<Button>("Registro") as Button;
             _button2.RegisterCallback<ClickEvent>(evt => IrRegistro());
 
@@ -102,7 +102,6 @@ public class loginU : MonoBehaviour
                     {
                         Debug.Log("Usuario autenticado correctamente. ID del usuario: " + userId);
                         StartCoroutine(GetGamesAndScores(userId));
-                        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu"); //carga el menu principal del juego
                     }
                     else
                     {
@@ -160,7 +159,6 @@ public class loginU : MonoBehaviour
     //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public List<int> gameIds = new List<int>();
     public List<int> scoreId = new List<int>();
-    private bool scoreRequested = false;
 
     private IEnumerator GetGame(int gameId)
     {
@@ -185,26 +183,18 @@ public class loginU : MonoBehaviour
                     Debug.Log("Detalles del juego con ID " + gameId + ": " + jsonResponse);
 
                     gameIds.Add(gameId);
-
+                    scoreId.Add(gameDetails.score_Id);
                     for (int i = 0; i < gameIds.Count; i++)
                     {
                         PlayerPrefs.SetInt("GameId_Escena" + (i + 1), gameIds[i]);
-                        /*
-                        if( i == 2){
-
-                             ImprimirDatosGuardados();
-
-                        }
-                        */
+                        PlayerPrefs.SetInt("score_Id" + (i + 1), scoreId[i]);
                     }
 
-                    if (!scoreRequested)
-                    {
-                        scoreRequested = true;
-                        scoreId.Add(gameDetails.score_Id);
-                        PlayerPrefs.SetInt("score_Id", gameDetails.score_Id);
-                        yield return GetScore(gameDetails.score_Id);
-                    }
+
+
+
+                    yield return GetScore(gameDetails.score_Id);
+
                 }
                 else
                 {
@@ -309,7 +299,7 @@ public class loginU : MonoBehaviour
         else
         {
             Debug.Log("No se encontraron datos guardados para la puntuación");
-        }
-    }
-    */
+        }
+    }
+    */
 }

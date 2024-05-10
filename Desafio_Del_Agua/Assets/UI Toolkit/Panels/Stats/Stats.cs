@@ -28,7 +28,7 @@ public class Stats : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (PlayerPref.GetInt("achivementE1", 0) = 1)
         {
@@ -42,5 +42,5 @@ public class Stats : MonoBehaviour
         {
             visualElement3.style.display = DisplayStyle.Flex;
         }
-    }
+    }*/
 }
