@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/Mainmenubuttons.uss?fileID=7433441132597879392&amp;guid=7a6cccc9c7159c14391246ac4d74e413&amp;type=3#Mainmenubuttons" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/Fin.jpg?fileID=2800000&amp;guid=bd5b9b7ec5773744aa7aa9819adfdf6d&amp;type=3#Fin&quot;);">
+        <ui:VisualElement name="Background2" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/escenarios%20y%20terrenos/LowPolyWater_Pack/Textures/Foam.tga?fileID=2800000&amp;guid=5fbcffe9c2077f04186883cb39275fcc&amp;type=3#Foam&quot;); -unity-background-image-tint-color: rgba(144, 144, 144, 0.43);">
+            <ui:Label tabindex="-1" text="GRACIAS POR JUGAR" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Grax" style="position: absolute; width: 50%; height: 20%; font-size: 127px; -unity-font-style: bold; top: 434px; left: 444px; -unity-text-align: upper-center; color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Button text="Volver al menu principal" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Menu" class="button-main-title" style="position: absolute; top: 793px; left: 608px; justify-content: center; align-items: center; height: 96px; font-size: 49px;" />
+</ui:UXML>

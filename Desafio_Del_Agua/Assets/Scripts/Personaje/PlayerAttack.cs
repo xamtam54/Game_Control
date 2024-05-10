@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange = 2f; 
     public LayerMask attackLayer;  
     public int damagePerHit = 1;
-    public float attackCooldown = 2f;
+    public float attackCooldown = 1f;
     private bool quieto;
 
     private float lastAttackTime;
