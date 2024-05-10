@@ -19,10 +19,10 @@ public class registroU : MonoBehaviour
         uIDocument = GetComponent<UIDocument>(); // Asignar a la variable de clase
         if (uIDocument != null)
         {
-           // Debug.Log("El documento existe :D");
+            // Debug.Log("El documento existe :D");
             usernameField = uIDocument.rootVisualElement.Q<TextField>("UsernameField");
             passwordField = uIDocument.rootVisualElement.Q<TextField>("PasswordField");
-            
+
 
             // Mover el registro del callback del botón aquí
             _button1 = uIDocument.rootVisualElement.Q<Button>("Registro") as Button;
@@ -33,7 +33,7 @@ public class registroU : MonoBehaviour
         }
     }
 
-   
+
     public void Inicio()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Log in"); //carga el menu principal del juego

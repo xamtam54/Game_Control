@@ -23,7 +23,7 @@ public class Rice_Plant : MonoBehaviour
             if (ricePlant != null)
             {
                 
-                ricePlant.InitializePlant("Arroz", "Oryza sativa", 5.5f, 7.0f, 20f, 1f, 1, 125f);
+                ricePlant.InitializePlant("Arroz", "Oryza sativa", 5.5f, 7.0f, 20f, 10f, 1, 125f);
                 ricePlant.gameObject.tag = plantTag;
                 plantInstance.layer = layerIndex;
             }
