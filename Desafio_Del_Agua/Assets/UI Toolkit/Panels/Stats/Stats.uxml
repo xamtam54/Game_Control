@@ -1,0 +1,29 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/OptionsStyle.uss?fileID=7433441132597879392&amp;guid=d5d6e79d074881a42a0224e21c7a9b86&amp;type=3#OptionsStyle" />
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/Tama%C3%B1ovisualelements.uss?fileID=7433441132597879392&amp;guid=60c92d91d884ffa48bbb32de58c2b8f1&amp;type=3#Tamañovisualelements" />
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/Stats.uss?fileID=7433441132597879392&amp;guid=a0465190cba273045be91a8aac6063ba&amp;type=3#Stats" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Bacgrounds/Fondo.png?fileID=2800000&amp;guid=2b94f3b7599cdff46bf83d0b31952a0c&amp;type=3#Fondo&quot;); -unity-background-image-tint-color: rgb(132, 132, 132); align-items: center; justify-content: flex-start; align-self: auto;">
+        <ui:VisualElement name="Title" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 27%; align-items: center; justify-content: center;">
+            <ui:Label tabindex="-1" text="LOGROS" parse-escape-sequences="true" display-tooltip-when-elided="true" class="subtitles" style="color: rgb(41, 119, 255); background-image: url(&quot;project://database/Assets/escenarios%20y%20terrenos/LowPolyWater_Pack/Textures/Foam.tga?fileID=2800000&amp;guid=5fbcffe9c2077f04186883cb39275fcc&amp;type=3#Foam&quot;); -unity-background-image-tint-color: rgb(56, 56, 56); font-size: 60px;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-between; align-items: stretch;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 4%; flex-shrink: 0; height: 100%;" />
+            <ui:VisualElement name="Body" style="flex-grow: 1; align-items: center; justify-content: flex-start; flex-direction: column; width: 1280px; background-image: url(&quot;project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/06-1024x1024.jpeg?fileID=2800000&amp;guid=dfd8f295caa952d4397569503b2cf5bb&amp;type=3#06-1024x1024&quot;); -unity-background-image-tint-color: rgba(53, 53, 53, 0.67); border-top-left-radius: 161px; border-top-right-radius: 161px; border-bottom-right-radius: 161px; border-bottom-left-radius: 161px;">
+                <ui:VisualElement name="Logro1" class="subtitles" style="flex-grow: 0; width: 90%; height: 30%; background-image: none; flex-shrink: 0; align-items: flex-start; -unity-background-image-tint-color: rgb(157, 157, 157); display: flex;">
+                    <ui:Toggle label="Completar el primer nivel " name="Nivel" focusable="false" picking-mode="Ignore" value="true" style="-unity-background-image-tint-color: rgb(255, 255, 255); -unity-background-scale-mode: stretch-to-fill;" />
+                    <ui:Label tabindex="-1" text="Completa el primer nivel" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 33px; color: rgb(41, 192, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Logro2" class="subtitles" style="flex-grow: 0; width: 90%; height: 30%; background-image: none; flex-shrink: 0; align-items: flex-start; display: flex;">
+                    <ui:Toggle label="Salvacion de Cultivos " name="Cultivos" focusable="false" picking-mode="Ignore" value="true" class="unity-toggle_checkmark" style="overflow: visible;" />
+                    <ui:Label tabindex="-1" text="Salva al menos el 60% de los cultivos en un nivel." parse-escape-sequences="true" display-tooltip-when-elided="true" picking-mode="Ignore" focusable="false" style="-unity-font-style: bold; font-size: 33px; color: rgb(41, 192, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Logro3" class="subtitles" style="flex-grow: 0; height: 30%; width: 90%; background-image: none; flex-shrink: 0; align-items: flex-start; display: flex;">
+                    <ui:Toggle label="Derrota al jefe" name="Jefe" picking-mode="Ignore" focusable="false" value="true" />
+                    <ui:Label tabindex="-1" text="En el tercer escenario derrota al jefe final." parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 33px; color: rgb(41, 192, 255);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 0; width: 14%; flex-shrink: 0; justify-content: space-around; align-items: auto; align-self: auto;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; height: 12%; flex-shrink: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,6 @@
+.toggle {
+    visibility: visible;
+    display: flex;
+    -unity-background-image-tint-color: rgb(245, 245, 245);
+    background-image: url("project://database/Assets/ASSETS/TEXTURAS%20AMBIENTE/06-1024x1024.jpeg?fileID=2800000&guid=dfd8f295caa952d4397569503b2cf5bb&type=3#06-1024x1024");
+}

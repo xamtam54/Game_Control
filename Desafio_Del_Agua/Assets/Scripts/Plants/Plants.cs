@@ -16,7 +16,7 @@ public class Plants : MonoBehaviour
 
     public float Actual_Water;                      //agua esta se debe restar en el tiempo
 
-    public float max_Health = 100f;                 // vida 
+    public float max_Health = 1000f;                 // vida 
     public float currentHealth;                     // vida actual 
 
     public float lifespan;                          // cuantos dias tarda 
@@ -34,7 +34,7 @@ public class Plants : MonoBehaviour
     //logica de progreso vida, etc de la planta
     private float waterDecreaseRate = 0.5f; // Tasa de disminución de agua por segundo                  //40 segundos
     private float lifeDecreaseRate = 1.42f; // Tasa de disminución de vida por segundo                  70 segundos
-    private float progressIncreaseRate = 0.5f; // Tasa de aumento de progreso por segundo            5 mins
+    private float progressIncreaseRate = 0.005f; // Tasa de aumento de progreso por segundo            5 mins
 
     //public float currentWater = 1.0f; // Agua actual de la planta (0 a 1)
     //public float currentLife = 1.0f; // Vida actual de la planta (0 a 1)

@@ -7,33 +7,43 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange = 2f; 
     public LayerMask attackLayer;  
     public int damagePerHit = 1;
-    public float attackCooldown = 2f;
+    public float attackCooldown = 1f;
+    private bool quieto;
 
     private float lastAttackTime;
-
+    void Start()
+    {
+        quieto = true;
+    }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && Time.time - lastAttackTime >= attackCooldown)
-        {
-            Attack();
+        if (Input.GetKeyDown(KeyCode.E))
+        { quieto = !quieto; }
 
-            lastAttackTime = Time.time;
+        if (!quieto)
+        {
+            if (Input.GetMouseButtonDown(0) && Time.time - lastAttackTime >= attackCooldown)
+            {
+                Attack();
+
+                lastAttackTime = Time.time;
+            }
         }
     }
 
     void Attack()
-    {
-        RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, attackRange, attackLayer);
+    {     
+            RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, attackRange, attackLayer);
 
-        foreach (RaycastHit hit in hits)
-        {
-            WeaverLife weaverLife = hit.collider.GetComponent<WeaverLife>();
-
-            if (weaverLife != null)
+            foreach (RaycastHit hit in hits)
             {
-                weaverLife.ReceiveDamage(damagePerHit);
-            }
-        }
+                WeaverLife weaverLife = hit.collider.GetComponent<WeaverLife>();
+
+                if (weaverLife != null)
+                {
+                    weaverLife.ReceiveDamage(damagePerHit);
+                }
+            }        
     }
 
     void OnDrawGizmosSelected()

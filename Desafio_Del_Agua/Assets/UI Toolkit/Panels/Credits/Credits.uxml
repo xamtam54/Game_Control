@@ -10,7 +10,7 @@
                     <ui:Label tabindex="-1" text="Nikolai Torres" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombreNK" class="subtitles" />
                     <ui:VisualElement name="DatosNk" class="Datosinterior" style="flex-grow: 0; height: 90%; justify-content: center; align-items: center;">
                         <ui:VisualElement name="InfoNk" class="Infotext" style="flex-grow: 0; height: 75%; width: 90%;">
-                            <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet,&#10;consectetur adipiscing&#10;elit. Suspendisse in mi sed&#10;velit lacinia vulputate.&#10;Vestibulum dignissim mollis&#10;ipsum sed pellentesque." parse-escape-sequences="true" display-tooltip-when-elided="true" name="textnk" />
+                            <ui:Label tabindex="-1" text="Diseño del sistema de riego.&#10;Logica y codigo de menus e&#10; interfaces.&#10;Apartado visual de las interfaces.&#10;Implementacion de oleadas en &#10;los niveles.&#10;Logica e implementacion de&#10;camaras.&#10;&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="textnk" style="-unity-font-style: bold;" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
@@ -18,7 +18,7 @@
                     <ui:Label tabindex="-1" text="Luis Beltran" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombreLK" class="subtitles" />
                     <ui:VisualElement name="DatosLK" class="Datosinterior" style="flex-grow: 0; height: 90%;">
                         <ui:VisualElement name="InfoLk" class="Infotext" style="flex-grow: 0; height: 75%; width: 90%;">
-                            <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet,&#10;consectetur adipiscing&#10;elit. Suspendisse in mi sed&#10;velit lacinia vulputate.&#10;Vestibulum dignissim mollis&#10;ipsum sed pellentesque." parse-escape-sequences="true" display-tooltip-when-elided="true" name="textlk" />
+                            <ui:Label tabindex="-1" text="Modelos de elementos extra.&#10;Modelo del jugador.&#10;Modelo de los dispositivos.&#10;Diseño y creacion de escenarios.&#10;Animaciones de personaje.&#10;Animaciones de enemigos.&#10;Movimiento Jugador." parse-escape-sequences="true" display-tooltip-when-elided="true" name="textlk" style="-unity-font-style: bold;" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
@@ -26,28 +26,28 @@
                     <ui:Label tabindex="-1" text="Carlos Salazar" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombreCS" class="subtitles" />
                     <ui:VisualElement name="DatosCS" class="Datosinterior" style="flex-grow: 0; height: 90%;">
                         <ui:VisualElement name="InfoCS" class="Infotext" style="flex-grow: 0; height: 75%; width: 90%;">
-                            <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet,&#10;consectetur adipiscing&#10;elit. Suspendisse in mi sed&#10;velit lacinia vulputate.&#10;Vestibulum dignissim mollis&#10;ipsum sed pellentesque." parse-escape-sequences="true" display-tooltip-when-elided="true" name="textcs" />
+                            <ui:Label tabindex="-1" text="Logica Sistema de riego.&#10;Logica de enemigos.&#10;Logica de plantas.&#10;Logica del jefe.&#10;Back end.&#10;Elementos visuales del&#10; sistemade riego.&#10;&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="textcs" style="-unity-font-style: bold;" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="Musica" class="grow" style="flex-grow: 1;">
-                    <ui:Label tabindex="-1" text="Musica" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombreMs" class="subtitles" />
+                    <ui:Label tabindex="-1" text="Juan Romero" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombreMs" class="subtitles" />
                     <ui:VisualElement name="DatosMS" class="Datosinterior" style="flex-grow: 0; height: 90%;">
                         <ui:VisualElement name="InfoMS" class="Infotext" style="flex-grow: 0; height: 75%; width: 90%;">
-                            <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet,&#10;consectetur adipiscing&#10;elit. Suspendisse in mi sed&#10;velit lacinia vulputate.&#10;Vestibulum dignissim mollis&#10;ipsum sed pellentesque." parse-escape-sequences="true" display-tooltip-when-elided="true" name="textms" />
+                            <ui:Label tabindex="-1" text="OST del juego" parse-escape-sequences="true" display-tooltip-when-elided="true" name="textms" style="-unity-font-style: bold;" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="Pf" class="grow" style="flex-grow: 1;">
-                    <ui:Label tabindex="-1" text="Profesor" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombrePF" class="subtitles" />
+                    <ui:Label tabindex="-1" text="Profesores" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NombrePF" class="subtitles" />
                     <ui:VisualElement name="DatosPF" class="Datosinterior" style="flex-grow: 0; height: 90%; visibility: visible;">
                         <ui:VisualElement name="InfoPF" class="Infotext" style="flex-grow: 0; height: 75%; width: 90%;">
-                            <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet,&#10;consectetur adipiscing&#10;elit. Suspendisse in mi sed&#10;velit lacinia vulputate.&#10;Vestibulum dignissim mollis&#10;ipsum sed pellentesque." parse-escape-sequences="true" display-tooltip-when-elided="true" name="textpf" />
+                            <ui:Label tabindex="-1" text="Edison Cañon :&#10; Software seguro y de calidad&#10;&#10;Mauricio Cardozo &#10;Ingenieria de software II" parse-escape-sequences="true" display-tooltip-when-elided="true" name="textpf" style="-unity-font-style: bold; font-size: 21px;" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:Button text="Volver a menu principal" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Menu" class="button-options" style="width: 560px; height: 10%; position: absolute; left: 676px; top: 948px; background-color: rgb(97, 98, 111); border-top-left-radius: 45px; border-top-right-radius: 45px; border-bottom-right-radius: 45px; border-bottom-left-radius: 45px; border-left-color: rgb(183, 183, 183); border-right-color: rgb(183, 183, 183); border-top-color: rgb(183, 183, 183); border-bottom-color: rgb(183, 183, 183); -unity-background-image-tint-color: rgb(255, 255, 255); font-size: 49px; color: rgb(76, 239, 255);" />
+        <ui:Button text="Volver a menu principal" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Menu" class="button-options" style="width: 560px; height: 10%; position: absolute; left: 676px; top: 948px; background-color: rgb(97, 98, 111); border-top-left-radius: 45px; border-top-right-radius: 45px; border-bottom-right-radius: 45px; border-bottom-left-radius: 45px; border-left-color: rgb(183, 183, 183); border-right-color: rgb(183, 183, 183); border-top-color: rgb(183, 183, 183); border-bottom-color: rgb(183, 183, 183); -unity-background-image-tint-color: rgb(255, 255, 255); font-size: 40px; color: rgb(76, 239, 255);" />
     </ui:VisualElement>
 </ui:UXML>
