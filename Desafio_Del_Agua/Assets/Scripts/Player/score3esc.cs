@@ -40,7 +40,7 @@ public class score3esc : MonoBehaviour
             else
             {
                 Debug.Log("Juego actualizado correctamente");
-                PlayerPrefs.SetString("scoreE3", scoreId.ToString() + "%");
+                PlayerPrefs.SetString("scoreE3", total.ToString() + "%");
             }
         }
         paso = true;

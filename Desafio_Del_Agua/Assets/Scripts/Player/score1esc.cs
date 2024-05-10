@@ -40,7 +40,7 @@ public class score1esc : MonoBehaviour
             else
             {
                 Debug.Log("Juego actualizado correctamente");
-                PlayerPrefs.SetString("scoreE1", scoreId.ToString() + "%");
+                PlayerPrefs.SetString("scoreE1", total.ToString() + "%");
 
             }
         }
