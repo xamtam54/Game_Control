@@ -32,9 +32,7 @@ public class PlayerAttack : MonoBehaviour
     }
 
     void Attack()
-    {
-        if (!quieto)
-        {
+    {     
             RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, attackRange, attackLayer);
 
             foreach (RaycastHit hit in hits)
@@ -45,8 +43,7 @@ public class PlayerAttack : MonoBehaviour
                 {
                     weaverLife.ReceiveDamage(damagePerHit);
                 }
-            }
-        }
+            }        
     }
 
     void OnDrawGizmosSelected()
