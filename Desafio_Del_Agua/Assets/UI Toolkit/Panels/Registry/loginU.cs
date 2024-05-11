@@ -102,6 +102,8 @@ public class loginU : MonoBehaviour
                     {
                         Debug.Log("Usuario autenticado correctamente. ID del usuario: " + userId);
                         StartCoroutine(GetGamesAndScores(userId));
+                        IrAMenu(); //carga el menu principal del juego
+
                     }
                     else
                     {
@@ -118,6 +120,11 @@ public class loginU : MonoBehaviour
 
 
     //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    private void IrAMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu"); //carga el menu principal del juego
+    }
+
 
     private IEnumerator GetGamesAndScores(int userId)
     {
