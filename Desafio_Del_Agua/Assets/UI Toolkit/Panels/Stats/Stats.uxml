@@ -24,6 +24,9 @@
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 0; width: 14%; flex-shrink: 0; justify-content: space-around; align-items: auto; align-self: auto;" />
         </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 0; height: 12%; flex-shrink: 0;" />
+        <ui:VisualElement style="flex-grow: 0; height: 12%; flex-shrink: 0; width: 100%; align-items: center; flex-direction: row; justify-content: center;">
+            <ui:Button text="Volver a Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Menu" class="button" style="width: 25%;" />
+            <ui:Button text="Progreso" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Progreso" class="button" style="width: 25%;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

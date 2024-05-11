@@ -11,11 +11,13 @@ public class MiCodigo : MonoBehaviour
     private Button _button3;
     private Button _button4;
     private Button _button5;
-   //--------------------------------------------------
+    private Button _button6;
+
+    //--------------------------------------------------
 
 
-    
-   //------------------------------------------------
+
+    //------------------------------------------------
     private void Awake()
     {
         _document = GetComponent<UIDocument>();
@@ -35,6 +37,9 @@ public class MiCodigo : MonoBehaviour
         _button5 = _document.rootVisualElement.Q<Button>("exit") as Button;
         _button5.RegisterCallback<ClickEvent>(Exit);
 
+        _button6 = _document.rootVisualElement.Q<Button>("Stats") as Button;
+        _button6.RegisterCallback<ClickEvent>(Estadisticas);
+
     }
     private void OnDisable()
     {
@@ -43,6 +48,7 @@ public class MiCodigo : MonoBehaviour
         _button3.UnregisterCallback<ClickEvent>(OnTutorialClick);
         _button4.UnregisterCallback<ClickEvent>(OnCreditsClick);
         _button5.UnregisterCallback<ClickEvent>(Exit);
+        _button6.UnregisterCallback<ClickEvent>(Estadisticas);
     }
     private void OnPlayGameClick(ClickEvent evt)
     {
@@ -71,5 +77,10 @@ public class MiCodigo : MonoBehaviour
     public void Exit(ClickEvent evt)
     {
         Application.Quit();
+    }
+
+    private void Estadisticas(ClickEvent evt)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Progreso");
     }
 }

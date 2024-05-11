@@ -6,6 +6,7 @@
             <ui:Label tabindex="-1" text="Plaga en la granja" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="label-main-title" style="width: 440px; flex-grow: initial; flex-wrap: wrap; color: rgb(49, 228, 255);" />
             <ui:Button text="Jugar" parse-escape-sequences="true" display-tooltip-when-elided="true" name="play" class="button-main-title" />
             <ui:Button text="Opciones" parse-escape-sequences="true" display-tooltip-when-elided="true" name="options" class="button-main-title" />
+            <ui:Button text="Estadisticas y logros" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Stats" class="button-main-title" style="font-size: 28px;" />
             <ui:Button text="Tutorial" parse-escape-sequences="true" display-tooltip-when-elided="true" name="tutorial" class="button-main-title" />
             <ui:Button text="Creditos" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Credits" class="button-main-title" />
             <ui:Button text="Salir" parse-escape-sequences="true" display-tooltip-when-elided="true" name="exit" class="button-main-title" />

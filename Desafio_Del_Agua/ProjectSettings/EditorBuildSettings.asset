@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: bfab8d1241f68a048a40db20eda7f7cd
   - enabled: 1
+    path: Assets/Scenes/Stats.unity
+    guid: b53489f54a595bf48a400499b53f3214
+  - enabled: 1
+    path: Assets/Scenes/Progreso.unity
+    guid: cc429a1afbcd02447869c44aa7fc7f4e
+  - enabled: 1
     path: Assets/escenarios y terrenos/escenario 1.unity
     guid: cce4d771508a44641b1c538d233057b1
   - enabled: 1
