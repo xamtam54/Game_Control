@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 1026752107}
   - component: {fileID: 1026752106}
   - component: {fileID: 1026752108}
+  - component: {fileID: 1026752110}
+  - component: {fileID: 1026752109}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -184,10 +186,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feab0bca78277764b9e3af823db942ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Uno: 
-  Options: 
-  Tutorial: 
-  Credits: 
+--- !u!114 &1026752109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026752105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d1fb6f5baf857742b5ecd528dec57ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAPIUrl: http://www.irrigationmanagementudec.somee.com/
+--- !u!114 &1026752110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026752105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da9b00f28edafc4496526986c81cb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAPIUrl: http://www.irrigationmanagementudec.somee.com/
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

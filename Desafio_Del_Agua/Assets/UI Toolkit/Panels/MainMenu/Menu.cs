@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 
 public class MiCodigo : MonoBehaviour
 {
+    
+
     private UIDocument _document;
     private Button _button1;
     private Button _button2;
@@ -13,6 +15,9 @@ public class MiCodigo : MonoBehaviour
     private Button _button5;
     private Button _button6;
 
+
+    private btton_Score _scoreScript;
+    private btton_Achievements _achievementsScript;
     //--------------------------------------------------
 
 
@@ -40,7 +45,13 @@ public class MiCodigo : MonoBehaviour
         _button6 = _document.rootVisualElement.Q<Button>("Stats") as Button;
         _button6.RegisterCallback<ClickEvent>(Estadisticas);
 
+        _scoreScript = GetComponent<btton_Score>();
+        _achievementsScript = GetComponent<btton_Achievements>();
+
     }
+
+    
+
     private void OnDisable()
     {
         _button1.UnregisterCallback<ClickEvent>(OnPlayGameClick);
@@ -81,6 +92,8 @@ public class MiCodigo : MonoBehaviour
 
     private void Estadisticas(ClickEvent evt)
     {
+        StartCoroutine(_scoreScript.GetScores());
+        StartCoroutine(_achievementsScript.GetAchivements());
         UnityEngine.SceneManagement.SceneManager.LoadScene("Progreso");
     }
 }

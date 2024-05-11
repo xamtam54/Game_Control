@@ -7,7 +7,7 @@ public class btton_Score : MonoBehaviour
 {
     public string baseAPIUrl = "http://www.irrigationmanagementudec.somee.com/";
 
-    private IEnumerator GetScores()
+    public IEnumerator GetScores()
     {
         // Llamar a GetScore para cada scoreId
         yield return StartCoroutine(GetScore(PlayerPrefs.GetInt("score_Id1", 0), "scoreE1"));

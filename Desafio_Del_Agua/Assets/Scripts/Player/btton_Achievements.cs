@@ -7,7 +7,7 @@ public class btton_Achievements : MonoBehaviour
 {
     public string baseAPIUrl = "http://www.irrigationmanagementudec.somee.com/";
 
-    private IEnumerator GetScores()
+    public IEnumerator GetAchivements()
     {
         // Llamar a GetScore para cada scoreId
         yield return StartCoroutine(GetScore(PlayerPrefs.GetInt("GameId_Escena1", 0), "achievementE1"));
