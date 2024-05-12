@@ -94,7 +94,7 @@ ModelImporter:
       name: Armature|moving
       takeName: Armature|moving
       internalID: 205857726293629326
-      firstFrame: 0
+      firstFrame: 10.62
       lastFrame: 58
       wrapMode: 0
       orientationOffsetY: 0
@@ -102,7 +102,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
