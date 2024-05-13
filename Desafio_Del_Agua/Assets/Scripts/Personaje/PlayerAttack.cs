@@ -24,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && Time.time - lastAttackTime >= attackCooldown)
             {
+                Debug.Log("golpe");
                 Attack();
                 lastAttackTime = Time.time;
             }

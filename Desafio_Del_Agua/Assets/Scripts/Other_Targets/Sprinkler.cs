@@ -23,7 +23,7 @@ public class Sprinkler : MonoBehaviour
 
             if (sprinkler != null)
             {
-                sprinkler.CreateDevice("Aspersor", false, true, "Aspersor1", null, null, "Litros", null, 10f, 0f);
+                sprinkler.CreateDevice("Aspersor", false, true, "Aspersor1", null, null, "Litros", null, 1f, 0f);
                 sprinkler.gameObject.tag = plantTag;
                 sprinklerInstance.layer = layerIndex;
                 //Debug.Log("Estado del Tanque de agua: " + sprinkler.Status);
