@@ -157,7 +157,7 @@ public class NewBehaviourScript : MonoBehaviour
                 plant = target.GetComponent<Plants>();
                 if (plant != null)
                 {
-                    plant.UpdateHealth(1); 
+                    plant.UpdateHealth(3); 
                 }
                 break;
             case "Device":
@@ -165,7 +165,7 @@ public class NewBehaviourScript : MonoBehaviour
                 device = target.GetComponent<Devices>();
                 if (device != null)
                 {
-                    device.UpdateHealth(1); 
+                    device.UpdateHealth(3); 
                 }
                 break;
             default:
