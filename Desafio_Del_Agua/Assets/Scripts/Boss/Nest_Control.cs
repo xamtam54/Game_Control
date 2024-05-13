@@ -13,6 +13,7 @@ public class Nest_Control : MonoBehaviour
     public LayerMask bossLayer;        // Capa que incluye al jefe (aseg�rate de configurar las capas correctamente en Unity)
 
     private static int nest = 1;
+
     public int nest2;
 
     public float chanceToTurnFire = 0.4f;
@@ -22,6 +23,7 @@ public class Nest_Control : MonoBehaviour
     {
         nest2 = nest + nest2;
         nest += 1;
+        Debug.Log("nest: " + nest);
     }
     
     void Update()
@@ -35,6 +37,7 @@ public class Nest_Control : MonoBehaviour
             float randomValue = Random.value;
             Activate(randomValue);
             nest = nest2;
+            Debug.Log("nest: " + nest);
         }
     }
 

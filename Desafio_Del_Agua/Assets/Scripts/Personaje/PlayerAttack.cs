@@ -7,15 +7,13 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange = 2f;
     public LayerMask attackLayer;
     public int damagePerHit = 1;
-    public float attackCooldown = 1f;
+    public float attackCooldown = 2f;
     private bool quieto;
-    public Player playerComponent;
 
     private float lastAttackTime;
     void Start()
     {
         quieto = false;
-        playerComponent = GetComponent<Player>();
     }
     void Update()
     {
@@ -24,12 +22,10 @@ public class PlayerAttack : MonoBehaviour
 
         if (!quieto)
         {
-            if (Input.GetMouseButtonDown(0) /*&& Time.time - lastAttackTime >= attackCooldown*/)
+            if (Input.GetMouseButtonDown(0) && Time.time - lastAttackTime >= attackCooldown)
             {
                 Attack();
                 lastAttackTime = Time.time;
-                playerComponent.isAttacking = true;
-                Debug.Log("Ataque");
             }
         }
     }

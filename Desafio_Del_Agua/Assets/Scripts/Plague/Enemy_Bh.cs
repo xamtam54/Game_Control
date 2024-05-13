@@ -16,12 +16,13 @@ public class NewBehaviourScript : MonoBehaviour
 
     public float attackRange = 5f;
     public float attackDamageRate = 0.1f;
-
+    public float plageSpeed = 10f;
     bool isCooldown = false;
 
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent.speed = plageSpeed;
 
 
         S_plants();
