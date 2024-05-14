@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -9,10 +8,10 @@ public class btton_Achievements : MonoBehaviour
 
     public IEnumerator GetAchivements()
     {
-        // Llamar a GetScore para cada scoreId
+        // Llamar a GetScore para cada gameId
         yield return StartCoroutine(GetScore(PlayerPrefs.GetInt("GameId_Escena1", 0), "achievementE1"));
         yield return StartCoroutine(GetScore(PlayerPrefs.GetInt("GameId_Escena2", 0), "achievementE2"));
-        yield return StartCoroutine(GetScore(PlayerPrefs.GetInt("GameId_Escena3", 0), "achievementE2"));
+        yield return StartCoroutine(GetScore(PlayerPrefs.GetInt("GameId_Escena3", 0), "achievementE3"));
     }
 
     private IEnumerator GetScore(int gameId, string playerPrefsKey)
@@ -27,30 +26,38 @@ public class btton_Achievements : MonoBehaviour
 
             if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
             {
-                Debug.LogError("Error al obtener los detalles de la puntuación con ID " + gameId + ": " + request.error);
+                Debug.LogError("Error al obtener los detalles del juego con ID " + gameId + ": " + request.error);
             }
             else
             {
                 if (request.responseCode == 200)
                 {
-                    // Extraer el valor total de la respuesta
-                    int achievementId;
-                    if (int.TryParse(request.downloadHandler.text, out achievementId))
-                    {
-                        // Almacenar el valor total en PlayerPrefs
-                        PlayerPrefs.SetInt(playerPrefsKey, achievementId);
-                        Debug.Log("Valor total cargado para " + playerPrefsKey + ": " + achievementId);
-                    }
-                    else
-                    {
-                        Debug.LogError("Error al convertir el valor total a int.");
-                    }
+                    // Imprimir el texto de la respuesta para depuración
+                    Debug.Log("Respuesta recibida: " + request.downloadHandler.text);
+
+                    // Deserializar la respuesta JSON
+                    AchievementResponse achievementResponse = JsonUtility.FromJson<AchievementResponse>(request.downloadHandler.text);
+
+                    // Verificar si achievementId es null y asignar 0 en ese caso
+                    int achievementId = achievementResponse.achievementId.HasValue ? achievementResponse.achievementId.Value : 0;
+
+                    // Almacenar el valor en PlayerPrefs
+                    PlayerPrefs.SetInt(playerPrefsKey, achievementId);
+                    Debug.Log("Valor total cargado para " + playerPrefsKey + ": " + achievementId);
                 }
                 else
                 {
-                    Debug.LogError("Error al obtener los detalles de la puntuación con ID " + gameId + ": " + request.downloadHandler.text);
+                    Debug.LogError("Error al obtener los detalles del juego con ID " + gameId + ": " + request.downloadHandler.text);
                 }
             }
         }
     }
+
+    [System.Serializable]
+    public class AchievementResponse
+    {
+        public int? gameId;
+        public int? achievementId;
+    }
+
 }

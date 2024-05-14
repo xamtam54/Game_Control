@@ -7,6 +7,7 @@ public class score1esc : MonoBehaviour
 {
     public WIN winScript;
     public bool paso = false;
+    public bool pasito = false;
     public int scoreId;
 
     void Start()
@@ -16,18 +17,20 @@ public class score1esc : MonoBehaviour
 
     void Update()
     {
-        if (winScript != null && winScript.won && !paso)
+        if (winScript != null && winScript.won && !paso && !pasito)
         {
+            Debug.Log("gano score");
             StartCoroutine(EnviarUpdate(scoreId, winScript.totalSobrevivientes));
         }
     }
 
     IEnumerator EnviarUpdate(int scoreId, decimal total)
     {
+
         string url = "http://www.irrigationmanagementudec.somee.com/api/Score/" + scoreId;
 
         url += "?total=" + total;
-
+        Debug.Log("URL:" + url);
         using (UnityWebRequest request = UnityWebRequest.Put(url, ""))
         {
             request.downloadHandler = new DownloadHandlerBuffer();
@@ -41,9 +44,11 @@ public class score1esc : MonoBehaviour
             {
                 Debug.Log("Juego actualizado correctamente");
                 PlayerPrefs.SetString("scoreE1", total.ToString() + "%");
-
+                paso = true;
             }
+            pasito = true;
+
         }
-        paso = true;
+        
     }
 }

@@ -8,7 +8,7 @@ public class score2esc : MonoBehaviour
     public WIN winScript;
     public bool paso = false;
     public int scoreId;
-
+    public bool pasito = false;
     void Start()
     {
         scoreId = PlayerPrefs.GetInt("score_Id2", 0);
@@ -16,7 +16,7 @@ public class score2esc : MonoBehaviour
 
     void Update()
     {
-        if (winScript != null && winScript.won && !paso)
+        if (winScript != null && winScript.won && !paso && !pasito)
         {
             StartCoroutine(EnviarUpdate(scoreId, winScript.totalSobrevivientes));
         }
@@ -41,9 +41,11 @@ public class score2esc : MonoBehaviour
             {
                 Debug.Log("Juego actualizado correctamente");
                 PlayerPrefs.SetString("scoreE2", total.ToString() + "%");
-
+                paso = true;
             }
+            pasito = true;
+
         }
-        paso = true;
+
     }
 }

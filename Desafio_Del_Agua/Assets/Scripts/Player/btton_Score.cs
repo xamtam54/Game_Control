@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -33,18 +32,18 @@ public class btton_Score : MonoBehaviour
             {
                 if (request.responseCode == 200)
                 {
-                    // Extraer el valor total de la respuesta
-                    decimal total;
-                    if (decimal.TryParse(request.downloadHandler.text, out total))
-                    {
-                        // Almacenar el valor total en PlayerPrefs
-                        PlayerPrefs.SetString(playerPrefsKey, total.ToString() + "%");
-                        Debug.Log("Valor total cargado para " + playerPrefsKey + ": " + total);
-                    }
-                    else
-                    {
-                        Debug.LogError("Error al convertir el valor total a decimal.");
-                    }
+                    // Imprimir el texto de la respuesta para depuración
+                    Debug.Log("Respuesta recibida: " + request.downloadHandler.text);
+
+                    // Deserializar la respuesta JSON
+                    ScoreResponse scoreResponse = JsonUtility.FromJson<ScoreResponse>(request.downloadHandler.text);
+
+                    // Asignar valores predeterminados si son null
+                    float totalValue = scoreResponse.total.HasValue ? scoreResponse.total.Value : 0f;
+
+                    // Almacenar el valor total en PlayerPrefs
+                    PlayerPrefs.SetString(playerPrefsKey, totalValue.ToString("0.##") + "%");
+                    Debug.Log("Valor total cargado para " + playerPrefsKey + ": " + totalValue);
                 }
                 else
                 {
@@ -52,5 +51,15 @@ public class btton_Score : MonoBehaviour
                 }
             }
         }
+    }
+
+    [System.Serializable]
+    public class ScoreResponse
+    {
+        public int score_Id;
+        public float? success_Rate;
+        public float? water_Saved;
+        public float? total;
+        public bool isDeleted;
     }
 }

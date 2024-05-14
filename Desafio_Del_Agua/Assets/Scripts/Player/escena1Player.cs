@@ -8,7 +8,7 @@ public class escena1Player : MonoBehaviour
     public WIN winScript; 
     public bool paso = false;
     public int gameId;
-
+    public bool pasito = false;
     void Start() 
     {
         gameId = PlayerPrefs.GetInt("GameId_Escena1", 0);
@@ -16,8 +16,9 @@ public class escena1Player : MonoBehaviour
 
     void Update()
     {
-        if (winScript != null && winScript.won && !paso)
+        if (winScript != null && winScript.won && !paso && !pasito)
         {
+            Debug.Log("gano iachi");
             StartCoroutine(EnviarUpdate(gameId, 1));
         } 
     }
@@ -47,11 +48,12 @@ public class escena1Player : MonoBehaviour
             {
                 Debug.Log("Juego actualizado correctamente");
                 PlayerPrefs.SetInt("achievementE1", achievementId);
-
+                paso = true;
             }
+            pasito = true;
         }
 
         // Marcar como ya enviado
-        paso = true;
+        
     }
 }

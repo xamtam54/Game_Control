@@ -27061,6 +27061,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttacking: 0
   stun: 0
+--- !u!114 &315003931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315003922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b02d629f72f4284d913755c5e0fab02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sTargets: {fileID: 0}
+  winScript: {fileID: 452624073}
+  gameId: 0
+  paso: 0
+--- !u!114 &315003932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315003922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694ce2fd9c2f4cd4385700ed0d6a8c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winScript: {fileID: 452624073}
+  paso: 0
+  scoreId: 0
 --- !u!1001 &331055882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33468,7 +33499,14 @@ MonoBehaviour:
   sTargets: {fileID: 0}
   lost: 0
   won: 0
+  win: 0
   totalSobrevivientes: 0
+  score1: {fileID: 0}
+  score2: {fileID: 315003932}
+  score3: {fileID: 0}
+  ach1: {fileID: 0}
+  ach2: {fileID: 315003931}
+  ach3: {fileID: 0}
 --- !u!1001 &453728070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52185,6 +52223,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28af46745084f1445ae765784fe95a75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 315003929}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28af46745084f1445ae765784fe95a75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 315003931}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28af46745084f1445ae765784fe95a75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 315003932}
   m_SourcePrefab: {fileID: 100100000, guid: 28af46745084f1445ae765784fe95a75, type: 3}
 --- !u!1001 &875772849
 PrefabInstance:
@@ -61819,8 +61863,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.5764847, z: 1}
-  m_Center: {x: 0, y: 1.2882423, z: 0}
+  m_Size: {x: 1.59, y: 2.58, z: 1.75}
+  m_Center: {x: 0, y: 1.17, z: 0}
 --- !u!23 &1334141183
 MeshRenderer:
   m_ObjectHideFlags: 0

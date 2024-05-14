@@ -34,10 +34,7 @@ public class registroU : MonoBehaviour
     }
 
 
-    public void Inicio()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Log in"); //carga el menu principal del juego
-    }
+    
     public void registrar()
     {
         //Debug.Log("Entro al metodo registrar");
@@ -84,5 +81,9 @@ public class registroU : MonoBehaviour
                 Inicio();
             }
         }
+    }
+    public void Inicio()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Log in"); //carga el menu principal del juego
     }
 }

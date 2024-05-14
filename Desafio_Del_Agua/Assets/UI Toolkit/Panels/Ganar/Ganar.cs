@@ -1,3 +1,5 @@
+#nullable enable
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +10,9 @@ public class Ganar : MonoBehaviour
 {
     public UIDocument uIDocument;
     public WIN winScript; // Referencia al script WIN
+
+    
+
     private Button _button1;
     private Button _button2;
     private Button _button3;
@@ -20,19 +25,22 @@ public class Ganar : MonoBehaviour
 
     void Update()
     {
-        if (winScript != null && winScript.won)
+        if (winScript != null && winScript.win)
         {
             uIDocument.enabled = true;
             Time.timeScale = 0f;
             Reinicio_captura();
             Volver_Menu();
             Siguiente();
+            
         }
+
+        
     }
     public void Siguiente()
     {
         _button3 = uIDocument.rootVisualElement.Q<Button>("Siguiente") as Button;
-        _button3.RegisterCallback<ClickEvent>(evt => CapturarSiguiente());
+        _button3.RegisterCallback<ClickEvent>(evt => CapturarSiguiente()); 
     }
     public void CapturarSiguiente()
     {
@@ -52,7 +60,7 @@ public class Ganar : MonoBehaviour
     public void Reinicio_captura()
     {
         _button1 = uIDocument.rootVisualElement.Q<Button>("Reiniciar") as Button;
-        _button1.RegisterCallback<ClickEvent>(evt => Restart());
+        _button1.RegisterCallback<ClickEvent>(evt => Restart());            
     }
 
     public void Volver_Menu()

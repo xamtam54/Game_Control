@@ -8,7 +8,7 @@ public class escena3Player : MonoBehaviour
     public Boss boss;
     public int gameId;
     public bool paso = false;
-
+    public bool pasito = false;
     void Start()
     {
         gameId = PlayerPrefs.GetInt("GameId_Escena3", 0);
@@ -16,7 +16,7 @@ public class escena3Player : MonoBehaviour
 
     void Update()
     {
-        if (boss.isAlive == false && !paso)
+        if (boss.isAlive == false && !paso && !pasito)
         {
             StartCoroutine(EnviarUpdate(gameId, 3));
         } 
@@ -48,11 +48,12 @@ public class escena3Player : MonoBehaviour
             {
                 Debug.Log("Juego actualizado correctamente");
                 PlayerPrefs.SetInt("achievementE3", achievementId);
-
+                paso = true;
             }
+            pasito = true;
         }
 
-        paso = true;
+        
 
 
     }

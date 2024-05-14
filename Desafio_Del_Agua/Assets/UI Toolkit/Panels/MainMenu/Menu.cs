@@ -91,9 +91,18 @@ public class MiCodigo : MonoBehaviour
     }
 
     private void Estadisticas(ClickEvent evt)
-    {
-        StartCoroutine(_scoreScript.GetScores());
-        StartCoroutine(_achievementsScript.GetAchivements());
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Progreso");
-    }
+{
+    StartCoroutine(ExecuteAfterCoroutines());
+}
+
+private IEnumerator ExecuteAfterCoroutines()
+{
+    // Iniciar las dos corutinas y guardarlas como WaitUntil
+    yield return StartCoroutine(_scoreScript.GetScores());
+    yield return StartCoroutine(_achievementsScript.GetAchivements());
+
+    // Una vez que ambas corutinas han terminado, carga la escena
+    UnityEngine.SceneManagement.SceneManager.LoadScene("Progreso");
+}
+
 }

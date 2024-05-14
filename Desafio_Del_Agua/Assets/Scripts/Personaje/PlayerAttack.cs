@@ -22,9 +22,8 @@ public class PlayerAttack : MonoBehaviour
 
         if (!quieto)
         {
-            if (Input.GetMouseButtonDown(0) && Time.time - lastAttackTime >= attackCooldown)
+            if (Input.GetMouseButtonDown(0) /*&& Time.time - lastAttackTime >= attackCooldown*/)
             {
-                Debug.Log("golpe");
                 Attack();
                 lastAttackTime = Time.time;
             }

@@ -9,7 +9,7 @@ public class escene2Player : MonoBehaviour
     public WIN winScript;
     public int gameId;
     public bool paso = false;
-
+    public bool pasito = false;
     void Start()
     {
         gameId = PlayerPrefs.GetInt("GameId_Escena2", 0);
@@ -17,7 +17,7 @@ public class escene2Player : MonoBehaviour
 
     void Update()
     {
-        if (winScript != null && winScript.won && !paso)
+        if (winScript != null && winScript.won && !paso && !pasito)
         {
             float livePercentage = CalculateLivePercentage();
 
@@ -95,11 +95,13 @@ public class escene2Player : MonoBehaviour
             {
                 Debug.Log("Juego actualizado correctamente");
                 PlayerPrefs.SetInt("achievementE2", achievementId);
-
+                paso = true;
             }
+            pasito = true;
+
         }
 
-        paso = true;
+
 
 
     }

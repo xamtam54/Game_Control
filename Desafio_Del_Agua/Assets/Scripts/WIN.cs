@@ -8,11 +8,18 @@ public class WIN : MonoBehaviour
     public S_Targets sTargets;
     public bool lost = false; // perdio
     public bool won = false; // gano
+    public bool win = false; // para que los menus tengan en cuenta
     float agua_actual = 0;
     public int totalSobrevivientes = 0;
 
 
+    public score1esc? score1; // hace referencia a los scripts de victoria
+    public score2esc? score2;
+    public score3esc? score3;
 
+    public escena1Player? ach1; // referencia a los logros
+    public escene2Player? ach2;
+    public escena3Player? ach3;
 
 
     void Start()
@@ -36,7 +43,7 @@ public class WIN : MonoBehaviour
 
         if (Time.timeScale == 1f)
         {
-            if (sTargets != null && !lost && !won)
+            if (sTargets != null && !lost && !win)
             {
                 Devices torre = sTargets.Tower[0];
                 agua_actual = torre.Actual_Water;
@@ -124,10 +131,44 @@ public class WIN : MonoBehaviour
 
         if (allProgressComplete)
         {
-            Time.timeScale = 0f;
             won = true;
-            Debug.Log("El jugador ha ganado.");
-            UnityEngine.Cursor.lockState = CursorLockMode.None;
+
+            //(se ejecuta cuando se cargen los datos)
+            //Debug.Log("El jugador ha ganado.");
+            if (score1 != null && ach1 != null)
+            {
+                //Debug.Log("esc 1");
+                if (score1.paso)
+                {   
+                    Debug.Log("esc 1");
+                    Time.timeScale = 0f;
+                    UnityEngine.Cursor.lockState = CursorLockMode.None;
+                    win = true;
+                }
+            }
+            if (score2 != null && ach2 != null)
+            {
+                Debug.Log("esc 2");
+                if (score2.paso)
+                {
+                    Debug.Log("esc 2");
+                    Time.timeScale = 0f;
+                    UnityEngine.Cursor.lockState = CursorLockMode.None;
+                    win = true;
+                }
+            }
+            if (score3 != null)
+            {
+                Debug.Log("esc 3");
+                if (score3.paso && ach3.paso)
+                {
+                    Debug.Log("esc 3");
+                    Time.timeScale = 0f;
+                    UnityEngine.Cursor.lockState = CursorLockMode.None;
+                    win = true;
+                }
+            }
+            
         }
     }
 }
