@@ -1,6 +1,6 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Collections;
 
 public class btton_Score : MonoBehaviour
 {
@@ -32,16 +32,17 @@ public class btton_Score : MonoBehaviour
             {
                 if (request.responseCode == 200)
                 {
-                    // Imprimir el texto de la respuesta para depuración
-                    Debug.Log("Respuesta recibida: " + request.downloadHandler.text);
 
-                    // Deserializar la respuesta JSON
-                    ScoreResponse scoreResponse = JsonUtility.FromJson<ScoreResponse>(request.downloadHandler.text);
+                    // Preprocesar el JSON para reemplazar "null" por "0.0"
+                    string jsonResponse = PreprocessJson(request.downloadHandler.text);
+                    Debug.Log("Preprocessed JSON Response: " + jsonResponse);
 
-                    // Asignar valores predeterminados si son null
-                    float totalValue = scoreResponse.total.HasValue ? scoreResponse.total.Value : 0f;
+                    // Deserializar el JSON
+                    ScoreResponse scoreResponse = JsonUtility.FromJson<ScoreResponse>(jsonResponse);
 
-                    // Almacenar el valor total en PlayerPrefs
+                    float totalValue = scoreResponse.total;
+
+                    // Guardar el valor total en PlayerPrefs
                     PlayerPrefs.SetString(playerPrefsKey, totalValue.ToString("0.##") + "%");
                     Debug.Log("Valor total cargado para " + playerPrefsKey + ": " + totalValue);
                 }
@@ -53,13 +54,19 @@ public class btton_Score : MonoBehaviour
         }
     }
 
+    private string PreprocessJson(string json)
+    {
+        // Reemplaza "null" por "0.0" en el JSON
+        return json.Replace(":null", ":0.0");
+    }
+
     [System.Serializable]
     public class ScoreResponse
     {
         public int score_Id;
-        public float? success_Rate;
-        public float? water_Saved;
-        public float? total;
+        public float success_Rate;
+        public float water_Saved;
+        public float total;
         public bool isDeleted;
     }
 }

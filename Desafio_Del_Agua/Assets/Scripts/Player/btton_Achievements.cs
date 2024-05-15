@@ -37,13 +37,14 @@ public class btton_Achievements : MonoBehaviour
 
                     // Deserializar la respuesta JSON
                     AchievementResponse achievementResponse = JsonUtility.FromJson<AchievementResponse>(request.downloadHandler.text);
-
-                    // Verificar si achievementId es null y asignar 0 en ese caso
-                    int achievementId = achievementResponse.achievementId.HasValue ? achievementResponse.achievementId.Value : 0;
-
+                    Debug.Log(achievementResponse.game_Id);
+                    Debug.Log(achievementResponse.achievement_Id);
+                    // Verificar achievementId 
+                    int achievementId = achievementResponse.achievement_Id;
+                    Debug.Log("Valor total cargado para " + playerPrefsKey + ": " + achievementId);
                     // Almacenar el valor en PlayerPrefs
                     PlayerPrefs.SetInt(playerPrefsKey, achievementId);
-                    Debug.Log("Valor total cargado para " + playerPrefsKey + ": " + achievementId);
+                    
                 }
                 else
                 {
@@ -56,8 +57,8 @@ public class btton_Achievements : MonoBehaviour
     [System.Serializable]
     public class AchievementResponse
     {
-        public int? gameId;
-        public int? achievementId;
+        public int game_Id;
+        public int achievement_Id;
     }
 
 }

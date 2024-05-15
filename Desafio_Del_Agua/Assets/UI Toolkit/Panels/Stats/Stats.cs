@@ -40,15 +40,16 @@ public class Stats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("achivementE1", 0) == 1)
+        if (PlayerPrefs.GetInt("achievementE1", 0) == 1)
         {
+            Debug.Log("fff");
             visualElement1.style.display = DisplayStyle.Flex;
         }
-        if (PlayerPrefs.GetInt("achivementE2", 0) == 2)
+        if (PlayerPrefs.GetInt("achievementE2", 0) == 2)
         {
             visualElement2.style.display = DisplayStyle.Flex;
         }
-        if (PlayerPrefs.GetInt("achivementE3", 0) == 1)
+        if (PlayerPrefs.GetInt("achievementE3", 0) == 1)
         {
             visualElement3.style.display = DisplayStyle.Flex;
         }
